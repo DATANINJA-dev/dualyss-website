@@ -1,0 +1,298 @@
+{
+  "version": "1.0.0",
+  "schema_version": "1.0",
+  "generated": "2026-01-25",
+  "description": "Workflow patterns for hub commands used by generic-classifier for workflow mapping",
+  "patterns": {
+    "task_management": {
+      "generate-task": {
+        "input_type": "description",
+        "input_format": "free_text",
+        "action_type": "create",
+        "output_type": "task_file",
+        "output_format": "TASK-XXX.md",
+        "domain": "generic",
+        "parameters": ["--epic", "--type", "--priority"],
+        "keywords": ["create task", "new task", "add task", "generate task", "make task"],
+        "workflow_steps": ["gather context", "analyze requirements", "create task file", "update index"]
+      },
+      "list-tasks": {
+        "input_type": "filters",
+        "input_format": "flags",
+        "action_type": "list",
+        "output_type": "table",
+        "output_format": "markdown_table",
+        "domain": "generic",
+        "parameters": ["--status", "--epic", "--type", "--assignee"],
+        "keywords": ["list tasks", "show tasks", "view tasks", "get tasks", "backlog", "task list"],
+        "workflow_steps": ["read tasks.json", "apply filters", "format output"]
+      },
+      "update-task": {
+        "input_type": "task_id_and_status",
+        "input_format": "TASK-XXX [status]",
+        "action_type": "update",
+        "output_type": "confirmation",
+        "output_format": "message",
+        "domain": "generic",
+        "parameters": ["status", "priority", "assignee"],
+        "keywords": ["update task", "change task", "mark task", "set status", "task status"],
+        "workflow_steps": ["validate task exists", "update field", "save tasks.json"]
+      },
+      "suggest-task": {
+        "input_type": "context",
+        "input_format": "implicit",
+        "action_type": "recommend",
+        "output_type": "suggestion",
+        "output_format": "task_recommendation",
+        "domain": "generic",
+        "parameters": [],
+        "keywords": ["suggest task", "next task", "recommend task", "what to do", "pick task", "choose task"],
+        "workflow_steps": ["read tasks.json", "analyze dependencies", "score by priority/complexity", "recommend"]
+      },
+      "archive-tasks": {
+        "input_type": "none",
+        "input_format": "implicit",
+        "action_type": "archive",
+        "output_type": "confirmation",
+        "output_format": "message",
+        "domain": "generic",
+        "parameters": ["--older-than", "--status"],
+        "keywords": ["archive", "cleanup tasks", "remove old", "clean backlog"],
+        "workflow_steps": ["find completed tasks", "move to archive", "update tasks.json"]
+      }
+    },
+    "content_generation": {
+      "generate-epics": {
+        "input_type": "idea",
+        "input_format": "free_text",
+        "action_type": "create",
+        "output_type": "epic_files",
+        "output_format": "EPIC-XXX.md",
+        "domain": "generic",
+        "parameters": ["--audience", "--skip-prd"],
+        "keywords": ["epic", "project", "product", "feature set", "initiative"],
+        "workflow_steps": ["semantic matching", "market research", "personas", "feature scope", "create epics"]
+      },
+      "refine": {
+        "input_type": "task_id",
+        "input_format": "TASK-XXX",
+        "action_type": "analyze",
+        "output_type": "implementation_plan",
+        "output_format": "markdown_sections",
+        "domain": "generic",
+        "parameters": ["--resume", "--quick"],
+        "keywords": ["refine", "plan", "analyze task", "implementation plan", "prepare task"],
+        "workflow_steps": ["run discovery agents", "QA synthesis", "generate plan", "append to task"]
+      }
+    },
+    "execution": {
+      "develop-task": {
+        "input_type": "task_id",
+        "input_format": "TASK-XXX",
+        "action_type": "execute",
+        "output_type": "completed_code",
+        "output_format": "file_changes",
+        "domain": "generic",
+        "parameters": ["--resume", "--quick", "--skip-tests"],
+        "keywords": ["develop", "implement", "code", "build", "fix", "execute task"],
+        "workflow_steps": ["load plan", "TDD cycle", "verify step", "commit"]
+      }
+    },
+    "validation": {
+      "seo-validate-quality": {
+        "input_type": "path_or_url",
+        "input_format": "file_path | URL",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "score_report",
+        "domain": "seo",
+        "parameters": ["--threshold", "--json"],
+        "keywords": ["content quality", "E-E-A-T", "readability", "SEO score", "content audit"],
+        "workflow_steps": ["fetch content", "analyze E-E-A-T", "score readability", "check keywords", "generate report"]
+      },
+      "seo-validate-meta": {
+        "input_type": "path",
+        "input_format": "file_path",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "validation_report",
+        "domain": "seo",
+        "parameters": ["--fix", "--json"],
+        "keywords": ["meta tags", "title", "description", "og tags", "SEO meta"],
+        "workflow_steps": ["parse HTML", "extract meta", "validate rules", "report issues"]
+      },
+      "seo-validate-orthography": {
+        "input_type": "path",
+        "input_format": "file_path | directory",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "spelling_report",
+        "domain": "seo",
+        "parameters": ["--lang", "--fix", "--ignore"],
+        "keywords": ["spelling", "grammar", "typos", "spell check", "orthography"],
+        "workflow_steps": ["extract text", "check spelling", "check grammar", "report errors"]
+      },
+      "seo-validate-structured": {
+        "input_type": "path",
+        "input_format": "file_path",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "validation_report",
+        "domain": "seo",
+        "parameters": ["--schema", "--json"],
+        "keywords": ["JSON-LD", "structured data", "schema.org", "rich snippets"],
+        "workflow_steps": ["parse JSON-LD", "validate schema", "check required fields", "report"]
+      },
+      "seo-validate-hreflang": {
+        "input_type": "path_or_url",
+        "input_format": "file_path | URL",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "validation_report",
+        "domain": "seo",
+        "parameters": ["--langs", "--json"],
+        "keywords": ["hreflang", "multi-language", "i18n", "localization", "language tags"],
+        "workflow_steps": ["fetch pages", "extract hreflang", "validate bidirectional", "report"]
+      },
+      "seo-validate-lighthouse": {
+        "input_type": "url",
+        "input_format": "URL",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "lighthouse_report",
+        "domain": "seo",
+        "parameters": ["--budget", "--categories"],
+        "keywords": ["lighthouse", "performance", "Core Web Vitals", "page speed"],
+        "workflow_steps": ["run lighthouse", "check budgets", "report scores"]
+      },
+      "seo-validate-geo": {
+        "input_type": "keywords_or_url",
+        "input_format": "keywords[] | URL",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "citation_report",
+        "domain": "seo",
+        "parameters": ["--platforms", "--json"],
+        "keywords": ["GEO", "AI search", "citations", "Perplexity", "ChatGPT search"],
+        "workflow_steps": ["query AI platforms", "check citations", "report visibility"]
+      },
+      "audit": {
+        "input_type": "target",
+        "input_format": "all | commands | agents | skills | hooks | filename",
+        "action_type": "audit",
+        "output_type": "report",
+        "output_format": "audit_scores",
+        "domain": "generic",
+        "parameters": ["--watch", "--json"],
+        "keywords": ["audit", "review", "check quality", "score", "evaluate"],
+        "workflow_steps": ["run analyzers", "synthesize scores", "generate recommendations"]
+      },
+      "validate-journeys": {
+        "input_type": "path",
+        "input_format": "directory",
+        "action_type": "validate",
+        "output_type": "report",
+        "output_format": "journey_report",
+        "domain": "ux",
+        "parameters": ["--fix", "--json"],
+        "keywords": ["user journeys", "navigation", "orphaned pages", "route validation"],
+        "workflow_steps": ["build route graph", "detect orphans", "validate flows", "report"]
+      }
+    },
+    "navigation": {
+      "generate-nav": {
+        "input_type": "config",
+        "input_format": "route-registry.yaml",
+        "action_type": "generate",
+        "output_type": "code",
+        "output_format": "navigation_components",
+        "domain": "frontend",
+        "parameters": ["--framework"],
+        "keywords": ["navigation", "menu", "nav component", "route config", "sitemap"],
+        "workflow_steps": ["read route-registry", "generate components", "write files"]
+      }
+    },
+    "framework_management": {
+      "framework-analyze": {
+        "input_type": "path",
+        "input_format": "directory",
+        "action_type": "analyze",
+        "output_type": "report",
+        "output_format": "analysis_json",
+        "domain": "generic",
+        "parameters": ["--json", "--verbose", "--fresh"],
+        "keywords": ["analyze project", "check structure", "scan project", "evaluate"],
+        "workflow_steps": ["detect type", "scan context", "classify components", "generate plan"]
+      },
+      "framework-install": {
+        "input_type": "none",
+        "input_format": "implicit",
+        "action_type": "install",
+        "output_type": "confirmation",
+        "output_format": "message",
+        "domain": "generic",
+        "parameters": ["--force", "--clean", "--level"],
+        "keywords": ["install framework", "setup framework", "add framework"],
+        "workflow_steps": ["validate", "backup", "subtree add", "merge config"]
+      }
+    },
+    "epic_management": {
+      "list-epics": {
+        "input_type": "filters",
+        "input_format": "flags",
+        "action_type": "list",
+        "output_type": "table",
+        "output_format": "markdown_table",
+        "domain": "generic",
+        "parameters": ["--status"],
+        "keywords": ["list epics", "show epics", "view epics", "epic list"],
+        "workflow_steps": ["read epics.json", "apply filters", "format output"]
+      }
+    },
+    "data_patterns": {
+      "_description": "Patterns that should be skills or data files, not commands",
+      "entity_registry": {
+        "input_type": "entity_data",
+        "input_format": "structured_input",
+        "action_type": "crud",
+        "output_type": "data_update",
+        "output_format": "json_file",
+        "domain": "specific",
+        "suggested_conversion": "data file + skill",
+        "keywords": ["add entity", "register", "create record", "new entry", "insert"],
+        "indicators": ["hardcoded entity types", "domain-specific fields", "single data source"]
+      },
+      "config_generator": {
+        "input_type": "parameters",
+        "input_format": "flags",
+        "action_type": "generate",
+        "output_type": "config_file",
+        "output_format": "json | yaml",
+        "domain": "specific",
+        "suggested_conversion": "template + skill",
+        "keywords": ["generate config", "create config", "setup config"],
+        "indicators": ["hardcoded paths", "project-specific values", "single use case"]
+      }
+    }
+  },
+  "mapping_rules": {
+    "similarity_thresholds": {
+      "renamed_duplicate": 0.90,
+      "parameterized": 0.75,
+      "composite": 0.60,
+      "data_pattern": 0.50
+    },
+    "workflow_comparison_weights": {
+      "action_type_match": 0.30,
+      "input_type_match": 0.20,
+      "output_type_match": 0.20,
+      "keyword_overlap": 0.15,
+      "workflow_step_overlap": 0.15
+    }
+  },
+  "_metadata": {
+    "categories_count": 8,
+    "patterns_count": 21,
+    "last_updated": "2026-01-25"
+  }
+}

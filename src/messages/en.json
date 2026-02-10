@@ -1,0 +1,724 @@
+{
+  "metadata": {
+    "title": "Dualyss | Dual-Use Technologies for European Security",
+    "description": "Protecting democracy with dual deterrence technologies. Dualyss develops enabling capabilities in defense, cybersecurity, and biosecurity for European strategic autonomy."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "aboutUs": "About Us",
+    "team": "Team",
+    "partners": "Partners",
+    "capabilities": "Capabilities",
+    "defense": "Defense",
+    "cybersecurity": "Cybersecurity",
+    "biosecurity": "Biosecurity",
+    "dualUse": "Dual-Use Tech",
+    "sectors": "Sectors",
+    "news": "News",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tagline": "Dual-Use Technologies",
+    "title": "Protecting Democracy Through Technological Preparedness",
+    "subtitle": "We develop enabling capabilities in defense, cybersecurity, and biosecurity to strengthen European strategic autonomy.",
+    "cta": "Discover Our Capabilities",
+    "ctaSecondary": "Contact Us"
+  },
+  "capabilities": {
+    "title": "Our Capabilities",
+    "subtitle": "Enabling technologies for a more secure and autonomous Europe",
+    "defense": {
+      "title": "Defense",
+      "description": "Unmanned systems, advanced sensors, and autonomous platforms for modern defense requirements."
+    },
+    "cybersecurity": {
+      "title": "Cybersecurity",
+      "description": "Protecting critical digital infrastructure with resilient and secure communication systems."
+    },
+    "biosecurity": {
+      "title": "Biosecurity",
+      "description": "Bio-sanitary response capabilities and health security solutions for emerging threats."
+    },
+    "dualUse": {
+      "title": "Dual-Use Technologies",
+      "description": "Civil and defense applications that drive innovation while ensuring strategic preparedness."
+    }
+  },
+  "about": {
+    "title": "About Dualyss",
+    "subtitle": "Building European strategic autonomy through enabling capabilities",
+    "mission": {
+      "title": "Our Mission",
+      "text": "We articulate Catalonia's technological ecosystem to develop enabling capabilities, giving them scale and positioning them in European programs and debates."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "A more secure, more autonomous, and better-prepared Europe—built on a solid, integrated, and innovative industrial and technological base."
+    },
+    "values": {
+      "title": "Our Values",
+      "deterrence": "Deterrence",
+      "deterrenceDesc": "Security through technological superiority and preparedness",
+      "autonomy": "Autonomy",
+      "autonomyDesc": "Developing sovereign capabilities to reduce dependencies",
+      "innovation": "Innovation",
+      "innovationDesc": "Cutting-edge solutions for complex challenges",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "Integrating SMEs, research centers, and industrial partners"
+    }
+  },
+  "cta": {
+    "title": "Ready to Strengthen European Security?",
+    "subtitle": "Join our ecosystem of technology partners and contribute to building strategic autonomy.",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "description": "Protecting democracy with dual deterrence technologies.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "cookies": "Cookie Policy",
+    "followUs": "Follow Us",
+    "copyright": "© {year} Dualyss AIE. All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "organization": "Organization",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "viewAll": "View All",
+    "back": "Back",
+    "loading": "Loading..."
+  },
+  "pages": {
+    "about": {
+      "meta": {
+        "title": "About Dualyss | European Dual-Use Technology Leader",
+        "description": "Learn about Dualyss, a Catalan Economic Interest Grouping specializing in dual-use technologies for defense, cybersecurity, and biosecurity."
+      },
+      "title": "About Dualyss",
+      "subtitle": "Building European strategic autonomy through enabling capabilities",
+      "mission": {
+        "title": "Our Mission",
+        "text": "We articulate Catalonia's technological ecosystem to develop enabling capabilities, giving them scale and positioning them in European programs and debates."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "text": "A more secure, more autonomous, and better-prepared Europe—built on a solid, integrated, and innovative industrial and technological base."
+      },
+      "values": {
+        "title": "Our Values",
+        "deterrence": "Deterrence",
+        "deterrenceDesc": "Security through technological superiority and preparedness",
+        "autonomy": "Autonomy",
+        "autonomyDesc": "Developing sovereign capabilities to reduce dependencies",
+        "innovation": "Innovation",
+        "innovationDesc": "Cutting-edge solutions for complex challenges",
+        "collaboration": "Collaboration",
+        "collaborationDesc": "Integrating SMEs, research centers, and industrial partners"
+      },
+      "european": {
+        "title": "European Commitment",
+        "text": "As a European-focused organization, we are committed to strengthening the continent's technological sovereignty and industrial base. We actively participate in EU defense and security programs, contributing to a more resilient and autonomous Europe."
+      },
+      "links": {
+        "team": "Meet Our Team",
+        "teamDesc": "Discover the experts driving our mission forward.",
+        "partners": "Our Partners",
+        "partnersDesc": "Explore our ecosystem of industrial and academic partners."
+      }
+    },
+    "team": {
+      "meta": {
+        "title": "Our Team | Dualyss Leadership",
+        "description": "Meet the leadership team at Dualyss, experts in defense, cybersecurity, and dual-use technologies."
+      },
+      "title": "Our Team",
+      "subtitle": "Meet the experts driving European technological autonomy",
+      "leadership": {
+        "title": "Leadership Team",
+        "subtitle": "Our diverse team brings together expertise from defense, technology, and European institutions."
+      },
+      "members": {
+        "member1": {
+          "name": "Executive Director",
+          "role": "Chief Executive Officer",
+          "description": "Leading Dualyss's strategic vision and European positioning."
+        },
+        "member2": {
+          "name": "Technology Director",
+          "role": "Chief Technology Officer",
+          "description": "Overseeing technological development and innovation programs."
+        },
+        "member3": {
+          "name": "Operations Director",
+          "role": "Chief Operations Officer",
+          "description": "Managing partnerships and operational excellence."
+        },
+        "member4": {
+          "name": "Strategy Director",
+          "role": "Chief Strategy Officer",
+          "description": "Driving European program participation and market development."
+        }
+      },
+      "joinUs": {
+        "title": "Join Our Team",
+        "text": "We're always looking for talented professionals passionate about European security and dual-use technologies.",
+        "cta": "Contact Us"
+      }
+    },
+    "partners": {
+      "meta": {
+        "title": "Partners | Dualyss Ecosystem",
+        "description": "Explore Dualyss's partner ecosystem of industrial leaders, academic institutions, and research centers."
+      },
+      "title": "Our Partners",
+      "subtitle": "Building capabilities through strategic collaboration",
+      "ecosystem": {
+        "title": "Partner Ecosystem",
+        "text": "Our strength lies in our diverse network of partners, combining industrial expertise, academic research, and institutional support to deliver cutting-edge solutions."
+      },
+      "categories": {
+        "industry": {
+          "title": "Industrial Partners",
+          "description": "Leading defense and technology companies"
+        },
+        "academic": {
+          "title": "Academic Partners",
+          "description": "Universities and educational institutions"
+        },
+        "research": {
+          "title": "Research Centers",
+          "description": "Innovation and R&D organizations"
+        },
+        "institutional": {
+          "title": "Institutional Partners",
+          "description": "Government and EU agencies"
+        }
+      },
+      "cta": {
+        "title": "Become a Partner",
+        "text": "Join our ecosystem and contribute to European technological sovereignty.",
+        "button": "Get in Touch"
+      }
+    },
+    "capabilities": {
+      "meta": {
+        "title": "Capabilities | Dualyss Technologies",
+        "description": "Explore Dualyss's capabilities in defense, cybersecurity, biosecurity, and dual-use technologies."
+      },
+      "title": "Our Capabilities",
+      "subtitle": "Enabling technologies for a more secure and autonomous Europe",
+      "approach": {
+        "title": "Our Approach",
+        "text": "We follow a systematic approach to developing and delivering enabling capabilities.",
+        "step1": {
+          "title": "Identify",
+          "text": "Assess needs and identify technological gaps"
+        },
+        "step2": {
+          "title": "Develop",
+          "text": "Build solutions with our partner ecosystem"
+        },
+        "step3": {
+          "title": "Deploy",
+          "text": "Implement and support operational readiness"
+        }
+      },
+      "cta": {
+        "title": "Ready to Explore Our Capabilities?",
+        "text": "Contact us to discuss how we can support your security and technology needs.",
+        "button": "Contact Us"
+      }
+    },
+    "defense": {
+      "meta": {
+        "title": "Defense Technologies | Dualyss",
+        "description": "Discover Dualyss's defense capabilities including unmanned systems, sensors, and autonomous platforms."
+      },
+      "title": "Defense Technologies",
+      "subtitle": "Advanced systems for modern defense requirements",
+      "overview": {
+        "title": "Defense Capabilities Overview",
+        "text1": "Our defense technology portfolio encompasses cutting-edge unmanned systems, advanced sensors, and autonomous platforms designed to meet the evolving needs of modern armed forces.",
+        "text2": "We work closely with defense institutions and industrial partners to develop solutions that enhance operational capabilities while ensuring interoperability with allied systems."
+      },
+      "technologies": {
+        "title": "Key Technologies",
+        "subtitle": "Comprehensive defense technology solutions"
+      },
+      "tech": {
+        "uav": {
+          "title": "Unmanned Aerial Vehicles",
+          "description": "Advanced drone systems for reconnaissance, surveillance, and tactical operations."
+        },
+        "comms": {
+          "title": "Secure Communications",
+          "description": "Encrypted communication systems for battlefield coordination."
+        },
+        "sensors": {
+          "title": "Advanced Sensors",
+          "description": "Multi-spectral sensing and target acquisition systems."
+        },
+        "surveillance": {
+          "title": "Surveillance Systems",
+          "description": "Integrated surveillance networks for situational awareness."
+        },
+        "autonomous": {
+          "title": "Autonomous Systems",
+          "description": "AI-enabled autonomous platforms for various defense applications."
+        },
+        "protection": {
+          "title": "Force Protection",
+          "description": "Systems for personnel and asset protection in hostile environments."
+        }
+      },
+      "useCases": {
+        "title": "Applications",
+        "defense": "Defense",
+        "civil": "Civil",
+        "case1": {
+          "title": "Border Surveillance",
+          "description": "Integrated sensor networks for continuous border monitoring."
+        },
+        "case2": {
+          "title": "Search and Rescue",
+          "description": "UAV-assisted search operations in difficult terrain."
+        },
+        "case3": {
+          "title": "Maritime Security",
+          "description": "Naval surveillance and protection systems."
+        }
+      },
+      "cta": {
+        "title": "Interested in Defense Solutions?",
+        "text": "Contact us to discuss your defense technology requirements.",
+        "button": "Get in Touch"
+      }
+    },
+    "cybersecurity": {
+      "meta": {
+        "title": "Cybersecurity Solutions | Dualyss",
+        "description": "Comprehensive cybersecurity solutions for critical infrastructure protection and digital resilience."
+      },
+      "title": "Cybersecurity",
+      "subtitle": "Protecting critical digital infrastructure",
+      "overview": {
+        "title": "Cybersecurity Capabilities",
+        "text1": "In an increasingly connected world, protecting digital infrastructure is paramount. Our cybersecurity solutions address the full spectrum of threats facing modern organizations and nations.",
+        "text2": "We combine technical expertise with deep understanding of regulatory requirements to deliver comprehensive security solutions."
+      },
+      "services": {
+        "title": "Our Services",
+        "subtitle": "End-to-end cybersecurity capabilities",
+        "protection": {
+          "title": "Threat Protection",
+          "description": "Advanced threat detection and prevention systems."
+        },
+        "infrastructure": {
+          "title": "Infrastructure Security",
+          "description": "Securing critical infrastructure and operational technology."
+        },
+        "network": {
+          "title": "Network Security",
+          "description": "Comprehensive network monitoring and defense solutions."
+        },
+        "crypto": {
+          "title": "Cryptographic Solutions",
+          "description": "Advanced encryption and key management systems."
+        },
+        "threat": {
+          "title": "Threat Intelligence",
+          "description": "Real-time threat intelligence and analysis services."
+        },
+        "compliance": {
+          "title": "Compliance & Governance",
+          "description": "Regulatory compliance and security governance support."
+        }
+      },
+      "standards": {
+        "title": "Standards & Compliance",
+        "text": "Our solutions are designed to meet the highest international security standards and regulatory requirements."
+      },
+      "cta": {
+        "title": "Strengthen Your Cyber Defenses",
+        "text": "Contact us to assess your cybersecurity posture and requirements.",
+        "button": "Contact Us"
+      }
+    },
+    "biosecurity": {
+      "meta": {
+        "title": "Biosecurity Capabilities | Dualyss",
+        "description": "Bio-sanitary response capabilities and health security solutions for emerging biological threats."
+      },
+      "title": "Biosecurity",
+      "subtitle": "Health security solutions for emerging threats",
+      "overview": {
+        "title": "Biosecurity Capabilities",
+        "text1": "Our biosecurity portfolio addresses the growing need for preparedness against biological threats, from natural pandemics to deliberate biological incidents.",
+        "text2": "We develop integrated solutions that combine detection, response, and protection capabilities to safeguard public health and national security."
+      },
+      "capabilities": {
+        "title": "Key Capabilities",
+        "subtitle": "Comprehensive biosecurity solutions",
+        "detection": {
+          "title": "Threat Detection",
+          "description": "Early warning systems for biological agent detection."
+        },
+        "monitoring": {
+          "title": "Health Monitoring",
+          "description": "Surveillance systems for epidemiological monitoring."
+        },
+        "response": {
+          "title": "Rapid Response",
+          "description": "Coordinated response capabilities for biological incidents."
+        },
+        "medical": {
+          "title": "Medical Countermeasures",
+          "description": "Development and stockpiling of medical countermeasures."
+        },
+        "protection": {
+          "title": "Personal Protection",
+          "description": "Advanced protective equipment and decontamination systems."
+        },
+        "health": {
+          "title": "Public Health Systems",
+          "description": "Integrated public health information systems."
+        }
+      },
+      "applications": {
+        "title": "Applications",
+        "text": "Our biosecurity solutions serve both civilian public health needs and defense requirements, ensuring comprehensive protection against biological threats."
+      },
+      "cta": {
+        "title": "Enhance Your Biosecurity Preparedness",
+        "text": "Contact us to discuss biosecurity solutions for your organization.",
+        "button": "Get in Touch"
+      }
+    },
+    "dualUse": {
+      "meta": {
+        "title": "Dual-Use Technologies | Dualyss",
+        "description": "Technologies with both civil and defense applications, driving innovation while ensuring strategic preparedness."
+      },
+      "title": "Dual-Use Technologies",
+      "subtitle": "Innovation for both civil and defense applications",
+      "overview": {
+        "title": "The Dual-Use Advantage",
+        "text1": "Dual-use technologies represent the intersection of civil innovation and defense capability. By developing technologies with applications in both domains, we maximize value and accelerate innovation.",
+        "text2": "This approach allows us to leverage commercial advancements for defense applications while ensuring civil society benefits from security-driven innovations."
+      },
+      "concept": {
+        "title": "Understanding Dual-Use",
+        "text": "Dual-use technologies serve legitimate purposes in both civilian and defense contexts, creating synergies that benefit society as a whole.",
+        "defense": {
+          "title": "Defense Applications",
+          "item1": "Surveillance and reconnaissance",
+          "item2": "Secure communications",
+          "item3": "Autonomous systems"
+        },
+        "civil": {
+          "title": "Civil Applications",
+          "item1": "Emergency response",
+          "item2": "Infrastructure monitoring",
+          "item3": "Environmental protection"
+        }
+      },
+      "civilApps": {
+        "title": "Civil Applications",
+        "subtitle": "Defense technologies serving society"
+      },
+      "applications": {
+        "firefighting": {
+          "title": "Firefighting Support",
+          "description": "UAV systems for fire detection, monitoring, and coordination of firefighting efforts."
+        },
+        "rescue": {
+          "title": "Search and Rescue",
+          "description": "Advanced sensors and autonomous systems for locating missing persons in difficult terrain."
+        },
+        "maritime": {
+          "title": "Maritime Safety",
+          "description": "Surveillance systems for maritime safety and environmental protection."
+        },
+        "infrastructure": {
+          "title": "Critical Infrastructure",
+          "description": "Monitoring and protection systems for essential infrastructure."
+        }
+      },
+      "cta": {
+        "title": "Explore Dual-Use Opportunities",
+        "text": "Contact us to discover how dual-use technologies can benefit your organization.",
+        "button": "Contact Us"
+      }
+    },
+    "sectors": {
+      "meta": {
+        "title": "Sectors We Serve | Dualyss",
+        "description": "Dualyss serves institutional, industrial, academic, and public sectors across Europe."
+      },
+      "title": "Sectors We Serve",
+      "subtitle": "Delivering capabilities across diverse sectors",
+      "sectors": {
+        "institutional": {
+          "title": "Institutional Sector",
+          "description": "Supporting European and national institutions in defense and security programs.",
+          "service1": "EU program participation support",
+          "service2": "Policy and strategy advisory",
+          "service3": "Capability assessment and planning"
+        },
+        "industrial": {
+          "title": "Industrial Sector",
+          "description": "Partnering with defense contractors and technology companies.",
+          "service1": "Technology integration services",
+          "service2": "Supply chain management",
+          "service3": "Joint development programs"
+        },
+        "academic": {
+          "title": "Academic Sector",
+          "description": "Collaborating with universities and research institutions.",
+          "service1": "Research partnerships",
+          "service2": "Technology transfer programs",
+          "service3": "Talent development initiatives"
+        },
+        "public": {
+          "title": "Public Sector",
+          "description": "Serving public safety and civil protection agencies.",
+          "service1": "Emergency response systems",
+          "service2": "Public safety technologies",
+          "service3": "Civil protection solutions"
+        }
+      },
+      "european": {
+        "title": "European Focus",
+        "text": "We are committed to strengthening European technological sovereignty and contributing to the EU's strategic autonomy in defense and security technologies."
+      },
+      "cta": {
+        "title": "How Can We Help Your Sector?",
+        "text": "Contact us to discuss sector-specific solutions and partnerships.",
+        "button": "Get in Touch"
+      }
+    },
+    "news": {
+      "meta": {
+        "title": "News & Insights | Dualyss",
+        "description": "Latest news, announcements, and insights from Dualyss on defense, cybersecurity, and dual-use technologies."
+      },
+      "title": "News & Insights",
+      "subtitle": "Stay updated with our latest developments",
+      "readMore": "Read More",
+      "categories": {
+        "announcement": "Announcement",
+        "partnership": "Partnership",
+        "technology": "Technology",
+        "event": "Event"
+      },
+      "articles": {
+        "article1": {
+          "title": "Dualyss Announces Strategic Partnership",
+          "excerpt": "New collaboration to strengthen European defense capabilities through innovative dual-use technologies."
+        },
+        "article2": {
+          "title": "Participation in EU Defense Program",
+          "excerpt": "Dualyss selected for participation in major European defense research initiative."
+        },
+        "article3": {
+          "title": "New Cybersecurity Solution Launch",
+          "excerpt": "Introducing advanced threat detection capabilities for critical infrastructure protection."
+        },
+        "article4": {
+          "title": "European Security Conference 2026",
+          "excerpt": "Join us at the upcoming conference to discuss the future of European defense technologies."
+        },
+        "article5": {
+          "title": "Expanding Our Partner Network",
+          "excerpt": "Welcome to our newest industrial and academic partners joining the Dualyss ecosystem."
+        },
+        "article6": {
+          "title": "Innovation in Biosecurity",
+          "excerpt": "Latest developments in biological threat detection and response capabilities."
+        }
+      },
+      "newsletter": {
+        "title": "Stay Informed",
+        "text": "Subscribe to our newsletter for the latest updates on European defense and security technologies.",
+        "placeholder": "Enter your email",
+        "button": "Subscribe"
+      }
+    },
+    "contact": {
+      "meta": {
+        "title": "Contact Us | Dualyss",
+        "description": "Get in touch with Dualyss for inquiries about our defense, cybersecurity, and dual-use technology solutions."
+      },
+      "title": "Contact Us",
+      "subtitle": "We'd love to hear from you",
+      "info": {
+        "title": "Contact Information",
+        "address": {
+          "title": "Address",
+          "line1": "Barcelona, Catalonia",
+          "line2": "Spain, Europe"
+        },
+        "email": {
+          "title": "Email",
+          "general": "info@dualyss.eu",
+          "press": "press@dualyss.eu"
+        },
+        "phone": {
+          "title": "Phone",
+          "main": "+34 XXX XXX XXX"
+        },
+        "hours": {
+          "title": "Business Hours",
+          "weekdays": "Monday - Friday: 9:00 - 18:00 CET",
+          "weekend": "Weekend: Closed"
+        }
+      },
+      "form": {
+        "title": "Send Us a Message"
+      },
+      "social": {
+        "title": "Follow Us"
+      }
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacy Policy | Dualyss",
+        "description": "Dualyss privacy policy explaining how we collect, use, and protect your personal information."
+      },
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: January 2026",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "Dualyss AIE (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website."
+        },
+        "dataCollection": {
+          "title": "Information We Collect",
+          "content": "We collect information that you voluntarily provide to us when you contact us through our website, including your name, email address, organization, and any other information you choose to provide in your message."
+        },
+        "dataUse": {
+          "title": "How We Use Your Information",
+          "content": "We use the information we collect to respond to your inquiries, provide you with information about our services, and improve our website and services."
+        },
+        "dataSharing": {
+          "title": "Information Sharing",
+          "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law or to service providers who assist us in operating our website."
+        },
+        "dataSecurity": {
+          "title": "Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "content": "Under GDPR, you have the right to access, rectify, erase, restrict processing, and port your personal data. You also have the right to object to processing and to withdraw consent at any time."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "content": "Our website uses cookies to enhance your experience. Please refer to our Cookie Policy for more information about how we use cookies."
+        },
+        "changes": {
+          "title": "Changes to This Policy",
+          "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have any questions about this Privacy Policy, please contact us at privacy@dualyss.eu."
+        }
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms of Use | Dualyss",
+        "description": "Terms and conditions for using the Dualyss website and services."
+      },
+      "title": "Terms of Use",
+      "lastUpdated": "Last updated: January 2026",
+      "sections": {
+        "acceptance": {
+          "title": "Acceptance of Terms",
+          "content": "By accessing and using this website, you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this website."
+        },
+        "use": {
+          "title": "Use of Website",
+          "content": "This website is provided for informational purposes about Dualyss and its services. You may use this website only for lawful purposes and in accordance with these Terms."
+        },
+        "intellectualProperty": {
+          "title": "Intellectual Property",
+          "content": "All content on this website, including text, graphics, logos, and images, is the property of Dualyss or its content suppliers and is protected by intellectual property laws."
+        },
+        "userConduct": {
+          "title": "User Conduct",
+          "content": "You agree not to use this website in any way that could damage, disable, or impair the website, or interfere with any other party's use of the website."
+        },
+        "disclaimers": {
+          "title": "Disclaimers",
+          "content": "This website and its content are provided \"as is\" without warranties of any kind, either express or implied. Dualyss does not warrant that the website will be uninterrupted or error-free."
+        },
+        "limitation": {
+          "title": "Limitation of Liability",
+          "content": "Dualyss shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website."
+        },
+        "governingLaw": {
+          "title": "Governing Law",
+          "content": "These Terms shall be governed by and construed in accordance with the laws of Spain and the European Union. Any disputes shall be subject to the exclusive jurisdiction of the courts of Barcelona."
+        },
+        "changes": {
+          "title": "Changes to Terms",
+          "content": "We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to the website."
+        },
+        "contact": {
+          "title": "Contact",
+          "content": "For questions about these Terms, please contact us at legal@dualyss.eu."
+        }
+      }
+    },
+    "cookies": {
+      "meta": {
+        "title": "Cookie Policy | Dualyss",
+        "description": "Information about how Dualyss uses cookies on its website."
+      },
+      "title": "Cookie Policy",
+      "lastUpdated": "Last updated: January 2026",
+      "sections": {
+        "whatAreCookies": {
+          "title": "What Are Cookies?",
+          "content": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners."
+        },
+        "howWeUse": {
+          "title": "How We Use Cookies",
+          "content": "We use cookies to understand how you interact with our website, to remember your preferences, and to improve your overall experience on our site."
+        },
+        "types": {
+          "title": "Types of Cookies We Use",
+          "content": "Essential Cookies: Required for the website to function properly.\nAnalytics Cookies: Help us understand how visitors interact with our website.\nPreference Cookies: Remember your settings and preferences."
+        },
+        "thirdParty": {
+          "title": "Third-Party Cookies",
+          "content": "We may use third-party services that place cookies on your device. These services help us analyze website traffic and improve our services."
+        },
+        "manage": {
+          "title": "Managing Cookies",
+          "content": "You can control and manage cookies through your browser settings. Please note that removing or blocking cookies may impact your experience on our website."
+        },
+        "contact": {
+          "title": "Contact Us",
+          "content": "If you have questions about our use of cookies, please contact us at privacy@dualyss.eu."
+        }
+      }
+    }
+  }
+}

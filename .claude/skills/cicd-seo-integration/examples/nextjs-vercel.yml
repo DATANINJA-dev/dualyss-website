@@ -1,0 +1,185 @@
+# SEO Validation Workflow for Next.js + Vercel
+#
+# This workflow runs Lighthouse CI against Vercel preview deployments
+# to validate SEO and performance before merging.
+#
+# Prerequisites:
+# - Vercel project connected to GitHub repo
+# - Performance budget at .claude/skills/seo-validation/budgets/default.json
+#
+# Customization:
+# - Adjust performance thresholds in the budget file
+# - Add more URLs to test in the lighthouse step
+# - Modify retention-days for artifact storage
+#
+# Trigger: Runs when Vercel deployment succeeds (preview or production)
+
+name: SEO Validation (Next.js + Vercel)
+
+on:
+  deployment_status:
+
+jobs:
+  seo-validation:
+    # Only run when deployment succeeds
+    if: github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Cache Next.js build artifacts for faster subsequent runs
+      - name: Cache Next.js build
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-
+
+      - name: Get Preview URL
+        id: preview
+        run: |
+          PREVIEW_URL="${{ github.event.deployment_status.target_url }}"
+          echo "url=${PREVIEW_URL}" >> $GITHUB_OUTPUT
+          echo "Preview URL: ${PREVIEW_URL}"
+
+      # Run Lighthouse CI using the official action
+      - name: Run Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ steps.preview.outputs.url }}
+            ${{ steps.preview.outputs.url }}/about
+          budgetPath: .claude/skills/seo-validation/budgets/default.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+
+      # Check performance budgets and fail if thresholds not met
+      - name: Check Performance Budgets
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+
+            let failed = false;
+            const results = [];
+
+            for (const entry of manifest) {
+              const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+              const url = new URL(report.finalUrl).pathname || '/';
+
+              const scores = {
+                performance: report.categories.performance?.score * 100 || 0,
+                accessibility: report.categories.accessibility?.score * 100 || 0,
+                bestPractices: report.categories['best-practices']?.score * 100 || 0,
+                seo: report.categories.seo?.score * 100 || 0
+              };
+
+              results.push({ url, ...scores });
+
+              // Check thresholds (90% for SEO, 80% for others)
+              if (scores.seo < 90) {
+                console.error('[ERROR] E505: SEO score ' + scores.seo.toFixed(0) + '% below 90% threshold for ' + url);
+                failed = true;
+              }
+              if (scores.performance < 80) {
+                console.error('[ERROR] E505: Performance score ' + scores.performance.toFixed(0) + '% below 80% threshold for ' + url);
+                failed = true;
+              }
+            }
+
+            // Output summary table
+            console.log('\\n## Lighthouse Results\\n');
+            console.log('| URL | Performance | Accessibility | Best Practices | SEO |');
+            console.log('|-----|-------------|---------------|----------------|-----|');
+            for (const r of results) {
+              console.log('| ' + r.url + ' | ' + r.performance.toFixed(0) + '% | ' + r.accessibility.toFixed(0) + '% | ' + r.bestPractices.toFixed(0) + '% | ' + r.seo.toFixed(0) + '% |');
+            }
+
+            if (failed) {
+              process.exit(1);
+            }
+            console.log('\\n✓ All pages pass SEO and performance thresholds');
+          "
+
+      # Upload Lighthouse reports as artifacts
+      - name: Upload Lighthouse Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports-${{ github.run_id }}
+          path: |
+            .lighthouseci/*.json
+            .lighthouseci/*.html
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Post results as PR comment (if applicable)
+      - name: Comment on PR
+        if: github.event.deployment_status.environment == 'Preview'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Find associated PR
+            const { data: deployments } = await github.rest.repos.listDeployments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha
+            });
+
+            if (!deployments.length) return;
+
+            // Read Lighthouse results
+            let body = '## 🔍 Lighthouse SEO Validation\n\n';
+            body += `**Preview URL**: ${{ steps.preview.outputs.url }}\n\n`;
+
+            try {
+              const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+              body += '| URL | Performance | SEO | Status |\n';
+              body += '|-----|-------------|-----|--------|\n';
+
+              for (const entry of manifest) {
+                const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+                const url = new URL(report.finalUrl).pathname || '/';
+                const perf = (report.categories.performance?.score * 100 || 0).toFixed(0);
+                const seo = (report.categories.seo?.score * 100 || 0).toFixed(0);
+                const status = seo >= 90 && perf >= 80 ? '✅' : '❌';
+                body += `| ${url} | ${perf}% | ${seo}% | ${status} |\n`;
+              }
+            } catch (e) {
+              body += '⚠️ Could not read Lighthouse results\n';
+            }
+
+            body += '\n---\n_Generated by SEO Validation workflow_';
+
+            // Find PR for this deployment
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              head: `${context.repo.owner}:${context.ref.replace('refs/heads/', '')}`
+            });
+
+            if (prs.length) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prs[0].number,
+                body
+              });
+            }

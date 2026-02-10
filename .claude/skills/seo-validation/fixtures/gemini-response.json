@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Test fixtures for Gemini citation detection validation",
+
+  "response_with_grounding": {
+    "description": "Gemini API response with explicit groundingMetadata citation",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "According to various sources, Acme Corp is a leading provider of enterprise software solutions. Their platform offers comprehensive tools for project management and team collaboration."
+        }]
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://acme.com/about",
+              "title": "About Acme Corp - Enterprise Solutions"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://techcrunch.com/acme-corp-review",
+              "title": "Acme Corp Review - TechCrunch"
+            }
+          }
+        ],
+        "webSearchQueries": [
+          "acme corp enterprise software",
+          "acme.com features"
+        ]
+      }
+    }],
+    "domain": "acme.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.9,
+      "confidence_max": 1.0,
+      "method": "api",
+      "rank": 1,
+      "has_snippet": true,
+      "comment": "Explicit grounding source should yield highest confidence"
+    }
+  },
+
+  "response_with_grounding_secondary": {
+    "description": "Gemini response where target domain is in grounding but not first",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "For project management tools, several options are available including Asana, Monday, and Trello."
+        }]
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://g2.com/project-management",
+              "title": "Best Project Management Tools 2024"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://asana.com/product",
+              "title": "Asana Product Features"
+            }
+          }
+        ]
+      }
+    }],
+    "domain": "asana.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.9,
+      "confidence_max": 1.0,
+      "method": "api",
+      "rank": 2,
+      "comment": "Domain found in second grounding chunk, rank=2"
+    }
+  },
+
+  "response_mention_only": {
+    "description": "Gemini response with text mention but no groundingMetadata",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "Acme Corp is known for providing reliable enterprise software. Their solutions are used by many Fortune 500 companies."
+        }]
+      }
+    }],
+    "domain": "acme.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.5,
+      "confidence_max": 0.8,
+      "method": "api",
+      "rank": null,
+      "has_snippet": true,
+      "comment": "Mention without grounding yields lower confidence"
+    }
+  },
+
+  "response_search_query_match": {
+    "description": "Gemini response where domain appears in search queries but not grounding chunks",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "Based on search results, there are several CRM options to consider for small businesses."
+        }]
+      },
+      "groundingMetadata": {
+        "groundingChunks": [],
+        "webSearchQueries": [
+          "salesforce.com pricing",
+          "salesforce small business crm"
+        ]
+      }
+    }],
+    "domain": "salesforce.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.8,
+      "confidence_max": 0.9,
+      "method": "api",
+      "rank": null,
+      "comment": "Domain in search queries yields medium-high confidence"
+    }
+  },
+
+  "response_without_citation": {
+    "description": "Gemini response with no domain mention or grounding",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "There are many enterprise software options available. Consider evaluating based on your specific needs, team size, and budget constraints."
+        }]
+      }
+    }],
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "method": "api",
+      "has_snippet": false,
+      "reason": "not_mentioned"
+    }
+  },
+
+  "response_competitor_grounding": {
+    "description": "Gemini response with grounding for competitors but not target",
+    "candidates": [{
+      "content": {
+        "parts": [{
+          "text": "For CRM solutions, popular options include HubSpot and Pipedrive."
+        }]
+      },
+      "groundingMetadata": {
+        "groundingChunks": [
+          {
+            "web": {
+              "uri": "https://hubspot.com/crm",
+              "title": "HubSpot CRM"
+            }
+          },
+          {
+            "web": {
+              "uri": "https://pipedrive.com",
+              "title": "Pipedrive Sales CRM"
+            }
+          }
+        ]
+      }
+    }],
+    "domain": "salesforce.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "method": "api",
+      "has_snippet": false,
+      "comment": "Grounding exists but doesn't include target domain"
+    }
+  },
+
+  "scraping_response_with_mention": {
+    "description": "Simulated scraping response with domain mention",
+    "text": "GitHub is one of the most popular platforms for version control and collaboration. Many developers use github.com daily for their open source and private projects.",
+    "domain": "github.com",
+    "method": "scraping",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.5,
+      "confidence_max": 0.75,
+      "method": "scraping",
+      "has_snippet": true,
+      "comment": "Scraping results have confidence * 0.9 multiplier"
+    }
+  },
+
+  "scraping_response_without_mention": {
+    "description": "Simulated scraping response without domain mention",
+    "text": "There are many version control platforms available for developers. Consider your team's needs when choosing.",
+    "domain": "github.com",
+    "method": "scraping",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "method": "scraping",
+      "has_snippet": false
+    }
+  },
+
+  "error_response_api_quota": {
+    "description": "Simulated API quota exceeded error",
+    "error": "E526",
+    "reason": "Gemini API quota exceeded",
+    "status_code": 429,
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E526"
+    }
+  },
+
+  "error_response_auth_failed": {
+    "description": "Simulated API authentication failure",
+    "error": "E529",
+    "reason": "Gemini API authentication failed",
+    "status_code": 401,
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E529"
+    }
+  },
+
+  "error_response_scraping_auth": {
+    "description": "Simulated scraping session expired error",
+    "error": "E529",
+    "reason": "Gemini session expired",
+    "method": "scraping",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E529"
+    }
+  },
+
+  "error_response_general_failure": {
+    "description": "Simulated general detection failure",
+    "error": "E525",
+    "reason": "Gemini detection failed",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E525"
+    }
+  }
+}

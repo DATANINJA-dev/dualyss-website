@@ -1,0 +1,260 @@
+{
+  "version": "1.0.0",
+  "generated": "2026-01-20",
+  "description": "Centralized registry of actual skills with their domains and keywords. Used by skill discovery agents to recommend only existing skills.",
+  "skills": [
+    {
+      "name": "security-patterns",
+      "path": ".claude/skills/security-patterns/SKILL.md",
+      "type": "passive",
+      "domains": ["security", "authentication", "authorization", "vulnerability", "compliance"],
+      "keywords": ["security", "auth", "login", "password", "XSS", "CSRF", "injection", "OWASP", "encryption", "cryptography", "supply chain"],
+      "project_types": ["saas", "ecommerce", "fintech", "healthcare", "enterprise"],
+      "exists": true
+    },
+    {
+      "name": "performance-patterns",
+      "path": ".claude/skills/performance-patterns/SKILL.md",
+      "type": "passive",
+      "domains": ["performance", "optimization", "scalability", "caching"],
+      "keywords": ["performance", "optimization", "scalability", "Core Web Vitals", "LCP", "INP", "CLS", "caching", "Redis", "CDN", "N+1", "database"],
+      "project_types": ["saas", "ecommerce", "api", "backend"],
+      "exists": true
+    },
+    {
+      "name": "ux-standards",
+      "path": ".claude/skills/ux-standards/SKILL.md",
+      "type": "passive",
+      "domains": ["ux", "accessibility", "usability", "design"],
+      "keywords": ["UX", "user experience", "usability", "accessibility", "a11y", "WCAG", "ADA", "ARIA", "Nielsen", "heuristics"],
+      "project_types": ["saas", "ecommerce", "consumer", "mobile"],
+      "exists": true
+    },
+    {
+      "name": "seo-validation",
+      "path": ".claude/skills/seo-validation/SKILL.md",
+      "type": "passive",
+      "domains": ["seo", "meta-tags", "structured-data"],
+      "keywords": ["SEO", "meta tags", "structured data", "JSON-LD", "Lighthouse", "robots.txt", "sitemap"],
+      "project_types": ["ecommerce", "content", "saas", "marketing"],
+      "exists": true
+    },
+    {
+      "name": "seo-content-quality-scoring",
+      "path": ".claude/skills/seo-content-quality-scoring/SKILL.md",
+      "type": "passive",
+      "domains": ["seo", "content-quality", "readability"],
+      "keywords": ["E-E-A-T", "readability", "content quality", "keyword optimization", "content audit"],
+      "project_types": ["content", "marketing", "ecommerce"],
+      "exists": true
+    },
+    {
+      "name": "multi-language-seo-patterns",
+      "path": ".claude/skills/multi-language-seo-patterns/SKILL.md",
+      "type": "passive",
+      "domains": ["seo", "i18n", "localization"],
+      "keywords": ["hreflang", "multilingual", "i18n", "l10n", "international SEO", "ccTLD", "locale", "translation"],
+      "project_types": ["international", "ecommerce", "saas"],
+      "exists": true
+    },
+    {
+      "name": "geo-optimization-patterns",
+      "path": ".claude/skills/geo-optimization-patterns/SKILL.md",
+      "type": "passive",
+      "domains": ["geo", "ai-search", "citations"],
+      "keywords": ["GEO", "AI search", "ChatGPT", "Perplexity", "citations", "AI crawler", "generative engine"],
+      "project_types": ["content", "marketing", "saas"],
+      "exists": true
+    },
+    {
+      "name": "cicd-seo-integration",
+      "path": ".claude/skills/cicd-seo-integration/SKILL.md",
+      "type": "passive",
+      "domains": ["seo", "ci-cd", "automation"],
+      "keywords": ["CI/CD", "GitHub Actions", "pre-commit", "deployment gate", "Lighthouse CI", "SEO automation"],
+      "project_types": ["saas", "ecommerce", "content"],
+      "exists": true
+    },
+    {
+      "name": "tdd-workflow",
+      "path": ".claude/skills/tdd-workflow/SKILL.md",
+      "type": "active",
+      "domains": ["testing", "development", "quality"],
+      "keywords": ["TDD", "test-driven", "red-green-refactor", "testing", "unit test", "test first"],
+      "project_types": ["any"],
+      "exists": true
+    },
+    {
+      "name": "document-creation",
+      "path": ".claude/skills/document-creation/SKILL.md",
+      "type": "passive",
+      "domains": ["documentation", "business", "writing"],
+      "keywords": ["document", "6-pager", "one-pager", "proposal", "summary", "business case", "executive"],
+      "project_types": ["enterprise", "saas", "any"],
+      "exists": true
+    },
+    {
+      "name": "presentation-creation",
+      "path": ".claude/skills/presentation-creation/SKILL.md",
+      "type": "passive",
+      "domains": ["presentation", "business", "communication"],
+      "keywords": ["presentation", "slides", "deck", "pitch", "PowerPoint", "McKinsey"],
+      "project_types": ["enterprise", "saas", "any"],
+      "exists": true
+    },
+    {
+      "name": "user-journey-validation",
+      "path": ".claude/skills/user-journey-validation/SKILL.md",
+      "type": "passive",
+      "domains": ["ux", "navigation", "validation"],
+      "keywords": ["user journey", "navigation", "route", "orphaned pages", "flow validation"],
+      "project_types": ["consumer", "saas", "ecommerce"],
+      "exists": true
+    },
+    {
+      "name": "framework-migration-planning",
+      "path": ".claude/skills/framework-migration-planning/SKILL.md",
+      "type": "passive",
+      "domains": ["migration", "planning", "deprecation"],
+      "keywords": ["migration", "deprecation", "framework", "upgrade", "breaking changes"],
+      "project_types": ["any"],
+      "exists": true
+    },
+    {
+      "name": "application-migration-patterns",
+      "path": ".claude/skills/application-migration-patterns/SKILL.md",
+      "type": "passive",
+      "domains": ["migration", "data", "infrastructure"],
+      "keywords": ["application migration", "data migration", "legacy", "modernization"],
+      "project_types": ["enterprise", "legacy"],
+      "exists": true
+    },
+    {
+      "name": "research-methodology",
+      "path": ".claude/skills/research-methodology/SKILL.md",
+      "type": "passive",
+      "domains": ["research", "methodology", "analysis"],
+      "keywords": ["research", "web search", "source evaluation", "synthesis"],
+      "project_types": ["any"],
+      "exists": true
+    },
+    {
+      "name": "error-handling",
+      "path": ".claude/skills/error-handling/SKILL.md",
+      "type": "passive",
+      "domains": ["errors", "logging", "debugging"],
+      "keywords": ["error handling", "error codes", "logging", "debugging"],
+      "project_types": ["any"],
+      "exists": true
+    },
+    {
+      "name": "agile-workflow-optimization",
+      "path": ".claude/skills/agile-workflow-optimization/SKILL.md",
+      "type": "passive",
+      "domains": ["agile", "workflow", "productivity"],
+      "keywords": ["agile", "scrum", "kanban", "backlog", "WIP", "value stream"],
+      "project_types": ["any"],
+      "exists": true
+    }
+  ],
+  "planned_skills": [
+    {
+      "name": "auth-patterns",
+      "domains": ["authentication"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "high"
+    },
+    {
+      "name": "multi-tenancy",
+      "domains": ["saas", "architecture"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "medium"
+    },
+    {
+      "name": "subscription-billing",
+      "domains": ["payments", "billing"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "medium"
+    },
+    {
+      "name": "payment-processing",
+      "domains": ["payments", "ecommerce"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "high"
+    },
+    {
+      "name": "inventory-management",
+      "domains": ["ecommerce", "logistics"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "low"
+    },
+    {
+      "name": "cart-checkout",
+      "domains": ["ecommerce", "ux"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "medium"
+    },
+    {
+      "name": "lms-patterns",
+      "domains": ["educational", "learning"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "low"
+    },
+    {
+      "name": "booking-systems",
+      "domains": ["booking", "scheduling"],
+      "reason": "Referenced in project-type-patterns.md but not yet created",
+      "priority": "low"
+    },
+    {
+      "name": "form-validation",
+      "domains": ["forms", "validation"],
+      "reason": "Referenced in task-domain-patterns.md but not yet created",
+      "priority": "medium"
+    },
+    {
+      "name": "api-integration",
+      "domains": ["api", "integration"],
+      "reason": "Referenced in task-domain-patterns.md but not yet created",
+      "priority": "high"
+    },
+    {
+      "name": "state-management",
+      "domains": ["frontend", "architecture"],
+      "reason": "Common frontend pattern, not yet created",
+      "priority": "medium"
+    }
+  ],
+  "domain_mapping": {
+    "authentication": ["security-patterns"],
+    "authorization": ["security-patterns"],
+    "security": ["security-patterns"],
+    "payments": [],
+    "forms": [],
+    "seo": ["seo-validation", "seo-content-quality-scoring", "multi-language-seo-patterns", "geo-optimization-patterns", "cicd-seo-integration"],
+    "testing": ["tdd-workflow"],
+    "infrastructure": ["framework-migration-planning"],
+    "ux": ["ux-standards", "user-journey-validation"],
+    "accessibility": ["ux-standards"],
+    "performance": ["performance-patterns"],
+    "documentation": ["document-creation"],
+    "presentations": ["presentation-creation"],
+    "migration": ["framework-migration-planning", "application-migration-patterns"],
+    "i18n": ["multi-language-seo-patterns"],
+    "geo": ["geo-optimization-patterns"],
+    "agile": ["agile-workflow-optimization"],
+    "research": ["research-methodology"],
+    "errors": ["error-handling"]
+  },
+  "project_type_mapping": {
+    "saas": ["security-patterns", "performance-patterns", "ux-standards", "tdd-workflow"],
+    "ecommerce": ["security-patterns", "performance-patterns", "ux-standards", "seo-validation", "seo-content-quality-scoring"],
+    "educational": ["ux-standards", "accessibility"],
+    "booking": ["ux-standards", "user-journey-validation"],
+    "content": ["seo-validation", "seo-content-quality-scoring", "geo-optimization-patterns"],
+    "api": ["security-patterns", "performance-patterns", "tdd-workflow"],
+    "mobile": ["ux-standards", "performance-patterns"],
+    "enterprise": ["security-patterns", "document-creation", "presentation-creation"],
+    "general": ["security-patterns", "performance-patterns", "ux-standards"]
+  }
+}

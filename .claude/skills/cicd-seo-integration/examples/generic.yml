@@ -1,0 +1,250 @@
+# Generic SEO Validation Workflow
+#
+# Framework-agnostic workflow that validates SEO and performance
+# against any URL. Works with any deployment platform.
+#
+# Prerequisites:
+# - Performance budget at .claude/skills/seo-validation/budgets/default.json
+# - URL provided via environment variable or workflow_dispatch input
+#
+# Customization:
+# - Set PREVIEW_URL in your deployment job and pass to this workflow
+# - Or trigger manually with workflow_dispatch and provide URL
+# - Adjust thresholds in the budget file
+# - Add more URLs to the lighthouse step
+#
+# Trigger Options:
+# 1. Workflow dispatch (manual) with URL input
+# 2. Called as reusable workflow from deployment workflow
+# 3. On pull_request with URL from environment
+
+name: SEO Validation (Generic)
+
+on:
+  # Manual trigger with URL input
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to validate'
+        required: true
+        type: string
+      additional_paths:
+        description: 'Additional paths to test (comma-separated, e.g., /about,/contact)'
+        required: false
+        type: string
+        default: ''
+
+  # Can be called from other workflows
+  workflow_call:
+    inputs:
+      url:
+        description: 'URL to validate'
+        required: true
+        type: string
+      additional_paths:
+        description: 'Additional paths to test (comma-separated)'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  seo-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Determine URLs to test
+        id: urls
+        run: |
+          BASE_URL="${{ inputs.url }}"
+          ADDITIONAL="${{ inputs.additional_paths }}"
+
+          # Build URL list
+          URLS="${BASE_URL}"
+          if [ -n "${ADDITIONAL}" ]; then
+            IFS=',' read -ra PATHS <<< "${ADDITIONAL}"
+            for path in "${PATHS[@]}"; do
+              path=$(echo "$path" | xargs)  # trim whitespace
+              URLS="${URLS}\n${BASE_URL}${path}"
+            done
+          fi
+
+          echo "Testing URLs:"
+          echo -e "${URLS}"
+
+          # Write to file for lighthouse action
+          echo -e "${URLS}" > /tmp/urls.txt
+          echo "urls<<EOF" >> $GITHUB_OUTPUT
+          echo -e "${URLS}" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      # Run Lighthouse CI using the official action
+      - name: Run Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: ${{ steps.urls.outputs.urls }}
+          budgetPath: .claude/skills/seo-validation/budgets/default.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      # Check performance budgets
+      - name: Check Performance Budgets
+        run: |
+          node -e "
+            const fs = require('fs');
+
+            if (!fs.existsSync('.lighthouseci/manifest.json')) {
+              console.error('[ERROR] E505: No Lighthouse results found');
+              process.exit(1);
+            }
+
+            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+
+            let failed = false;
+            const results = [];
+
+            // Thresholds (customize as needed)
+            const THRESHOLDS = {
+              performance: 80,
+              accessibility: 90,
+              seo: 90,
+              'best-practices': 80
+            };
+
+            for (const entry of manifest) {
+              const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+              const url = report.finalUrl;
+
+              const scores = {};
+              for (const [key, category] of Object.entries(report.categories)) {
+                scores[key] = category.score * 100;
+
+                const threshold = THRESHOLDS[key];
+                if (threshold && scores[key] < threshold) {
+                  console.error('[ERROR] E505: ' + key + ' score ' + scores[key].toFixed(0) + '% below ' + threshold + '% threshold for ' + url);
+                  failed = true;
+                }
+              }
+
+              results.push({ url, ...scores });
+            }
+
+            // Output summary
+            console.log('\\n## Lighthouse Results\\n');
+            console.log('| URL | Performance | Accessibility | Best Practices | SEO |');
+            console.log('|-----|-------------|---------------|----------------|-----|');
+            for (const r of results) {
+              console.log(
+                '| ' + r.url + ' | ' +
+                (r.performance?.toFixed(0) || 'N/A') + '% | ' +
+                (r.accessibility?.toFixed(0) || 'N/A') + '% | ' +
+                (r['best-practices']?.toFixed(0) || 'N/A') + '% | ' +
+                (r.seo?.toFixed(0) || 'N/A') + '% |'
+              );
+            }
+
+            if (failed) {
+              console.error('\\n❌ Some pages failed SEO/performance thresholds');
+              process.exit(1);
+            }
+            console.log('\\n✓ All pages pass thresholds');
+          "
+
+      # Generate summary report
+      - name: Generate Summary
+        if: always()
+        run: |
+          node -e "
+            const fs = require('fs');
+
+            if (!fs.existsSync('.lighthouseci/manifest.json')) {
+              console.log('No Lighthouse results to summarize');
+              process.exit(0);
+            }
+
+            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+            const timestamp = new Date().toISOString();
+            const commit = process.env.GITHUB_SHA?.substring(0, 7) || 'unknown';
+
+            const summary = {
+              timestamp,
+              commit,
+              branch: process.env.GITHUB_REF_NAME || 'unknown',
+              urls: []
+            };
+
+            for (const entry of manifest) {
+              const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+
+              summary.urls.push({
+                url: report.finalUrl,
+                scores: {
+                  performance: Math.round(report.categories.performance?.score * 100 || 0),
+                  accessibility: Math.round(report.categories.accessibility?.score * 100 || 0),
+                  'best-practices': Math.round(report.categories['best-practices']?.score * 100 || 0),
+                  seo: Math.round(report.categories.seo?.score * 100 || 0)
+                },
+                cwv: {
+                  lcp: report.audits['largest-contentful-paint']?.numericValue || null,
+                  cls: report.audits['cumulative-layout-shift']?.numericValue || null,
+                  fcp: report.audits['first-contentful-paint']?.numericValue || null
+                }
+              });
+            }
+
+            fs.writeFileSync('.lighthouseci/summary.json', JSON.stringify(summary, null, 2));
+            console.log('Summary written to .lighthouseci/summary.json');
+          "
+
+      # Upload Lighthouse reports as artifacts
+      - name: Upload Lighthouse Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports-generic-${{ github.run_id }}
+          path: |
+            .lighthouseci/*.json
+            .lighthouseci/*.html
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Output job summary
+      - name: Job Summary
+        if: always()
+        run: |
+          echo "## 🔍 SEO Validation Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**URL**: ${{ inputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f .lighthouseci/summary.json ]; then
+            node -e "
+              const fs = require('fs');
+              const summary = JSON.parse(fs.readFileSync('.lighthouseci/summary.json', 'utf8'));
+
+              let md = '| URL | Performance | SEO | Status |\\n';
+              md += '|-----|-------------|-----|--------|\\n';
+
+              for (const url of summary.urls) {
+                const status = url.scores.seo >= 90 && url.scores.performance >= 80 ? '✅' : '❌';
+                md += '| ' + url.url + ' | ' + url.scores.performance + '% | ' + url.scores.seo + '% | ' + status + ' |\\n';
+              }
+
+              console.log(md);
+            " >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⚠️ No results available" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "_Generated by SEO Validation workflow_" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,26 @@
+{
+  "$schema": "./schema.json",
+  "budgets": [
+    {
+      "path": "/*",
+      "resourceSizes": [
+        { "resourceType": "document", "budget": 30 },
+        { "resourceType": "script", "budget": 200 },
+        { "resourceType": "stylesheet", "budget": 50 },
+        { "resourceType": "image", "budget": 300 },
+        { "resourceType": "total", "budget": 500 }
+      ],
+      "resourceCounts": [
+        { "resourceType": "script", "budget": 10 },
+        { "resourceType": "third-party", "budget": 5 }
+      ],
+      "timings": [
+        { "metric": "largest-contentful-paint", "budget": 1500 },
+        { "metric": "cumulative-layout-shift", "budget": 50 },
+        { "metric": "interaction-to-next-paint", "budget": 100 },
+        { "metric": "first-contentful-paint", "budget": 1000 },
+        { "metric": "time-to-interactive", "budget": 2500 }
+      ]
+    }
+  ]
+}

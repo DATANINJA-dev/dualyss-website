@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Test fixtures for Claude citation detection validation",
+
+  "response_with_citation": {
+    "description": "Claude response that mentions the target domain with recommendation context",
+    "text": "Based on my knowledge, Acme Corp offers excellent solutions for enterprise software. Their platform at acme.com provides comprehensive tools for project management, including task tracking, team collaboration, and reporting features. Many teams find it particularly useful for remote work coordination.",
+    "domain": "acme.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.7,
+      "confidence_max": 1.0,
+      "has_snippet": true,
+      "snippet_contains": "acme.com"
+    }
+  },
+
+  "response_with_multiple_mentions": {
+    "description": "Claude response with multiple mentions of the domain",
+    "text": "For CRM solutions, I'd recommend looking at Salesforce. Salesforce.com offers a comprehensive suite including Sales Cloud, Service Cloud, and Marketing Cloud. Many enterprises use salesforce.com for their customer relationship management needs. You can find more information at salesforce.com/products.",
+    "domain": "salesforce.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.8,
+      "confidence_max": 1.0,
+      "has_snippet": true,
+      "mention_count_min": 3
+    }
+  },
+
+  "response_without_citation": {
+    "description": "Claude response that does not mention the target domain",
+    "text": "There are many enterprise software providers in the market. Consider evaluating options based on your specific requirements such as team size, budget, and feature needs. Popular categories include project management tools, CRM systems, and collaboration platforms.",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "has_snippet": false,
+      "reason": "not_mentioned"
+    }
+  },
+
+  "response_with_partial_match": {
+    "description": "Claude response with similar but not exact domain match",
+    "text": "For project management, you might consider tools like Asana, Monday, or Trello. These platforms offer various features for team collaboration and task tracking.",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "has_snippet": false,
+      "comment": "Should not match 'acme' in 'Asana' or similar partial matches"
+    }
+  },
+
+  "response_with_brand_variation": {
+    "description": "Claude response with brand name but not exact domain",
+    "text": "GitHub is an excellent platform for version control and collaboration. GitHub provides features like pull requests, issues, and actions for CI/CD workflows.",
+    "domain": "github.com",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.5,
+      "confidence_max": 0.8,
+      "has_snippet": true,
+      "comment": "Lower confidence when domain not explicitly mentioned but brand is"
+    }
+  },
+
+  "response_with_recommendation_context": {
+    "description": "Claude response with strong recommendation language",
+    "text": "I'd highly recommend checking out Notion for your documentation needs. Notion.so is particularly great for building internal wikis and knowledge bases. Many teams find it to be one of the best tools for collaborative note-taking.",
+    "domain": "notion.so",
+    "expected": {
+      "cited": true,
+      "confidence_min": 0.8,
+      "confidence_max": 1.0,
+      "has_snippet": true,
+      "has_relevant_context": true,
+      "context_terms": ["recommend", "best"]
+    }
+  },
+
+  "empty_response": {
+    "description": "Empty or null response handling",
+    "text": "",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0.0,
+      "has_snippet": false
+    }
+  },
+
+  "error_response_auth_required": {
+    "description": "Simulated authentication required error",
+    "error": "E529",
+    "reason": "Claude authentication required",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E529"
+    }
+  },
+
+  "error_response_rate_limit": {
+    "description": "Simulated rate limit error",
+    "error": "E522",
+    "reason": "Claude rate limit exceeded",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E522"
+    }
+  },
+
+  "error_response_blocking": {
+    "description": "Simulated CAPTCHA/blocking detection",
+    "error": "E523",
+    "reason": "Blocking detected (CAPTCHA/ban)",
+    "domain": "acme.com",
+    "expected": {
+      "cited": false,
+      "confidence": 0,
+      "error": "E523"
+    }
+  }
+}

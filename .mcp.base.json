@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "serena": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": ["/c", "uvx", "--from", "git+https://github.com/oraios/serena", "serena", "start-mcp-server"]
+    },
+    "memory": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": ["/c", "npx", "@anthropic/mcp-memory"],
+      "env": {}
+    },
+    "github": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": ["/c", "npx", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

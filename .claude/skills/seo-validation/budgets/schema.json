@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://simon-tools.dev/schemas/performance-budget.json",
+  "title": "Performance Budget Configuration",
+  "description": "JSON Schema for Lighthouse CI performance budget files. Compatible with Lighthouse CI v11+.",
+  "type": "object",
+  "required": ["budgets"],
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Reference to this schema for IDE validation"
+    },
+    "budgets": {
+      "type": "array",
+      "description": "Array of budget configurations, each targeting specific paths",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/budget"
+      }
+    }
+  },
+  "definitions": {
+    "budget": {
+      "type": "object",
+      "required": ["path"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "URL path pattern (e.g., '/*', '/products/*')",
+          "pattern": "^/.*$"
+        },
+        "resourceSizes": {
+          "type": "array",
+          "description": "Maximum sizes in KB for resource types",
+          "items": {
+            "$ref": "#/definitions/resourceSize"
+          }
+        },
+        "resourceCounts": {
+          "type": "array",
+          "description": "Maximum counts for resource types",
+          "items": {
+            "$ref": "#/definitions/resourceCount"
+          }
+        },
+        "timings": {
+          "type": "array",
+          "description": "Maximum timing values in milliseconds",
+          "items": {
+            "$ref": "#/definitions/timing"
+          }
+        }
+      }
+    },
+    "resourceSize": {
+      "type": "object",
+      "required": ["resourceType", "budget"],
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "enum": ["document", "script", "stylesheet", "image", "font", "total", "third-party", "media", "other"],
+          "description": "Type of resource to budget"
+        },
+        "budget": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum size in KB"
+        }
+      }
+    },
+    "resourceCount": {
+      "type": "object",
+      "required": ["resourceType", "budget"],
+      "properties": {
+        "resourceType": {
+          "type": "string",
+          "enum": ["document", "script", "stylesheet", "image", "font", "total", "third-party", "media", "other"],
+          "description": "Type of resource to count"
+        },
+        "budget": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum count"
+        }
+      }
+    },
+    "timing": {
+      "type": "object",
+      "required": ["metric", "budget"],
+      "properties": {
+        "metric": {
+          "type": "string",
+          "enum": [
+            "first-contentful-paint",
+            "largest-contentful-paint",
+            "cumulative-layout-shift",
+            "interaction-to-next-paint",
+            "time-to-interactive",
+            "total-blocking-time",
+            "speed-index",
+            "interactive"
+          ],
+          "description": "Lighthouse timing metric name"
+        },
+        "budget": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum value in milliseconds (CLS: value * 1000, e.g., 100 = 0.1)"
+        }
+      }
+    }
+  }
+}

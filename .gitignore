@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+build/
+
+# Production
+dist/
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# MCP Configuration (v0.32.0)
+# .mcp.base.json is tracked (framework MCPs)
+# .mcp.local.json and .mcp.json are git-ignored
+.mcp.json
+.mcp.local.json
+
+# Backup Directory (v0.37.0)
+# Created by /sync-scaffold, /sync-migrate, /sync-pull for rollback capability
+.backup/
+
+# Temporary files
+nul
+temp_html.txt
+*.tmp

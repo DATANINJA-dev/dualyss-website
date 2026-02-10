@@ -1,0 +1,185 @@
+# SEO Validation Workflow for SvelteKit
+#
+# This workflow builds and runs a local preview server, then runs
+# Lighthouse CI to validate SEO and performance before merging.
+#
+# Prerequisites:
+# - pnpm as package manager (or modify for npm/yarn)
+# - Performance budget at .claude/skills/seo-validation/budgets/default.json
+#
+# Customization:
+# - Adjust path filters for your project structure
+# - Modify preview port if different (default: 4173)
+# - Switch to npm/yarn by changing cache and install commands
+# - Add more URLs to test in the lighthouse step
+#
+# Trigger: Runs on pull requests that modify routes or lib
+
+name: SEO Validation (SvelteKit)
+
+on:
+  pull_request:
+    paths:
+      - 'src/routes/**'
+      - 'src/lib/**'
+      - 'svelte.config.js'
+      - 'vite.config.ts'
+      - 'vite.config.js'
+
+jobs:
+  seo-validation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      # Cache SvelteKit build artifacts
+      - name: Cache SvelteKit build
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .svelte-kit
+          key: ${{ runner.os }}-sveltekit-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-sveltekit-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        run: pnpm build
+
+      # Start preview server in background
+      - name: Start preview server
+        run: |
+          pnpm preview --host 0.0.0.0 &
+          echo "Waiting for server to start..."
+          sleep 5
+
+          # Verify server is running
+          for i in {1..10}; do
+            if curl -s http://localhost:4173 > /dev/null; then
+              echo "Server is ready"
+              break
+            fi
+            echo "Waiting... attempt $i"
+            sleep 2
+          done
+
+      # Run Lighthouse CI using the official action
+      - name: Run Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            http://localhost:4173
+            http://localhost:4173/about
+          budgetPath: .claude/skills/seo-validation/budgets/default.json
+          uploadArtifacts: true
+
+      # Check performance budgets
+      - name: Check Performance Budgets
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+
+            let failed = false;
+            const results = [];
+
+            for (const entry of manifest) {
+              const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+              const url = new URL(report.finalUrl).pathname || '/';
+
+              const scores = {
+                performance: report.categories.performance?.score * 100 || 0,
+                accessibility: report.categories.accessibility?.score * 100 || 0,
+                bestPractices: report.categories['best-practices']?.score * 100 || 0,
+                seo: report.categories.seo?.score * 100 || 0
+              };
+
+              results.push({ url, ...scores });
+
+              if (scores.seo < 90) {
+                console.error('[ERROR] E505: SEO score ' + scores.seo.toFixed(0) + '% below 90% threshold for ' + url);
+                failed = true;
+              }
+              if (scores.performance < 80) {
+                console.error('[ERROR] E505: Performance score ' + scores.performance.toFixed(0) + '% below 80% threshold for ' + url);
+                failed = true;
+              }
+            }
+
+            console.log('\\n## Lighthouse Results\\n');
+            console.log('| URL | Performance | Accessibility | Best Practices | SEO |');
+            console.log('|-----|-------------|---------------|----------------|-----|');
+            for (const r of results) {
+              console.log('| ' + r.url + ' | ' + r.performance.toFixed(0) + '% | ' + r.accessibility.toFixed(0) + '% | ' + r.bestPractices.toFixed(0) + '% | ' + r.seo.toFixed(0) + '% |');
+            }
+
+            if (failed) process.exit(1);
+            console.log('\\n✓ All pages pass thresholds');
+          "
+
+      # Upload Lighthouse reports as artifacts
+      - name: Upload Lighthouse Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports-sveltekit-${{ github.run_id }}
+          path: |
+            .lighthouseci/*.json
+            .lighthouseci/*.html
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Post results as PR comment
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            let body = '## 🔍 Lighthouse SEO Validation (SvelteKit)\n\n';
+            body += '**Test Environment**: Local preview server (localhost:4173)\n\n';
+
+            try {
+              const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+              body += '| URL | Performance | Accessibility | SEO | Status |\n';
+              body += '|-----|-------------|---------------|-----|--------|\n';
+
+              for (const entry of manifest) {
+                const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+                const url = new URL(report.finalUrl).pathname || '/';
+                const perf = (report.categories.performance?.score * 100 || 0).toFixed(0);
+                const a11y = (report.categories.accessibility?.score * 100 || 0).toFixed(0);
+                const seo = (report.categories.seo?.score * 100 || 0).toFixed(0);
+                const status = seo >= 90 && perf >= 80 ? '✅' : '❌';
+                body += `| ${url} | ${perf}% | ${a11y}% | ${seo}% | ${status} |\n`;
+              }
+            } catch (e) {
+              body += '⚠️ Could not read Lighthouse results\n';
+            }
+
+            body += '\n---\n_Generated by SEO Validation workflow_';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });

@@ -1,0 +1,195 @@
+# SEO Validation Workflow for Nuxt + Netlify
+#
+# This workflow deploys to Netlify preview, then runs Lighthouse CI
+# to validate SEO and performance before merging.
+#
+# Prerequisites:
+# - Netlify site configured
+# - GitHub secrets: NETLIFY_AUTH_TOKEN, NETLIFY_SITE_ID
+# - Performance budget at .claude/skills/seo-validation/budgets/default.json
+#
+# Customization:
+# - Adjust path filters for your project structure
+# - Modify Netlify deploy context (deploy-preview, branch-deploy)
+# - Add more URLs to test in the lighthouse step
+#
+# Trigger: Runs on pull requests that modify pages, components, or config
+
+name: SEO Validation (Nuxt + Netlify)
+
+on:
+  pull_request:
+    paths:
+      - 'pages/**'
+      - 'components/**'
+      - 'layouts/**'
+      - 'nuxt.config.ts'
+      - 'nuxt.config.js'
+      - 'app.vue'
+
+jobs:
+  # Job 1: Deploy to Netlify preview
+  deploy-preview:
+    runs-on: ubuntu-latest
+    outputs:
+      preview-url: ${{ steps.deploy.outputs.deploy-url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Cache Nuxt build artifacts
+      - name: Cache Nuxt build
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+            .nuxt
+            .output
+          key: ${{ runner.os }}-nuxt-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-nuxt-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Nuxt application
+        run: npm run build
+        env:
+          NITRO_PRESET: netlify
+
+      - name: Deploy to Netlify
+        id: deploy
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --build --context deploy-preview --json
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+  # Job 2: Run SEO validation against preview
+  seo-validation:
+    needs: deploy-preview
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Display Preview URL
+        run: |
+          echo "Preview URL: ${{ needs.deploy-preview.outputs.preview-url }}"
+
+      # Run Lighthouse CI using the official action
+      - name: Run Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ needs.deploy-preview.outputs.preview-url }}
+            ${{ needs.deploy-preview.outputs.preview-url }}/about
+          budgetPath: .claude/skills/seo-validation/budgets/default.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+
+      # Check performance budgets
+      - name: Check Performance Budgets
+        run: |
+          node -e "
+            const fs = require('fs');
+            const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+
+            let failed = false;
+            const results = [];
+
+            for (const entry of manifest) {
+              const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+              const url = new URL(report.finalUrl).pathname || '/';
+
+              const scores = {
+                performance: report.categories.performance?.score * 100 || 0,
+                seo: report.categories.seo?.score * 100 || 0
+              };
+
+              results.push({ url, ...scores });
+
+              if (scores.seo < 90) {
+                console.error('[ERROR] E505: SEO score ' + scores.seo.toFixed(0) + '% below 90% threshold for ' + url);
+                failed = true;
+              }
+              if (scores.performance < 80) {
+                console.error('[ERROR] E505: Performance score ' + scores.performance.toFixed(0) + '% below 80% threshold for ' + url);
+                failed = true;
+              }
+            }
+
+            console.log('\\n## Lighthouse Results\\n');
+            console.log('| URL | Performance | SEO |');
+            console.log('|-----|-------------|-----|');
+            for (const r of results) {
+              console.log('| ' + r.url + ' | ' + r.performance.toFixed(0) + '% | ' + r.seo.toFixed(0) + '% |');
+            }
+
+            if (failed) process.exit(1);
+            console.log('\\n✓ All pages pass thresholds');
+          "
+
+      # Upload Lighthouse reports as artifacts
+      - name: Upload Lighthouse Reports
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-reports-nuxt-${{ github.run_id }}
+          path: |
+            .lighthouseci/*.json
+            .lighthouseci/*.html
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Post results as PR comment
+      - name: Comment on PR
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            let body = '## 🔍 Lighthouse SEO Validation (Nuxt)\n\n';
+            body += `**Preview URL**: ${{ needs.deploy-preview.outputs.preview-url }}\n\n`;
+
+            try {
+              const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+              body += '| URL | Performance | SEO | Status |\n';
+              body += '|-----|-------------|-----|--------|\n';
+
+              for (const entry of manifest) {
+                const report = JSON.parse(fs.readFileSync(entry.jsonPath, 'utf8'));
+                const url = new URL(report.finalUrl).pathname || '/';
+                const perf = (report.categories.performance?.score * 100 || 0).toFixed(0);
+                const seo = (report.categories.seo?.score * 100 || 0).toFixed(0);
+                const status = seo >= 90 && perf >= 80 ? '✅' : '❌';
+                body += `| ${url} | ${perf}% | ${seo}% | ${status} |\n`;
+              }
+            } catch (e) {
+              body += '⚠️ Could not read Lighthouse results\n';
+            }
+
+            body += '\n---\n_Generated by SEO Validation workflow_';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });

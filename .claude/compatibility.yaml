@@ -1,0 +1,64 @@
+# .claude/compatibility.yaml
+# Compatibility matrix for simon_tools framework
+#
+# This file tracks version compatibility requirements and breaking changes.
+# Used by /sync-check-version command and sync workflows to validate
+# compatibility before allowing sync operations.
+#
+# Schema: version-compatibility-management skill (compatibility-matrix.md)
+
+schema_version: "1.0.0"
+
+versions:
+  "0.28.0":
+    released: "2026-01-09"
+    breaking_changes: []
+    compatible_with: ">=0.25.0"
+    deprecated_features: []
+    migration_guide: null
+
+  "0.27.0":
+    released: "2026-01-09"
+    breaking_changes:
+      - type: "removed"
+        component: "command"
+        name: "/set-up"
+        replacement: "/refine"
+        migration: "Replace /set-up with /refine (same functionality)"
+      - type: "removed"
+        component: "command"
+        name: "/next-task"
+        replacement: "/suggest-task"
+        migration: "Replace /next-task with /suggest-task (same functionality)"
+    compatible_with: ">=0.24.0"
+    deprecated_features: []
+    migration_guide: null
+
+  "0.26.0":
+    released: "2026-01-09"
+    breaking_changes: []
+    compatible_with: ">=0.24.0"
+    deprecated_features:
+      - feature: "/set-up command"
+        deprecated_in: "0.26.0"
+        removal_version: "0.27.0"
+        replacement: "/refine"
+      - feature: "/next-task command"
+        deprecated_in: "0.26.0"
+        removal_version: "0.27.0"
+        replacement: "/suggest-task"
+    migration_guide: null
+
+  "0.25.0":
+    released: "2026-01-08"
+    breaking_changes: []
+    compatible_with: ">=0.23.0"
+    deprecated_features: []
+    migration_guide: null
+
+  "0.24.0":
+    released: "2026-01-07"
+    breaking_changes: []
+    compatible_with: ">=0.22.0"
+    deprecated_features: []
+    migration_guide: null

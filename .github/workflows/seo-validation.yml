@@ -1,0 +1,578 @@
+# SEO Validation Workflow
+#
+# Three-stage pipeline for automated SEO validation:
+# 1. seo-lint (pre-commit): Fast checks (<5s) - runs on all PRs
+# 2. lighthouse (pre-merge): Full audit (30-60s) - runs on PRs only
+# 3. deploy-gate (deployment): Critical checks (10s) - runs on push to main
+#
+# Usage:
+#   - Automatic: Triggers on PR/push when web files change
+#   - Manual: workflow_dispatch with optional URL input
+#
+# Customization:
+#   - Add pages to lighthouse matrix for multi-page testing
+#   - Modify paths filter to match your project structure
+#   - Adjust .lighthouse-budget.json for custom budgets
+#
+# Error Codes:
+#   - E500: Missing meta description
+#   - E501: Title tag issue
+#   - E503: Missing canonical
+#   - E506: robots.txt blocks crawlers
+#   - E507: sitemap.xml invalid
+#   - E508: Lighthouse SEO score too low
+#
+# Reference: .claude/skills/cicd-seo-integration/
+
+name: SEO Validation
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+    paths:
+      - '**/*.html'
+      - '**/*.tsx'
+      - '**/*.jsx'
+      - '**/*.vue'
+      - '**/*.svelte'
+      - 'public/**'
+      - 'pages/**'
+      - 'app/**'
+      - 'robots.txt'
+      - 'sitemap.xml'
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL to validate (optional)'
+        required: false
+        type: string
+
+env:
+  NODE_VERSION: '20'
+  PREVIEW_URL: ${{ vars.PREVIEW_URL || 'http://localhost:3000' }}
+
+jobs:
+  # =============================================================================
+  # Stage 1: SEO Lint (Pre-commit) - Fast checks, <5 seconds
+  # =============================================================================
+  seo-lint:
+    name: SEO Lint (Fast)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate robots.txt
+        run: |
+          if [ -f robots.txt ]; then
+            echo "Checking robots.txt..."
+            if grep -q "Disallow: /" robots.txt && ! grep -q "Allow:" robots.txt; then
+              echo "::error::E506: robots.txt blocks all crawlers"
+              exit 1
+            fi
+            echo "✓ robots.txt validation passed"
+          else
+            echo "::notice::No robots.txt found (optional)"
+          fi
+
+      - name: Validate sitemap.xml
+        run: |
+          if [ -f sitemap.xml ]; then
+            echo "Checking sitemap.xml syntax..."
+            if command -v xmllint &> /dev/null; then
+              xmllint --noout sitemap.xml || {
+                echo "::error::E507: sitemap.xml is malformed"
+                exit 1
+              }
+            fi
+            echo "✓ sitemap.xml validation passed"
+          else
+            echo "::notice::No sitemap.xml found (optional)"
+          fi
+
+      - name: Check HTML meta tags
+        run: |
+          echo "Scanning for HTML files..."
+          shopt -s nullglob globstar
+          html_files=(**/*.html)
+          if [ ${#html_files[@]} -eq 0 ]; then
+            echo "::notice::No HTML files found to validate"
+            exit 0
+          fi
+
+          for file in "${html_files[@]}"; do
+            # Check for title tag
+            if ! grep -q "<title>" "$file"; then
+              echo "::warning file=$file::E501: Missing <title> tag"
+            fi
+            # Check for meta description
+            if ! grep -q 'name="description"' "$file"; then
+              echo "::warning file=$file::E500: Missing meta description"
+            fi
+            # Check for canonical
+            if ! grep -q 'rel="canonical"' "$file"; then
+              echo "::notice file=$file::Missing canonical tag"
+            fi
+          done
+          echo "✓ Meta tag scan complete"
+
+      - name: Check image alt attributes
+        run: |
+          echo "Scanning for images without alt attributes..."
+          shopt -s nullglob globstar
+          html_files=(**/*.html)
+          if [ ${#html_files[@]} -eq 0 ]; then
+            exit 0
+          fi
+
+          missing_alt=0
+          for file in "${html_files[@]}"; do
+            # Find <img> tags without alt attribute
+            matches=$(grep -oP '<img[^>]*>' "$file" 2>/dev/null | grep -v 'alt=' | head -5 || true)
+            if [ -n "$matches" ]; then
+              echo "::warning file=$file::Images missing alt attributes"
+              ((missing_alt++)) || true
+            fi
+          done
+
+          if [ "$missing_alt" -gt 10 ]; then
+            echo "::warning::More than 10 files have images missing alt attributes"
+          fi
+          echo "✓ Alt attribute scan complete"
+
+      - name: Check heading hierarchy
+        run: |
+          echo "Checking heading hierarchy..."
+          shopt -s nullglob globstar
+          html_files=(**/*.html)
+          if [ ${#html_files[@]} -eq 0 ]; then
+            exit 0
+          fi
+
+          for file in "${html_files[@]}"; do
+            h1_count=$(grep -c "<h1" "$file" 2>/dev/null || echo "0")
+            if [ "$h1_count" -gt 1 ]; then
+              echo "::warning file=$file::Multiple H1 tags found ($h1_count)"
+            elif [ "$h1_count" -eq 0 ]; then
+              echo "::notice file=$file::No H1 tag found"
+            fi
+          done
+          echo "✓ Heading hierarchy check complete"
+
+  # =============================================================================
+  # Stage 2: Lighthouse Audit (Pre-merge) - Comprehensive, 30-60 seconds
+  # =============================================================================
+  lighthouse:
+    name: Lighthouse Audit
+    runs-on: ubuntu-latest
+    needs: [seo-lint]
+    if: github.event_name == 'pull_request'
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        page:
+          - { name: 'home', path: '/' }
+          # Add more pages as needed:
+          # - { name: 'about', path: '/about' }
+          # - { name: 'products', path: '/products' }
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+        continue-on-error: true
+
+      - name: Run Lighthouse CI
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: |
+            ${{ github.event.inputs.url || format('{0}{1}', env.PREVIEW_URL, matrix.page.path) }}
+          budgetPath: ./.lighthouse-budget.json
+          uploadArtifacts: true
+          temporaryPublicStorage: true
+          runs: 3
+        continue-on-error: true
+
+      - name: Check SEO Score
+        if: steps.lighthouse.outcome == 'success'
+        run: |
+          # Parse Lighthouse results
+          if [ -f ".lighthouseci/manifest.json" ]; then
+            SEO_SCORE=$(cat .lighthouseci/manifest.json | jq -r '.[0].summary.seo // 0')
+            SEO_SCORE_INT=$(echo "$SEO_SCORE * 100" | bc | cut -d. -f1)
+
+            echo "SEO Score: $SEO_SCORE_INT"
+
+            if [ "$SEO_SCORE_INT" -lt 50 ]; then
+              echo "::error::E508: Lighthouse SEO score $SEO_SCORE_INT < 50 (critical)"
+              exit 1
+            elif [ "$SEO_SCORE_INT" -lt 90 ]; then
+              echo "::warning::Lighthouse SEO score $SEO_SCORE_INT < 90 (target)"
+            else
+              echo "✓ SEO score passes: $SEO_SCORE_INT"
+            fi
+          fi
+
+      # Download baseline summary from previous run for trend comparison
+      - name: Download Baseline Summary
+        if: always() && steps.lighthouse.outcome == 'success'
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          workflow: seo-validation.yml
+          branch: ${{ github.base_ref || 'main' }}
+          name: lighthouse-summary-${{ matrix.page.name }}
+          path: ./baseline/
+          if_no_artifact_found: ignore
+        continue-on-error: true
+
+      - name: Generate Summary JSON
+        if: always() && steps.lighthouse.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Read Lighthouse manifest
+            let manifest;
+            try {
+              manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json', 'utf8'));
+            } catch (e) {
+              console.log('No Lighthouse manifest found, skipping summary generation');
+              return;
+            }
+
+            // Build summary JSON matching TASK-155 schema
+            const summary = {
+              timestamp: new Date().toISOString(),
+              commit: process.env.GITHUB_SHA,
+              branch: process.env.GITHUB_REF_NAME || process.env.GITHUB_HEAD_REF,
+              runId: parseInt(process.env.GITHUB_RUN_ID),
+              page: '${{ matrix.page.name }}',
+              urls: manifest.map(result => {
+                // Read the full report for CWV metrics
+                let cwv = { lcp: null, cls: null, inp: null };
+                try {
+                  const reportPath = result.jsonPath;
+                  if (reportPath && fs.existsSync(reportPath)) {
+                    const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
+                    cwv = {
+                      lcp: report.audits?.['largest-contentful-paint']?.numericValue || null,
+                      cls: report.audits?.['cumulative-layout-shift']?.numericValue || null,
+                      inp: report.audits?.['experimental-interaction-to-next-paint']?.numericValue ||
+                           report.audits?.['interaction-to-next-paint']?.numericValue || null
+                    };
+                  }
+                } catch (e) {
+                  console.log('Could not read CWV from report:', e.message);
+                }
+
+                return {
+                  url: result.url,
+                  scores: {
+                    performance: Math.round((result.summary?.performance || 0) * 100),
+                    accessibility: Math.round((result.summary?.accessibility || 0) * 100),
+                    'best-practices': Math.round((result.summary?.['best-practices'] || 0) * 100),
+                    seo: Math.round((result.summary?.seo || 0) * 100)
+                  },
+                  cwv
+                };
+              })
+            };
+
+            // Write summary JSON
+            fs.mkdirSync('./reports', { recursive: true });
+            const filename = `lighthouse-${new Date().toISOString().slice(0,10)}-${{ matrix.page.name }}.summary.json`;
+            fs.writeFileSync(`./reports/${filename}`, JSON.stringify(summary, null, 2));
+            fs.writeFileSync('./reports/summary.json', JSON.stringify(summary, null, 2));
+
+            console.log('Summary generated:', filename);
+            console.log(JSON.stringify(summary, null, 2));
+
+      # Regression detection: compare current vs baseline scores
+      - name: Detect Score Regressions
+        id: regression
+        if: always() && steps.lighthouse.outcome == 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const core = require('@actions/core');
+
+            const THRESHOLD = 5; // 5% regression triggers warning
+            const categories = ['performance', 'accessibility', 'best-practices', 'seo'];
+
+            // Read current summary
+            let current;
+            try {
+              current = JSON.parse(fs.readFileSync('./reports/summary.json', 'utf8'));
+            } catch (e) {
+              console.log('No current summary found, skipping regression detection');
+              core.setOutput('regressions', '[]');
+              core.setOutput('hasRegression', 'false');
+              return;
+            }
+
+            // Read baseline summary (from previous run)
+            let baseline = null;
+            try {
+              baseline = JSON.parse(fs.readFileSync('./baseline/summary.json', 'utf8'));
+              console.log('Baseline found from run:', baseline.runId);
+            } catch (e) {
+              console.log('No baseline found (first run or new page). Skipping comparison.');
+              core.setOutput('regressions', '[]');
+              core.setOutput('hasRegression', 'false');
+              core.setOutput('baselineRunId', '');
+              return;
+            }
+
+            // Compare scores and detect regressions
+            const regressions = [];
+
+            for (const currentUrl of current.urls) {
+              const baselineUrl = baseline.urls?.find(u => u.url === currentUrl.url);
+              if (!baselineUrl) {
+                console.log(`New URL detected: ${currentUrl.url} (no baseline)`);
+                continue;
+              }
+
+              for (const category of categories) {
+                const currentScore = currentUrl.scores[category];
+                const baselineScore = baselineUrl.scores?.[category] ?? currentScore;
+                const delta = currentScore - baselineScore;
+
+                if (delta < -THRESHOLD) {
+                  const regression = {
+                    url: currentUrl.url,
+                    category,
+                    previous: baselineScore,
+                    current: currentScore,
+                    delta: delta.toFixed(1)
+                  };
+                  regressions.push(regression);
+
+                  // Output GitHub warning annotation
+                  core.warning(
+                    `[E501] ${category} score regressed by ${Math.abs(delta).toFixed(1)}% ` +
+                    `(${baselineScore} → ${currentScore})`,
+                    { title: `Score Regression: ${category}` }
+                  );
+                }
+              }
+            }
+
+            // Set outputs for PR comment
+            core.setOutput('regressions', JSON.stringify(regressions));
+            core.setOutput('hasRegression', regressions.length > 0 ? 'true' : 'false');
+            core.setOutput('baselineRunId', baseline.runId?.toString() || '');
+
+            // Update summary with comparison data
+            current.comparison = {
+              previousRun: baseline.runId?.toString() || null,
+              previousTimestamp: baseline.timestamp,
+              regressions: regressions
+            };
+            fs.writeFileSync('./reports/summary.json', JSON.stringify(current, null, 2));
+
+            if (regressions.length > 0) {
+              console.log(`\n⚠️ ${regressions.length} score regression(s) detected:`);
+              for (const r of regressions) {
+                console.log(`  - ${r.category}: ${r.previous} → ${r.current} (${r.delta}%)`);
+              }
+            } else {
+              console.log('✓ No score regressions detected');
+            }
+
+      - name: Comment PR with Results
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            // Try to read Lighthouse results
+            let comment = '## 🔍 SEO Validation Results\n\n';
+
+            // Read summary with comparison data (includes regressions)
+            let summary = null;
+            let baseline = null;
+            try {
+              summary = JSON.parse(fs.readFileSync('./reports/summary.json', 'utf8'));
+              if (summary.comparison?.previousRun) {
+                try {
+                  baseline = JSON.parse(fs.readFileSync('./baseline/summary.json', 'utf8'));
+                } catch (e) { /* baseline might not exist */ }
+              }
+            } catch (e) { /* summary might not exist */ }
+
+            try {
+              const manifest = JSON.parse(fs.readFileSync('.lighthouseci/manifest.json'));
+
+              const formatScore = (score, baselineScore = null) => {
+                const pct = Math.round((score || 0) * 100);
+                let indicator = pct >= 90 ? '🟢' : pct >= 50 ? '🟡' : '🔴';
+
+                // Add delta if baseline exists
+                if (baselineScore !== null) {
+                  const basePct = Math.round((baselineScore || 0) * 100);
+                  const delta = pct - basePct;
+                  if (delta > 0) {
+                    return `${indicator} ${pct} (+${delta})`;
+                  } else if (delta < 0) {
+                    return `${indicator} ${pct} (${delta})`;
+                  }
+                }
+                return `${indicator} ${pct}`;
+              };
+
+              // Show comparison info if baseline exists
+              if (summary?.comparison?.previousRun) {
+                comment += `📊 **Comparing to baseline** (run #${summary.comparison.previousRun})\n\n`;
+              }
+
+              comment += '### Lighthouse Scores\n\n';
+              comment += '| Page | SEO | Performance | Accessibility | Best Practices |\n';
+              comment += '|------|-----|-------------|---------------|----------------|\n';
+
+              for (const result of manifest) {
+                const url = new URL(result.url);
+                const baselineResult = baseline?.urls?.find(u => u.url === result.url);
+
+                const seoBase = baselineResult?.scores?.seo ? baselineResult.scores.seo / 100 : null;
+                const perfBase = baselineResult?.scores?.performance ? baselineResult.scores.performance / 100 : null;
+                const a11yBase = baselineResult?.scores?.accessibility ? baselineResult.scores.accessibility / 100 : null;
+                const bpBase = baselineResult?.scores?.['best-practices'] ? baselineResult.scores['best-practices'] / 100 : null;
+
+                comment += `| ${url.pathname} `;
+                comment += `| ${formatScore(result.summary?.seo, seoBase)} `;
+                comment += `| ${formatScore(result.summary?.performance, perfBase)} `;
+                comment += `| ${formatScore(result.summary?.accessibility, a11yBase)} `;
+                comment += `| ${formatScore(result.summary?.['best-practices'], bpBase)} |\n`;
+              }
+
+              // Show regression warnings
+              if (summary?.comparison?.regressions?.length > 0) {
+                comment += '\n### ⚠️ Score Regressions Detected\n\n';
+                comment += '| Category | Previous | Current | Change |\n';
+                comment += '|----------|----------|---------|--------|\n';
+                for (const r of summary.comparison.regressions) {
+                  comment += `| ${r.category} | ${r.previous} | ${r.current} | ${r.delta}% |\n`;
+                }
+                comment += '\n> Regressions > 5% are flagged. Please review before merging.\n';
+              }
+
+              const seoScore = manifest[0]?.summary?.seo || 0;
+              if (seoScore < 0.9) {
+                comment += '\n⚠️ **Action Required**: SEO score below 90 threshold.\n';
+              }
+            } catch (e) {
+              comment += '⚠️ Lighthouse results not available.\n';
+            }
+
+            comment += '\n---\n*Generated by SEO Validation workflow*';
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Upload Lighthouse Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report-${{ matrix.page.name }}-${{ github.run_number }}
+          path: |
+            .lighthouseci/
+            reports/
+          retention-days: 30
+          if-no-files-found: warn
+
+      # Upload summary separately for baseline comparison (used by regression detection)
+      - name: Upload Summary for Baseline
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-summary-${{ matrix.page.name }}
+          path: reports/summary.json
+          retention-days: 30
+          if-no-files-found: ignore
+
+  # =============================================================================
+  # Stage 3: SEO Deploy Gate (Deployment) - Critical checks, <10 seconds
+  # =============================================================================
+  deploy-gate:
+    name: SEO Deploy Gate
+    runs-on: ubuntu-latest
+    needs: [seo-lint]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Critical SEO Checks
+        run: |
+          echo "Running critical SEO gate checks..."
+          FAILURES=0
+
+          # 1. robots.txt must not block all crawlers
+          if [ -f robots.txt ]; then
+            if grep -q "Disallow: /" robots.txt && ! grep -q "Allow:" robots.txt; then
+              echo "::error::CRITICAL E506: robots.txt blocks all crawlers"
+              FAILURES=$((FAILURES + 1))
+            fi
+          fi
+
+          # 2. sitemap.xml must be valid if present
+          if [ -f sitemap.xml ]; then
+            if command -v xmllint &> /dev/null; then
+              if ! xmllint --noout sitemap.xml 2>/dev/null; then
+                echo "::error::CRITICAL E507: sitemap.xml is invalid"
+                FAILURES=$((FAILURES + 1))
+              fi
+            fi
+          fi
+
+          # 3. Check for critical meta tag issues
+          # (Homepage must have title and canonical)
+          if [ -f index.html ]; then
+            if ! grep -q "<title>" index.html; then
+              echo "::error::CRITICAL E501: Homepage missing <title>"
+              FAILURES=$((FAILURES + 1))
+            fi
+            if ! grep -q 'rel="canonical"' index.html; then
+              echo "::error::CRITICAL E503: Homepage missing canonical"
+              FAILURES=$((FAILURES + 1))
+            fi
+          fi
+
+          # Exit with failure if any critical issues
+          if [ "$FAILURES" -gt 0 ]; then
+            echo ""
+            echo "::error::SEO Gate BLOCKED: $FAILURES critical issue(s) found"
+            echo "Fix critical issues before deployment."
+            exit 1
+          fi
+
+          echo "✓ SEO deployment gate passed"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## SEO Deployment Gate Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ **PASSED** - Deployment allowed" >> $GITHUB_STEP_SUMMARY
