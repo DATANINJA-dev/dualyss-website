@@ -15,13 +15,18 @@ export function LanguageSwitcher() {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     }
+    // Support both mouse and touch events for mobile compatibility
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
   }, []);
 
   const handleLanguageChange = (newLocale: Locale) => {
@@ -33,7 +38,7 @@ export function LanguageSwitcher() {
     <div className="relative" ref={dropdownRef}>
       <button
         type="button"
-        className="flex items-center gap-1 rounded-md px-2 py-1.5 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900"
+        className="flex items-center gap-1.5 rounded-md px-3 py-2.5 text-sm font-medium text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900 min-h-[44px] min-w-[44px]"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
         aria-haspopup="true"
@@ -43,14 +48,20 @@ export function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <div
+          className={cn(
+            "absolute z-50 mt-2 w-44 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none",
+            "left-0 sm:left-auto sm:right-0",
+            "origin-top-left sm:origin-top-right"
+          )}
+        >
           <div className="py-1" role="menu" aria-orientation="vertical">
             {locales.map((loc) => (
               <button
                 key={loc}
                 onClick={() => handleLanguageChange(loc)}
                 className={cn(
-                  'block w-full px-4 py-2 text-left text-sm',
+                  'block w-full px-4 py-3 text-left text-sm min-h-[44px]',
                   locale === loc
                     ? 'bg-primary-50 text-primary-500'
                     : 'text-neutral-700 hover:bg-neutral-50'
