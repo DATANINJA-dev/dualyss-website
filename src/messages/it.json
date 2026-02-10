@@ -1,722 +1,722 @@
 {
   "metadata": {
-    "title": "Dualyss | Dual-Use Technologies for European Security",
-    "description": "Protecting democracy with dual deterrence technologies. Dualyss develops enabling capabilities in defense, cybersecurity, and biosecurity for European strategic autonomy."
+    "title": "Dualyss | Tecnologie Dual-Use per la Sicurezza Europea",
+    "description": "Proteggere la democrazia con tecnologie di deterrenza duale. Dualyss sviluppa capacità abilitanti in difesa, cybersicurezza e biosicurezza per l'autonomia strategica europea."
   },
   "nav": {
     "home": "Home",
-    "about": "About",
-    "aboutUs": "About Us",
+    "about": "Chi Siamo",
+    "aboutUs": "Chi Siamo",
     "team": "Team",
-    "partners": "Partners",
-    "capabilities": "Capabilities",
-    "defense": "Defense",
-    "cybersecurity": "Cybersecurity",
-    "biosecurity": "Biosecurity",
-    "dualUse": "Dual-Use Tech",
-    "sectors": "Sectors",
-    "news": "News",
-    "contact": "Contact"
+    "partners": "Partner",
+    "capabilities": "Capacità",
+    "defense": "Difesa",
+    "cybersecurity": "Cybersicurezza",
+    "biosecurity": "Biosicurezza",
+    "dualUse": "Tecnologie Duali",
+    "sectors": "Settori",
+    "news": "Notizie",
+    "contact": "Contatti"
   },
   "hero": {
-    "tagline": "Dual-Use Technologies",
-    "title": "Protecting Democracy Through Technological Preparedness",
-    "subtitle": "We develop enabling capabilities in defense, cybersecurity, and biosecurity to strengthen European strategic autonomy.",
-    "cta": "Discover Our Capabilities",
-    "ctaSecondary": "Contact Us"
+    "tagline": "Tecnologie Dual-Use",
+    "title": "Proteggere la Democrazia Attraverso la Preparazione Tecnologica",
+    "subtitle": "Sviluppiamo capacità abilitanti in difesa, cybersicurezza e biosicurezza per rafforzare l'autonomia strategica europea.",
+    "cta": "Scopri le Nostre Capacità",
+    "ctaSecondary": "Contattaci"
   },
   "capabilities": {
-    "title": "Our Capabilities",
-    "subtitle": "Enabling technologies for a more secure and autonomous Europe",
+    "title": "Le Nostre Capacità",
+    "subtitle": "Tecnologie abilitanti per un'Europa più sicura e autonoma",
     "defense": {
-      "title": "Defense",
-      "description": "Unmanned systems, advanced sensors, and autonomous platforms for modern defense requirements."
+      "title": "Difesa",
+      "description": "Sistemi senza pilota, sensori avanzati e piattaforme autonome per le moderne esigenze di difesa."
     },
     "cybersecurity": {
-      "title": "Cybersecurity",
-      "description": "Protecting critical digital infrastructure with resilient and secure communication systems."
+      "title": "Cybersicurezza",
+      "description": "Protezione delle infrastrutture digitali critiche con sistemi di comunicazione resilienti e sicuri."
     },
     "biosecurity": {
-      "title": "Biosecurity",
-      "description": "Bio-sanitary response capabilities and health security solutions for emerging threats."
+      "title": "Biosicurezza",
+      "description": "Capacità di risposta bio-sanitaria e soluzioni di sicurezza sanitaria per le minacce emergenti."
     },
     "dualUse": {
-      "title": "Dual-Use Technologies",
-      "description": "Civil and defense applications that drive innovation while ensuring strategic preparedness."
+      "title": "Tecnologie Dual-Use",
+      "description": "Applicazioni civili e di difesa che guidano l'innovazione garantendo la preparazione strategica."
     }
   },
   "about": {
-    "title": "About Dualyss",
-    "subtitle": "Building European strategic autonomy through enabling capabilities",
+    "title": "Chi è Dualyss",
+    "subtitle": "Costruire l'autonomia strategica europea attraverso capacità abilitanti",
     "mission": {
-      "title": "Our Mission",
-      "text": "We articulate Catalonia's technological ecosystem to develop enabling capabilities, giving them scale and positioning them in European programs and debates."
+      "title": "La Nostra Missione",
+      "text": "Articoliamo l'ecosistema tecnologico della Catalogna per sviluppare capacità abilitanti, dando loro scala e posizionandole nei programmi e dibattiti europei."
     },
     "vision": {
-      "title": "Our Vision",
-      "text": "A more secure, more autonomous, and better-prepared Europe—built on a solid, integrated, and innovative industrial and technological base."
+      "title": "La Nostra Visione",
+      "text": "Un'Europa più sicura, più autonoma e meglio preparata — costruita su una base industriale e tecnologica solida, integrata e innovativa."
     },
     "values": {
-      "title": "Our Values",
-      "deterrence": "Deterrence",
-      "deterrenceDesc": "Security through technological superiority and preparedness",
-      "autonomy": "Autonomy",
-      "autonomyDesc": "Developing sovereign capabilities to reduce dependencies",
-      "innovation": "Innovation",
-      "innovationDesc": "Cutting-edge solutions for complex challenges",
-      "collaboration": "Collaboration",
-      "collaborationDesc": "Integrating SMEs, research centers, and industrial partners"
+      "title": "I Nostri Valori",
+      "deterrence": "Deterrenza",
+      "deterrenceDesc": "Sicurezza attraverso la superiorità tecnologica e la preparazione",
+      "autonomy": "Autonomia",
+      "autonomyDesc": "Sviluppare capacità sovrane per ridurre le dipendenze",
+      "innovation": "Innovazione",
+      "innovationDesc": "Soluzioni all'avanguardia per sfide complesse",
+      "collaboration": "Collaborazione",
+      "collaborationDesc": "Integrare PMI, centri di ricerca e partner industriali"
     }
   },
   "cta": {
-    "title": "Ready to Strengthen European Security?",
-    "subtitle": "Join our ecosystem of technology partners and contribute to building strategic autonomy.",
-    "button": "Get in Touch"
+    "title": "Pronti a Rafforzare la Sicurezza Europea?",
+    "subtitle": "Unisciti al nostro ecosistema di partner tecnologici e contribuisci a costruire l'autonomia strategica.",
+    "button": "Contattaci"
   },
   "footer": {
-    "description": "Protecting democracy with dual deterrence technologies.",
-    "quickLinks": "Quick Links",
-    "legal": "Legal",
+    "description": "Proteggere la democrazia con tecnologie di deterrenza duale.",
+    "quickLinks": "Link Rapidi",
+    "legal": "Legale",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use",
+    "terms": "Termini d'Uso",
     "cookies": "Cookie Policy",
-    "followUs": "Follow Us",
-    "copyright": "© {year} Dualyss AIE. All rights reserved."
+    "followUs": "Seguici",
+    "copyright": "© {year} Dualyss AIE. Tutti i diritti riservati."
   },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with our team",
+    "title": "Contattaci",
+    "subtitle": "Mettiti in contatto con il nostro team",
     "form": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "organization": "Organization",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message"
+      "name": "Nome Completo",
+      "email": "Indirizzo E-mail",
+      "organization": "Organizzazione",
+      "subject": "Oggetto",
+      "message": "Messaggio",
+      "submit": "Invia Messaggio"
     }
   },
   "common": {
-    "learnMore": "Learn More",
-    "readMore": "Read More",
-    "viewAll": "View All",
-    "back": "Back",
-    "loading": "Loading..."
+    "learnMore": "Scopri di Più",
+    "readMore": "Leggi di Più",
+    "viewAll": "Vedi Tutto",
+    "back": "Indietro",
+    "loading": "Caricamento..."
   },
   "pages": {
     "about": {
       "meta": {
-        "title": "About Dualyss | European Dual-Use Technology Leader",
-        "description": "Learn about Dualyss, a Catalan Economic Interest Grouping specializing in dual-use technologies for defense, cybersecurity, and biosecurity."
+        "title": "Chi è Dualyss | Leader Europeo nelle Tecnologie Duali",
+        "description": "Scopri Dualyss, un Gruppo di Interesse Economico catalano specializzato in tecnologie dual-use per difesa, cybersicurezza e biosicurezza."
       },
-      "title": "About Dualyss",
-      "subtitle": "Building European strategic autonomy through enabling capabilities",
+      "title": "Chi è Dualyss",
+      "subtitle": "Costruire l'autonomia strategica europea attraverso capacità abilitanti",
       "mission": {
-        "title": "Our Mission",
-        "text": "We articulate Catalonia's technological ecosystem to develop enabling capabilities, giving them scale and positioning them in European programs and debates."
+        "title": "La Nostra Missione",
+        "text": "Articoliamo l'ecosistema tecnologico della Catalogna per sviluppare capacità abilitanti, dando loro scala e posizionandole nei programmi e dibattiti europei."
       },
       "vision": {
-        "title": "Our Vision",
-        "text": "A more secure, more autonomous, and better-prepared Europe—built on a solid, integrated, and innovative industrial and technological base."
+        "title": "La Nostra Visione",
+        "text": "Un'Europa più sicura, più autonoma e meglio preparata — costruita su una base industriale e tecnologica solida, integrata e innovativa."
       },
       "values": {
-        "title": "Our Values",
-        "deterrence": "Deterrence",
-        "deterrenceDesc": "Security through technological superiority and preparedness",
-        "autonomy": "Autonomy",
-        "autonomyDesc": "Developing sovereign capabilities to reduce dependencies",
-        "innovation": "Innovation",
-        "innovationDesc": "Cutting-edge solutions for complex challenges",
-        "collaboration": "Collaboration",
-        "collaborationDesc": "Integrating SMEs, research centers, and industrial partners"
+        "title": "I Nostri Valori",
+        "deterrence": "Deterrenza",
+        "deterrenceDesc": "Sicurezza attraverso la superiorità tecnologica e la preparazione",
+        "autonomy": "Autonomia",
+        "autonomyDesc": "Sviluppare capacità sovrane per ridurre le dipendenze",
+        "innovation": "Innovazione",
+        "innovationDesc": "Soluzioni all'avanguardia per sfide complesse",
+        "collaboration": "Collaborazione",
+        "collaborationDesc": "Integrare PMI, centri di ricerca e partner industriali"
       },
       "european": {
-        "title": "European Commitment",
-        "text": "As a European-focused organization, we are committed to strengthening the continent's technological sovereignty and industrial base. We actively participate in EU defense and security programs, contributing to a more resilient and autonomous Europe."
+        "title": "Impegno Europeo",
+        "text": "Come organizzazione a vocazione europea, ci impegniamo a rafforzare la sovranità tecnologica e la base industriale del continente. Partecipiamo attivamente ai programmi di difesa e sicurezza dell'UE, contribuendo a un'Europa più resiliente e autonoma."
       },
       "links": {
-        "team": "Meet Our Team",
-        "teamDesc": "Discover the experts driving our mission forward.",
-        "partners": "Our Partners",
-        "partnersDesc": "Explore our ecosystem of industrial and academic partners."
+        "team": "Incontra il Nostro Team",
+        "teamDesc": "Scopri gli esperti che guidano la nostra missione.",
+        "partners": "I Nostri Partner",
+        "partnersDesc": "Esplora il nostro ecosistema di partner industriali e accademici."
       }
     },
     "team": {
       "meta": {
-        "title": "Our Team | Dualyss Leadership",
-        "description": "Meet the leadership team at Dualyss, experts in defense, cybersecurity, and dual-use technologies."
+        "title": "Il Nostro Team | Leadership Dualyss",
+        "description": "Incontra il team di leadership di Dualyss, esperti in difesa, cybersicurezza e tecnologie dual-use."
       },
-      "title": "Our Team",
-      "subtitle": "Meet the experts driving European technological autonomy",
+      "title": "Il Nostro Team",
+      "subtitle": "Incontra gli esperti che guidano l'autonomia tecnologica europea",
       "leadership": {
-        "title": "Leadership Team",
-        "subtitle": "Our diverse team brings together expertise from defense, technology, and European institutions."
+        "title": "Team di Leadership",
+        "subtitle": "Il nostro team diversificato riunisce competenze dalla difesa, tecnologia e istituzioni europee."
       },
       "members": {
         "member1": {
-          "name": "Executive Director",
-          "role": "Chief Executive Officer",
-          "description": "Leading Dualyss's strategic vision and European positioning."
+          "name": "Direttore Esecutivo",
+          "role": "Amministratore Delegato",
+          "description": "Guida la visione strategica e il posizionamento europeo di Dualyss."
         },
         "member2": {
-          "name": "Technology Director",
+          "name": "Direttore Tecnologico",
           "role": "Chief Technology Officer",
-          "description": "Overseeing technological development and innovation programs."
+          "description": "Supervisiona lo sviluppo tecnologico e i programmi di innovazione."
         },
         "member3": {
-          "name": "Operations Director",
+          "name": "Direttore Operativo",
           "role": "Chief Operations Officer",
-          "description": "Managing partnerships and operational excellence."
+          "description": "Gestisce le partnership e l'eccellenza operativa."
         },
         "member4": {
-          "name": "Strategy Director",
+          "name": "Direttore Strategico",
           "role": "Chief Strategy Officer",
-          "description": "Driving European program participation and market development."
+          "description": "Guida la partecipazione ai programmi europei e lo sviluppo del mercato."
         }
       },
       "joinUs": {
-        "title": "Join Our Team",
-        "text": "We're always looking for talented professionals passionate about European security and dual-use technologies.",
-        "cta": "Contact Us"
+        "title": "Unisciti al Nostro Team",
+        "text": "Cerchiamo sempre professionisti di talento appassionati di sicurezza europea e tecnologie dual-use.",
+        "cta": "Contattaci"
       }
     },
     "partners": {
       "meta": {
-        "title": "Partners | Dualyss Ecosystem",
-        "description": "Explore Dualyss's partner ecosystem of industrial leaders, academic institutions, and research centers."
+        "title": "Partner | Ecosistema Dualyss",
+        "description": "Esplora l'ecosistema di partner di Dualyss: leader industriali, istituzioni accademiche e centri di ricerca."
       },
-      "title": "Our Partners",
-      "subtitle": "Building capabilities through strategic collaboration",
+      "title": "I Nostri Partner",
+      "subtitle": "Costruire capacità attraverso la collaborazione strategica",
       "ecosystem": {
-        "title": "Partner Ecosystem",
-        "text": "Our strength lies in our diverse network of partners, combining industrial expertise, academic research, and institutional support to deliver cutting-edge solutions."
+        "title": "Ecosistema dei Partner",
+        "text": "La nostra forza risiede nella nostra rete diversificata di partner, che combina competenze industriali, ricerca accademica e supporto istituzionale per fornire soluzioni all'avanguardia."
       },
       "categories": {
         "industry": {
-          "title": "Industrial Partners",
-          "description": "Leading defense and technology companies"
+          "title": "Partner Industriali",
+          "description": "Aziende leader nella difesa e tecnologia"
         },
         "academic": {
-          "title": "Academic Partners",
-          "description": "Universities and educational institutions"
+          "title": "Partner Accademici",
+          "description": "Università e istituzioni educative"
         },
         "research": {
-          "title": "Research Centers",
-          "description": "Innovation and R&D organizations"
+          "title": "Centri di Ricerca",
+          "description": "Organizzazioni di innovazione e R&S"
         },
         "institutional": {
-          "title": "Institutional Partners",
-          "description": "Government and EU agencies"
+          "title": "Partner Istituzionali",
+          "description": "Agenzie governative e dell'UE"
         }
       },
       "cta": {
-        "title": "Become a Partner",
-        "text": "Join our ecosystem and contribute to European technological sovereignty.",
-        "button": "Get in Touch"
+        "title": "Diventa Partner",
+        "text": "Unisciti al nostro ecosistema e contribuisci alla sovranità tecnologica europea.",
+        "button": "Contattaci"
       }
     },
     "capabilities": {
       "meta": {
-        "title": "Capabilities | Dualyss Technologies",
-        "description": "Explore Dualyss's capabilities in defense, cybersecurity, biosecurity, and dual-use technologies."
+        "title": "Capacità | Tecnologie Dualyss",
+        "description": "Esplora le capacità di Dualyss in difesa, cybersicurezza, biosicurezza e tecnologie dual-use."
       },
-      "title": "Our Capabilities",
-      "subtitle": "Enabling technologies for a more secure and autonomous Europe",
+      "title": "Le Nostre Capacità",
+      "subtitle": "Tecnologie abilitanti per un'Europa più sicura e autonoma",
       "approach": {
-        "title": "Our Approach",
-        "text": "We follow a systematic approach to developing and delivering enabling capabilities.",
+        "title": "Il Nostro Approccio",
+        "text": "Seguiamo un approccio sistematico per sviluppare e fornire capacità abilitanti.",
         "step1": {
-          "title": "Identify",
-          "text": "Assess needs and identify technological gaps"
+          "title": "Identificare",
+          "text": "Valutare le esigenze e identificare le lacune tecnologiche"
         },
         "step2": {
-          "title": "Develop",
-          "text": "Build solutions with our partner ecosystem"
+          "title": "Sviluppare",
+          "text": "Costruire soluzioni con il nostro ecosistema di partner"
         },
         "step3": {
-          "title": "Deploy",
-          "text": "Implement and support operational readiness"
+          "title": "Implementare",
+          "text": "Implementare e supportare la prontezza operativa"
         }
       },
       "cta": {
-        "title": "Ready to Explore Our Capabilities?",
-        "text": "Contact us to discuss how we can support your security and technology needs.",
-        "button": "Contact Us"
+        "title": "Pronti a Esplorare le Nostre Capacità?",
+        "text": "Contattaci per discutere delle tue esigenze di sicurezza e tecnologia.",
+        "button": "Contattaci"
       }
     },
     "defense": {
       "meta": {
-        "title": "Defense Technologies | Dualyss",
-        "description": "Discover Dualyss's defense capabilities including unmanned systems, sensors, and autonomous platforms."
+        "title": "Tecnologie di Difesa | Dualyss",
+        "description": "Scopri le capacità di difesa di Dualyss: sistemi senza pilota, sensori e piattaforme autonome."
       },
-      "title": "Defense Technologies",
-      "subtitle": "Advanced systems for modern defense requirements",
+      "title": "Tecnologie di Difesa",
+      "subtitle": "Sistemi avanzati per le moderne esigenze di difesa",
       "overview": {
-        "title": "Defense Capabilities Overview",
-        "text1": "Our defense technology portfolio encompasses cutting-edge unmanned systems, advanced sensors, and autonomous platforms designed to meet the evolving needs of modern armed forces.",
-        "text2": "We work closely with defense institutions and industrial partners to develop solutions that enhance operational capabilities while ensuring interoperability with allied systems."
+        "title": "Panoramica delle Capacità di Difesa",
+        "text1": "Il nostro portafoglio di tecnologie di difesa comprende sistemi senza pilota all'avanguardia, sensori avanzati e piattaforme autonome progettate per soddisfare le esigenze in evoluzione delle forze armate moderne.",
+        "text2": "Lavoriamo a stretto contatto con le istituzioni della difesa e i partner industriali per sviluppare soluzioni che migliorino le capacità operative garantendo l'interoperabilità con i sistemi alleati."
       },
       "technologies": {
-        "title": "Key Technologies",
-        "subtitle": "Comprehensive defense technology solutions"
+        "title": "Tecnologie Chiave",
+        "subtitle": "Soluzioni tecnologiche di difesa complete"
       },
       "tech": {
         "uav": {
-          "title": "Unmanned Aerial Vehicles",
-          "description": "Advanced drone systems for reconnaissance, surveillance, and tactical operations."
+          "title": "Veicoli Aerei Senza Pilota",
+          "description": "Sistemi di droni avanzati per ricognizione, sorveglianza e operazioni tattiche."
         },
         "comms": {
-          "title": "Secure Communications",
-          "description": "Encrypted communication systems for battlefield coordination."
+          "title": "Comunicazioni Sicure",
+          "description": "Sistemi di comunicazione crittografati per il coordinamento sul campo di battaglia."
         },
         "sensors": {
-          "title": "Advanced Sensors",
-          "description": "Multi-spectral sensing and target acquisition systems."
+          "title": "Sensori Avanzati",
+          "description": "Sistemi di rilevamento multispettrale e acquisizione bersagli."
         },
         "surveillance": {
-          "title": "Surveillance Systems",
-          "description": "Integrated surveillance networks for situational awareness."
+          "title": "Sistemi di Sorveglianza",
+          "description": "Reti di sorveglianza integrate per la consapevolezza situazionale."
         },
         "autonomous": {
-          "title": "Autonomous Systems",
-          "description": "AI-enabled autonomous platforms for various defense applications."
+          "title": "Sistemi Autonomi",
+          "description": "Piattaforme autonome abilitate all'IA per varie applicazioni di difesa."
         },
         "protection": {
-          "title": "Force Protection",
-          "description": "Systems for personnel and asset protection in hostile environments."
+          "title": "Protezione delle Forze",
+          "description": "Sistemi per la protezione del personale e degli asset in ambienti ostili."
         }
       },
       "useCases": {
-        "title": "Applications",
-        "defense": "Defense",
-        "civil": "Civil",
+        "title": "Applicazioni",
+        "defense": "Difesa",
+        "civil": "Civile",
         "case1": {
-          "title": "Border Surveillance",
-          "description": "Integrated sensor networks for continuous border monitoring."
+          "title": "Sorveglianza dei Confini",
+          "description": "Reti di sensori integrate per il monitoraggio continuo dei confini."
         },
         "case2": {
-          "title": "Search and Rescue",
-          "description": "UAV-assisted search operations in difficult terrain."
+          "title": "Ricerca e Soccorso",
+          "description": "Operazioni di ricerca assistite da droni in terreni difficili."
         },
         "case3": {
-          "title": "Maritime Security",
-          "description": "Naval surveillance and protection systems."
+          "title": "Sicurezza Marittima",
+          "description": "Sistemi di sorveglianza e protezione navale."
         }
       },
       "cta": {
-        "title": "Interested in Defense Solutions?",
-        "text": "Contact us to discuss your defense technology requirements.",
-        "button": "Get in Touch"
+        "title": "Interessato alle Soluzioni di Difesa?",
+        "text": "Contattaci per discutere delle tue esigenze di tecnologia di difesa.",
+        "button": "Contattaci"
       }
     },
     "cybersecurity": {
       "meta": {
-        "title": "Cybersecurity Solutions | Dualyss",
-        "description": "Comprehensive cybersecurity solutions for critical infrastructure protection and digital resilience."
+        "title": "Soluzioni di Cybersicurezza | Dualyss",
+        "description": "Soluzioni complete di cybersicurezza per la protezione delle infrastrutture critiche e la resilienza digitale."
       },
-      "title": "Cybersecurity",
-      "subtitle": "Protecting critical digital infrastructure",
+      "title": "Cybersicurezza",
+      "subtitle": "Protezione delle infrastrutture digitali critiche",
       "overview": {
-        "title": "Cybersecurity Capabilities",
-        "text1": "In an increasingly connected world, protecting digital infrastructure is paramount. Our cybersecurity solutions address the full spectrum of threats facing modern organizations and nations.",
-        "text2": "We combine technical expertise with deep understanding of regulatory requirements to deliver comprehensive security solutions."
+        "title": "Capacità di Cybersicurezza",
+        "text1": "In un mondo sempre più connesso, proteggere l'infrastruttura digitale è fondamentale. Le nostre soluzioni di cybersicurezza affrontano l'intero spettro delle minacce che affrontano le organizzazioni e le nazioni moderne.",
+        "text2": "Combiniamo competenze tecniche con una profonda comprensione dei requisiti normativi per fornire soluzioni di sicurezza complete."
       },
       "services": {
-        "title": "Our Services",
-        "subtitle": "End-to-end cybersecurity capabilities",
+        "title": "I Nostri Servizi",
+        "subtitle": "Capacità di cybersicurezza end-to-end",
         "protection": {
-          "title": "Threat Protection",
-          "description": "Advanced threat detection and prevention systems."
+          "title": "Protezione dalle Minacce",
+          "description": "Sistemi avanzati di rilevamento e prevenzione delle minacce."
         },
         "infrastructure": {
-          "title": "Infrastructure Security",
-          "description": "Securing critical infrastructure and operational technology."
+          "title": "Sicurezza delle Infrastrutture",
+          "description": "Protezione delle infrastrutture critiche e della tecnologia operativa."
         },
         "network": {
-          "title": "Network Security",
-          "description": "Comprehensive network monitoring and defense solutions."
+          "title": "Sicurezza di Rete",
+          "description": "Soluzioni complete di monitoraggio e difesa della rete."
         },
         "crypto": {
-          "title": "Cryptographic Solutions",
-          "description": "Advanced encryption and key management systems."
+          "title": "Soluzioni Crittografiche",
+          "description": "Sistemi avanzati di crittografia e gestione delle chiavi."
         },
         "threat": {
-          "title": "Threat Intelligence",
-          "description": "Real-time threat intelligence and analysis services."
+          "title": "Intelligence sulle Minacce",
+          "description": "Servizi di intelligence e analisi delle minacce in tempo reale."
         },
         "compliance": {
-          "title": "Compliance & Governance",
-          "description": "Regulatory compliance and security governance support."
+          "title": "Compliance e Governance",
+          "description": "Supporto per la conformità normativa e la governance della sicurezza."
         }
       },
       "standards": {
-        "title": "Standards & Compliance",
-        "text": "Our solutions are designed to meet the highest international security standards and regulatory requirements."
+        "title": "Standard e Conformità",
+        "text": "Le nostre soluzioni sono progettate per soddisfare i più alti standard di sicurezza internazionali e i requisiti normativi."
       },
       "cta": {
-        "title": "Strengthen Your Cyber Defenses",
-        "text": "Contact us to assess your cybersecurity posture and requirements.",
-        "button": "Contact Us"
+        "title": "Rafforza le Tue Difese Cyber",
+        "text": "Contattaci per valutare la tua postura e le tue esigenze di cybersicurezza.",
+        "button": "Contattaci"
       }
     },
     "biosecurity": {
       "meta": {
-        "title": "Biosecurity Capabilities | Dualyss",
-        "description": "Bio-sanitary response capabilities and health security solutions for emerging biological threats."
+        "title": "Capacità di Biosicurezza | Dualyss",
+        "description": "Capacità di risposta bio-sanitaria e soluzioni di sicurezza sanitaria per le minacce biologiche emergenti."
       },
-      "title": "Biosecurity",
-      "subtitle": "Health security solutions for emerging threats",
+      "title": "Biosicurezza",
+      "subtitle": "Soluzioni di sicurezza sanitaria per le minacce emergenti",
       "overview": {
-        "title": "Biosecurity Capabilities",
-        "text1": "Our biosecurity portfolio addresses the growing need for preparedness against biological threats, from natural pandemics to deliberate biological incidents.",
-        "text2": "We develop integrated solutions that combine detection, response, and protection capabilities to safeguard public health and national security."
+        "title": "Capacità di Biosicurezza",
+        "text1": "Il nostro portafoglio di biosicurezza affronta la crescente necessità di preparazione contro le minacce biologiche, dalle pandemie naturali agli incidenti biologici deliberati.",
+        "text2": "Sviluppiamo soluzioni integrate che combinano capacità di rilevamento, risposta e protezione per salvaguardare la salute pubblica e la sicurezza nazionale."
       },
       "capabilities": {
-        "title": "Key Capabilities",
-        "subtitle": "Comprehensive biosecurity solutions",
+        "title": "Capacità Chiave",
+        "subtitle": "Soluzioni complete di biosicurezza",
         "detection": {
-          "title": "Threat Detection",
-          "description": "Early warning systems for biological agent detection."
+          "title": "Rilevamento delle Minacce",
+          "description": "Sistemi di allarme precoce per il rilevamento di agenti biologici."
         },
         "monitoring": {
-          "title": "Health Monitoring",
-          "description": "Surveillance systems for epidemiological monitoring."
+          "title": "Monitoraggio Sanitario",
+          "description": "Sistemi di sorveglianza per il monitoraggio epidemiologico."
         },
         "response": {
-          "title": "Rapid Response",
-          "description": "Coordinated response capabilities for biological incidents."
+          "title": "Risposta Rapida",
+          "description": "Capacità di risposta coordinata per gli incidenti biologici."
         },
         "medical": {
-          "title": "Medical Countermeasures",
-          "description": "Development and stockpiling of medical countermeasures."
+          "title": "Contromisure Mediche",
+          "description": "Sviluppo e stoccaggio di contromisure mediche."
         },
         "protection": {
-          "title": "Personal Protection",
-          "description": "Advanced protective equipment and decontamination systems."
+          "title": "Protezione Personale",
+          "description": "Attrezzature di protezione avanzate e sistemi di decontaminazione."
         },
         "health": {
-          "title": "Public Health Systems",
-          "description": "Integrated public health information systems."
+          "title": "Sistemi di Sanità Pubblica",
+          "description": "Sistemi informativi integrati di sanità pubblica."
         }
       },
       "applications": {
-        "title": "Applications",
-        "text": "Our biosecurity solutions serve both civilian public health needs and defense requirements, ensuring comprehensive protection against biological threats."
+        "title": "Applicazioni",
+        "text": "Le nostre soluzioni di biosicurezza servono sia le esigenze di salute pubblica civile che i requisiti di difesa, garantendo una protezione completa contro le minacce biologiche."
       },
       "cta": {
-        "title": "Enhance Your Biosecurity Preparedness",
-        "text": "Contact us to discuss biosecurity solutions for your organization.",
-        "button": "Get in Touch"
+        "title": "Migliora la Tua Preparazione in Biosicurezza",
+        "text": "Contattaci per discutere delle soluzioni di biosicurezza per la tua organizzazione.",
+        "button": "Contattaci"
       }
     },
     "dualUse": {
       "meta": {
-        "title": "Dual-Use Technologies | Dualyss",
-        "description": "Technologies with both civil and defense applications, driving innovation while ensuring strategic preparedness."
+        "title": "Tecnologie Dual-Use | Dualyss",
+        "description": "Tecnologie con applicazioni civili e di difesa, che guidano l'innovazione garantendo la preparazione strategica."
       },
-      "title": "Dual-Use Technologies",
-      "subtitle": "Innovation for both civil and defense applications",
+      "title": "Tecnologie Dual-Use",
+      "subtitle": "Innovazione per applicazioni civili e di difesa",
       "overview": {
-        "title": "The Dual-Use Advantage",
-        "text1": "Dual-use technologies represent the intersection of civil innovation and defense capability. By developing technologies with applications in both domains, we maximize value and accelerate innovation.",
-        "text2": "This approach allows us to leverage commercial advancements for defense applications while ensuring civil society benefits from security-driven innovations."
+        "title": "Il Vantaggio del Dual-Use",
+        "text1": "Le tecnologie dual-use rappresentano l'intersezione tra innovazione civile e capacità di difesa. Sviluppando tecnologie con applicazioni in entrambi i domini, massimizziamo il valore e acceleriamo l'innovazione.",
+        "text2": "Questo approccio ci permette di sfruttare i progressi commerciali per le applicazioni di difesa garantendo che la società civile benefici delle innovazioni guidate dalla sicurezza."
       },
       "concept": {
-        "title": "Understanding Dual-Use",
-        "text": "Dual-use technologies serve legitimate purposes in both civilian and defense contexts, creating synergies that benefit society as a whole.",
+        "title": "Comprendere il Dual-Use",
+        "text": "Le tecnologie dual-use servono scopi legittimi sia in contesti civili che di difesa, creando sinergie che beneficiano la società nel suo insieme.",
         "defense": {
-          "title": "Defense Applications",
-          "item1": "Surveillance and reconnaissance",
-          "item2": "Secure communications",
-          "item3": "Autonomous systems"
+          "title": "Applicazioni di Difesa",
+          "item1": "Sorveglianza e ricognizione",
+          "item2": "Comunicazioni sicure",
+          "item3": "Sistemi autonomi"
         },
         "civil": {
-          "title": "Civil Applications",
-          "item1": "Emergency response",
-          "item2": "Infrastructure monitoring",
-          "item3": "Environmental protection"
+          "title": "Applicazioni Civili",
+          "item1": "Risposta alle emergenze",
+          "item2": "Monitoraggio delle infrastrutture",
+          "item3": "Protezione ambientale"
         }
       },
       "civilApps": {
-        "title": "Civil Applications",
-        "subtitle": "Defense technologies serving society"
+        "title": "Applicazioni Civili",
+        "subtitle": "Tecnologie di difesa al servizio della società"
       },
       "applications": {
         "firefighting": {
-          "title": "Firefighting Support",
-          "description": "UAV systems for fire detection, monitoring, and coordination of firefighting efforts."
+          "title": "Supporto Antincendio",
+          "description": "Sistemi di droni per il rilevamento degli incendi, il monitoraggio e il coordinamento delle operazioni di spegnimento."
         },
         "rescue": {
-          "title": "Search and Rescue",
-          "description": "Advanced sensors and autonomous systems for locating missing persons in difficult terrain."
+          "title": "Ricerca e Soccorso",
+          "description": "Sensori avanzati e sistemi autonomi per localizzare persone scomparse in terreni difficili."
         },
         "maritime": {
-          "title": "Maritime Safety",
-          "description": "Surveillance systems for maritime safety and environmental protection."
+          "title": "Sicurezza Marittima",
+          "description": "Sistemi di sorveglianza per la sicurezza marittima e la protezione ambientale."
         },
         "infrastructure": {
-          "title": "Critical Infrastructure",
-          "description": "Monitoring and protection systems for essential infrastructure."
+          "title": "Infrastrutture Critiche",
+          "description": "Sistemi di monitoraggio e protezione per le infrastrutture essenziali."
         }
       },
       "cta": {
-        "title": "Explore Dual-Use Opportunities",
-        "text": "Contact us to discover how dual-use technologies can benefit your organization.",
-        "button": "Contact Us"
+        "title": "Esplora le Opportunità Dual-Use",
+        "text": "Contattaci per scoprire come le tecnologie dual-use possono beneficiare la tua organizzazione.",
+        "button": "Contattaci"
       }
     },
     "sectors": {
       "meta": {
-        "title": "Sectors We Serve | Dualyss",
-        "description": "Dualyss serves institutional, industrial, academic, and public sectors across Europe."
+        "title": "Settori che Serviamo | Dualyss",
+        "description": "Dualyss serve i settori istituzionale, industriale, accademico e pubblico in tutta Europa."
       },
-      "title": "Sectors We Serve",
-      "subtitle": "Delivering capabilities across diverse sectors",
+      "title": "Settori che Serviamo",
+      "subtitle": "Fornire capacità in diversi settori",
       "sectors": {
         "institutional": {
-          "title": "Institutional Sector",
-          "description": "Supporting European and national institutions in defense and security programs.",
-          "service1": "EU program participation support",
-          "service2": "Policy and strategy advisory",
-          "service3": "Capability assessment and planning"
+          "title": "Settore Istituzionale",
+          "description": "Supporto alle istituzioni europee e nazionali nei programmi di difesa e sicurezza.",
+          "service1": "Supporto alla partecipazione ai programmi UE",
+          "service2": "Consulenza su politiche e strategie",
+          "service3": "Valutazione e pianificazione delle capacità"
         },
         "industrial": {
-          "title": "Industrial Sector",
-          "description": "Partnering with defense contractors and technology companies.",
-          "service1": "Technology integration services",
-          "service2": "Supply chain management",
-          "service3": "Joint development programs"
+          "title": "Settore Industriale",
+          "description": "Partnership con appaltatori della difesa e aziende tecnologiche.",
+          "service1": "Servizi di integrazione tecnologica",
+          "service2": "Gestione della supply chain",
+          "service3": "Programmi di sviluppo congiunto"
         },
         "academic": {
-          "title": "Academic Sector",
-          "description": "Collaborating with universities and research institutions.",
-          "service1": "Research partnerships",
-          "service2": "Technology transfer programs",
-          "service3": "Talent development initiatives"
+          "title": "Settore Accademico",
+          "description": "Collaborazione con università e istituzioni di ricerca.",
+          "service1": "Partnership di ricerca",
+          "service2": "Programmi di trasferimento tecnologico",
+          "service3": "Iniziative di sviluppo dei talenti"
         },
         "public": {
-          "title": "Public Sector",
-          "description": "Serving public safety and civil protection agencies.",
-          "service1": "Emergency response systems",
-          "service2": "Public safety technologies",
-          "service3": "Civil protection solutions"
+          "title": "Settore Pubblico",
+          "description": "Servizio alle agenzie di sicurezza pubblica e protezione civile.",
+          "service1": "Sistemi di risposta alle emergenze",
+          "service2": "Tecnologie per la sicurezza pubblica",
+          "service3": "Soluzioni di protezione civile"
         }
       },
       "european": {
-        "title": "European Focus",
-        "text": "We are committed to strengthening European technological sovereignty and contributing to the EU's strategic autonomy in defense and security technologies."
+        "title": "Focus Europeo",
+        "text": "Ci impegniamo a rafforzare la sovranità tecnologica europea e a contribuire all'autonomia strategica dell'UE nelle tecnologie di difesa e sicurezza."
       },
       "cta": {
-        "title": "How Can We Help Your Sector?",
-        "text": "Contact us to discuss sector-specific solutions and partnerships.",
-        "button": "Get in Touch"
+        "title": "Come Possiamo Aiutare il Tuo Settore?",
+        "text": "Contattaci per discutere di soluzioni e partnership specifiche per il tuo settore.",
+        "button": "Contattaci"
       }
     },
     "news": {
       "meta": {
-        "title": "News & Insights | Dualyss",
-        "description": "Latest news, announcements, and insights from Dualyss on defense, cybersecurity, and dual-use technologies."
+        "title": "Notizie e Approfondimenti | Dualyss",
+        "description": "Ultime notizie, annunci e approfondimenti da Dualyss su difesa, cybersicurezza e tecnologie dual-use."
       },
-      "title": "News & Insights",
-      "subtitle": "Stay updated with our latest developments",
-      "readMore": "Read More",
+      "title": "Notizie e Approfondimenti",
+      "subtitle": "Rimani aggiornato sui nostri ultimi sviluppi",
+      "readMore": "Leggi di Più",
       "categories": {
-        "announcement": "Announcement",
+        "announcement": "Annuncio",
         "partnership": "Partnership",
-        "technology": "Technology",
-        "event": "Event"
+        "technology": "Tecnologia",
+        "event": "Evento"
       },
       "articles": {
         "article1": {
-          "title": "Dualyss Announces Strategic Partnership",
-          "excerpt": "New collaboration to strengthen European defense capabilities through innovative dual-use technologies."
+          "title": "Dualyss Annuncia una Partnership Strategica",
+          "excerpt": "Nuova collaborazione per rafforzare le capacità di difesa europee attraverso tecnologie dual-use innovative."
         },
         "article2": {
-          "title": "Participation in EU Defense Program",
-          "excerpt": "Dualyss selected for participation in major European defense research initiative."
+          "title": "Partecipazione al Programma di Difesa UE",
+          "excerpt": "Dualyss selezionato per la partecipazione a un'importante iniziativa di ricerca sulla difesa europea."
         },
         "article3": {
-          "title": "New Cybersecurity Solution Launch",
-          "excerpt": "Introducing advanced threat detection capabilities for critical infrastructure protection."
+          "title": "Lancio di una Nuova Soluzione di Cybersicurezza",
+          "excerpt": "Introduzione di capacità avanzate di rilevamento delle minacce per la protezione delle infrastrutture critiche."
         },
         "article4": {
-          "title": "European Security Conference 2026",
-          "excerpt": "Join us at the upcoming conference to discuss the future of European defense technologies."
+          "title": "Conferenza Europea sulla Sicurezza 2026",
+          "excerpt": "Unisciti a noi alla prossima conferenza per discutere il futuro delle tecnologie di difesa europee."
         },
         "article5": {
-          "title": "Expanding Our Partner Network",
-          "excerpt": "Welcome to our newest industrial and academic partners joining the Dualyss ecosystem."
+          "title": "Espansione della Nostra Rete di Partner",
+          "excerpt": "Benvenuto ai nostri nuovi partner industriali e accademici che si uniscono all'ecosistema Dualyss."
         },
         "article6": {
-          "title": "Innovation in Biosecurity",
-          "excerpt": "Latest developments in biological threat detection and response capabilities."
+          "title": "Innovazione nella Biosicurezza",
+          "excerpt": "Ultimi sviluppi nel rilevamento delle minacce biologiche e nelle capacità di risposta."
         }
       },
       "newsletter": {
-        "title": "Stay Informed",
-        "text": "Subscribe to our newsletter for the latest updates on European defense and security technologies.",
-        "placeholder": "Enter your email",
-        "button": "Subscribe"
+        "title": "Rimani Informato",
+        "text": "Iscriviti alla nostra newsletter per gli ultimi aggiornamenti sulle tecnologie di difesa e sicurezza europee.",
+        "placeholder": "Inserisci la tua e-mail",
+        "button": "Iscriviti"
       }
     },
     "contact": {
       "meta": {
-        "title": "Contact Us | Dualyss",
-        "description": "Get in touch with Dualyss for inquiries about our defense, cybersecurity, and dual-use technology solutions."
+        "title": "Contattaci | Dualyss",
+        "description": "Contatta Dualyss per informazioni sulle nostre soluzioni di difesa, cybersicurezza e tecnologie dual-use."
       },
-      "title": "Contact Us",
-      "subtitle": "We'd love to hear from you",
+      "title": "Contattaci",
+      "subtitle": "Ci farebbe piacere sentirti",
       "info": {
-        "title": "Contact Information",
+        "title": "Informazioni di Contatto",
         "address": {
-          "title": "Address",
-          "line1": "Barcelona, Catalonia",
-          "line2": "Spain, Europe"
+          "title": "Indirizzo",
+          "line1": "Barcellona, Catalogna",
+          "line2": "Spagna, Europa"
         },
         "email": {
-          "title": "Email",
+          "title": "E-mail",
           "general": "info@dualyss.eu",
           "press": "press@dualyss.eu"
         },
         "phone": {
-          "title": "Phone",
+          "title": "Telefono",
           "main": "+34 XXX XXX XXX"
         },
         "hours": {
-          "title": "Business Hours",
-          "weekdays": "Monday - Friday: 9:00 - 18:00 CET",
-          "weekend": "Weekend: Closed"
+          "title": "Orari di Apertura",
+          "weekdays": "Lunedì - Venerdì: 9:00 - 18:00 CET",
+          "weekend": "Fine settimana: Chiuso"
         }
       },
       "form": {
-        "title": "Send Us a Message"
+        "title": "Inviaci un Messaggio"
       },
       "social": {
-        "title": "Follow Us"
+        "title": "Seguici"
       }
     },
     "privacy": {
       "meta": {
         "title": "Privacy Policy | Dualyss",
-        "description": "Dualyss privacy policy explaining how we collect, use, and protect your personal information."
+        "description": "Informativa sulla privacy di Dualyss che spiega come raccogliamo, utilizziamo e proteggiamo le tue informazioni personali."
       },
       "title": "Privacy Policy",
-      "lastUpdated": "Last updated: January 2026",
+      "lastUpdated": "Ultimo aggiornamento: Gennaio 2026",
       "sections": {
         "introduction": {
-          "title": "Introduction",
-          "content": "Dualyss AIE (\"we\", \"our\", or \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website."
+          "title": "Introduzione",
+          "content": "Dualyss AIE (\"noi\", \"nostro\" o \"ci\") si impegna a proteggere la tua privacy. Questa Privacy Policy spiega come raccogliamo, utilizziamo, divulghiamo e proteggiamo le tue informazioni quando visiti il nostro sito web."
         },
         "dataCollection": {
-          "title": "Information We Collect",
-          "content": "We collect information that you voluntarily provide to us when you contact us through our website, including your name, email address, organization, and any other information you choose to provide in your message."
+          "title": "Informazioni che Raccogliamo",
+          "content": "Raccogliamo le informazioni che ci fornisci volontariamente quando ci contatti attraverso il nostro sito web, inclusi nome, indirizzo e-mail, organizzazione e qualsiasi altra informazione che scegli di fornire nel tuo messaggio."
         },
         "dataUse": {
-          "title": "How We Use Your Information",
-          "content": "We use the information we collect to respond to your inquiries, provide you with information about our services, and improve our website and services."
+          "title": "Come Utilizziamo le Tue Informazioni",
+          "content": "Utilizziamo le informazioni raccolte per rispondere alle tue richieste, fornirti informazioni sui nostri servizi e migliorare il nostro sito web e i nostri servizi."
         },
         "dataSharing": {
-          "title": "Information Sharing",
-          "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as required by law or to service providers who assist us in operating our website."
+          "title": "Condivisione delle Informazioni",
+          "content": "Non vendiamo, scambiamo o trasferiamo in altro modo le tue informazioni personali a terzi senza il tuo consenso, salvo quanto richiesto dalla legge o ai fornitori di servizi che ci assistono nel funzionamento del nostro sito web."
         },
         "dataSecurity": {
-          "title": "Data Security",
-          "content": "We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+          "title": "Sicurezza dei Dati",
+          "content": "Implementiamo misure tecniche e organizzative appropriate per proteggere le tue informazioni personali contro accessi non autorizzati, alterazione, divulgazione o distruzione."
         },
         "yourRights": {
-          "title": "Your Rights",
-          "content": "Under GDPR, you have the right to access, rectify, erase, restrict processing, and port your personal data. You also have the right to object to processing and to withdraw consent at any time."
+          "title": "I Tuoi Diritti",
+          "content": "In base al GDPR, hai il diritto di accedere, rettificare, cancellare, limitare il trattamento e portare i tuoi dati personali. Hai anche il diritto di opporti al trattamento e di revocare il consenso in qualsiasi momento."
         },
         "cookies": {
-          "title": "Cookies",
-          "content": "Our website uses cookies to enhance your experience. Please refer to our Cookie Policy for more information about how we use cookies."
+          "title": "Cookie",
+          "content": "Il nostro sito web utilizza cookie per migliorare la tua esperienza. Consulta la nostra Cookie Policy per maggiori informazioni su come utilizziamo i cookie."
         },
         "changes": {
-          "title": "Changes to This Policy",
-          "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page."
+          "title": "Modifiche a Questa Policy",
+          "content": "Potremmo aggiornare questa Privacy Policy di tanto in tanto. Ti informeremo di eventuali modifiche pubblicando la nuova Privacy Policy su questa pagina."
         },
         "contact": {
-          "title": "Contact Us",
-          "content": "If you have any questions about this Privacy Policy, please contact us at privacy@dualyss.eu."
+          "title": "Contattaci",
+          "content": "Se hai domande su questa Privacy Policy, contattaci a privacy@dualyss.eu."
         }
       }
     },
     "terms": {
       "meta": {
-        "title": "Terms of Use | Dualyss",
-        "description": "Terms and conditions for using the Dualyss website and services."
+        "title": "Termini d'Uso | Dualyss",
+        "description": "Termini e condizioni per l'utilizzo del sito web e dei servizi Dualyss."
       },
-      "title": "Terms of Use",
-      "lastUpdated": "Last updated: January 2026",
+      "title": "Termini d'Uso",
+      "lastUpdated": "Ultimo aggiornamento: Gennaio 2026",
       "sections": {
         "acceptance": {
-          "title": "Acceptance of Terms",
-          "content": "By accessing and using this website, you accept and agree to be bound by these Terms of Use. If you do not agree to these terms, please do not use this website."
+          "title": "Accettazione dei Termini",
+          "content": "Accedendo e utilizzando questo sito web, accetti e acconsenti a essere vincolato da questi Termini d'Uso. Se non accetti questi termini, ti preghiamo di non utilizzare questo sito web."
         },
         "use": {
-          "title": "Use of Website",
-          "content": "This website is provided for informational purposes about Dualyss and its services. You may use this website only for lawful purposes and in accordance with these Terms."
+          "title": "Utilizzo del Sito Web",
+          "content": "Questo sito web è fornito a scopo informativo su Dualyss e i suoi servizi. Puoi utilizzare questo sito web solo per scopi leciti e in conformità con questi Termini."
         },
         "intellectualProperty": {
-          "title": "Intellectual Property",
-          "content": "All content on this website, including text, graphics, logos, and images, is the property of Dualyss or its content suppliers and is protected by intellectual property laws."
+          "title": "Proprietà Intellettuale",
+          "content": "Tutti i contenuti di questo sito web, inclusi testi, grafiche, loghi e immagini, sono proprietà di Dualyss o dei suoi fornitori di contenuti e sono protetti dalle leggi sulla proprietà intellettuale."
         },
         "userConduct": {
-          "title": "User Conduct",
-          "content": "You agree not to use this website in any way that could damage, disable, or impair the website, or interfere with any other party's use of the website."
+          "title": "Condotta dell'Utente",
+          "content": "Ti impegni a non utilizzare questo sito web in modo che possa danneggiare, disabilitare o compromettere il sito web, o interferire con l'uso del sito web da parte di altri."
         },
         "disclaimers": {
-          "title": "Disclaimers",
-          "content": "This website and its content are provided \"as is\" without warranties of any kind, either express or implied. Dualyss does not warrant that the website will be uninterrupted or error-free."
+          "title": "Esclusioni di Responsabilità",
+          "content": "Questo sito web e i suoi contenuti sono forniti \"così come sono\" senza garanzie di alcun tipo, esplicite o implicite. Dualyss non garantisce che il sito web sarà ininterrotto o privo di errori."
         },
         "limitation": {
-          "title": "Limitation of Liability",
-          "content": "Dualyss shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website."
+          "title": "Limitazione di Responsabilità",
+          "content": "Dualyss non sarà responsabile per danni indiretti, incidentali, speciali, consequenziali o punitivi derivanti dall'uso di questo sito web."
         },
         "governingLaw": {
-          "title": "Governing Law",
-          "content": "These Terms shall be governed by and construed in accordance with the laws of Spain and the European Union. Any disputes shall be subject to the exclusive jurisdiction of the courts of Barcelona."
+          "title": "Legge Applicabile",
+          "content": "Questi Termini sono regolati e interpretati in conformità con le leggi della Spagna e dell'Unione Europea. Qualsiasi controversia sarà soggetta alla giurisdizione esclusiva dei tribunali di Barcellona."
         },
         "changes": {
-          "title": "Changes to Terms",
-          "content": "We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to the website."
+          "title": "Modifiche ai Termini",
+          "content": "Ci riserviamo il diritto di modificare questi Termini in qualsiasi momento. Le modifiche saranno effettive immediatamente dopo la pubblicazione sul sito web."
         },
         "contact": {
-          "title": "Contact",
-          "content": "For questions about these Terms, please contact us at legal@dualyss.eu."
+          "title": "Contatto",
+          "content": "Per domande su questi Termini, contattaci a legal@dualyss.eu."
         }
       }
     },
     "cookies": {
       "meta": {
         "title": "Cookie Policy | Dualyss",
-        "description": "Information about how Dualyss uses cookies on its website."
+        "description": "Informazioni su come Dualyss utilizza i cookie sul suo sito web."
       },
       "title": "Cookie Policy",
-      "lastUpdated": "Last updated: January 2026",
+      "lastUpdated": "Ultimo aggiornamento: Gennaio 2026",
       "sections": {
         "whatAreCookies": {
-          "title": "What Are Cookies?",
-          "content": "Cookies are small text files that are placed on your device when you visit a website. They are widely used to make websites work more efficiently and to provide information to website owners."
+          "title": "Cosa Sono i Cookie?",
+          "content": "I cookie sono piccoli file di testo che vengono inseriti nel tuo dispositivo quando visiti un sito web. Sono ampiamente utilizzati per far funzionare i siti web in modo più efficiente e per fornire informazioni ai proprietari dei siti web."
         },
         "howWeUse": {
-          "title": "How We Use Cookies",
-          "content": "We use cookies to understand how you interact with our website, to remember your preferences, and to improve your overall experience on our site."
+          "title": "Come Utilizziamo i Cookie",
+          "content": "Utilizziamo i cookie per capire come interagisci con il nostro sito web, per ricordare le tue preferenze e per migliorare la tua esperienza complessiva sul nostro sito."
         },
         "types": {
-          "title": "Types of Cookies We Use",
-          "content": "Essential Cookies: Required for the website to function properly.\nAnalytics Cookies: Help us understand how visitors interact with our website.\nPreference Cookies: Remember your settings and preferences."
+          "title": "Tipi di Cookie che Utilizziamo",
+          "content": "Cookie Essenziali: Necessari per il corretto funzionamento del sito web.\nCookie Analitici: Ci aiutano a capire come i visitatori interagiscono con il nostro sito web.\nCookie di Preferenza: Ricordano le tue impostazioni e preferenze."
         },
         "thirdParty": {
-          "title": "Third-Party Cookies",
-          "content": "We may use third-party services that place cookies on your device. These services help us analyze website traffic and improve our services."
+          "title": "Cookie di Terze Parti",
+          "content": "Potremmo utilizzare servizi di terze parti che inseriscono cookie nel tuo dispositivo. Questi servizi ci aiutano ad analizzare il traffico del sito web e a migliorare i nostri servizi."
         },
         "manage": {
-          "title": "Managing Cookies",
-          "content": "You can control and manage cookies through your browser settings. Please note that removing or blocking cookies may impact your experience on our website."
+          "title": "Gestione dei Cookie",
+          "content": "Puoi controllare e gestire i cookie attraverso le impostazioni del tuo browser. Tieni presente che la rimozione o il blocco dei cookie potrebbe influire sulla tua esperienza sul nostro sito web."
         },
         "contact": {
-          "title": "Contact Us",
-          "content": "If you have questions about our use of cookies, please contact us at privacy@dualyss.eu."
+          "title": "Contattaci",
+          "content": "Se hai domande sul nostro utilizzo dei cookie, contattaci a privacy@dualyss.eu."
         }
       }
     }
