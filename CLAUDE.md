@@ -45,6 +45,7 @@ Read these before making changes:
 - `.claude/rules/002-technical-standards.md` - Code standards
 - `.claude/rules/003-seo-checklist.md` - SEO requirements
 - `.claude/rules/004-content-structure.md` - Sitemap and content
+- `.claude/rules/005-brand-assets.md` - Logo and asset files
 
 ## Available Commands
 
