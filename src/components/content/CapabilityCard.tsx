@@ -43,7 +43,7 @@ export function CapabilityCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        'group relative rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:border-accent-300 hover:shadow-xl hover:-translate-y-1',
+        'group relative rounded-xl border border-neutral-200 bg-white p-6 shadow-sm transition-all duration-300 ease-out hover:border-accent-300 hover:shadow-xl hover:-translate-y-1 card-equal',
         className
       )}
     >

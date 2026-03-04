@@ -130,11 +130,11 @@ export default async function PartnersPage({ params }: PageProps) {
                 <p className="text-neutral-600">{category.description}</p>
               </div>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 card-grid">
               {category.partners.map((partner) => (
                 <div
                   key={partner.name}
-                  className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm"
+                  className="rounded-xl border border-neutral-200 bg-white p-6 shadow-sm card-equal"
                 >
                   <div className="mb-4 h-16 w-full rounded-lg bg-neutral-100 flex items-center justify-center">
                     <span className="text-2xl font-bold text-neutral-300">Logo</span>

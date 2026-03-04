@@ -113,11 +113,11 @@ export default async function NewsPage({ params }: PageProps) {
       {/* News Grid */}
       <section className="py-16 md:py-24">
         <Container>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 card-grid">
             {newsItems.map((item) => (
               <article
                 key={item.id}
-                className="group rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:border-primary-200 hover:shadow-md"
+                className="group rounded-xl border border-neutral-200 bg-white shadow-sm transition-all hover:border-primary-200 hover:shadow-md card-equal"
               >
                 <div className="aspect-video w-full rounded-t-xl bg-neutral-100 flex items-center justify-center">
                   <span className="text-4xl font-bold text-neutral-200">News</span>

@@ -87,7 +87,7 @@ export default async function CapabilitiesPage({ params }: PageProps) {
       {/* Capabilities Grid */}
       <section className="py-16 md:py-24">
         <Container>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 card-grid">
             {capabilities.map((capability, index) => (
               <CapabilityCard
                 key={capability.title}
@@ -106,7 +106,7 @@ export default async function CapabilitiesPage({ params }: PageProps) {
             <h2 className="text-3xl font-bold text-neutral-900">{t('approach.title')}</h2>
             <p className="mt-4 text-lg text-neutral-600">{t('approach.text')}</p>
           </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-3 card-grid">
             <div className="text-center">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100 text-2xl font-bold text-primary-500">
                 1

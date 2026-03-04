@@ -74,13 +74,13 @@ export function AboutSection() {
               {t('values.title')}
             </motion.h3>
 
-            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2 card-grid">
               {values.map((value, index) => {
                 const Icon = value.icon;
                 return (
                   <motion.div
                     key={value.key}
-                    className="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-300 hover:border-accent-200 hover:shadow-md"
+                    className="rounded-lg border border-neutral-200 bg-white p-5 transition-all duration-300 hover:border-accent-200 hover:shadow-md card-equal"
                     initial={{ opacity: 0, y: 16 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}

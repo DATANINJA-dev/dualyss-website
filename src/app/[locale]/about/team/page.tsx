@@ -96,7 +96,7 @@ export default async function TeamPage({ params }: PageProps) {
             <h2 className="text-3xl font-bold text-neutral-900">{t('leadership.title')}</h2>
             <p className="mt-4 text-lg text-neutral-600">{t('leadership.subtitle')}</p>
           </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 card-grid">
             {teamMembers.map((member, index) => (
               <TeamCard
                 key={member.name}

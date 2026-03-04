@@ -32,7 +32,7 @@ export function TeamCard({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        'group rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-all hover:shadow-md',
+        'group rounded-xl border border-neutral-200 bg-white p-6 text-center shadow-sm transition-all hover:shadow-md card-equal',
         className
       )}
     >

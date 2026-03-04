@@ -126,7 +126,28 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addComponents }: { addComponents: (components: Record<string, Record<string, string | Record<string, string>>>) => void }) {
+      addComponents({
+        // Apply to grid container - ensures items stretch
+        '.card-grid': {
+          '& > *': {
+            height: '100%',
+          },
+        },
+        // Apply to card element for flex layout
+        '.card-equal': {
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100%',
+        },
+        // Apply to card body/description for flex grow
+        '.card-body-grow': {
+          flexGrow: '1',
+        },
+      })
+    }
+  ],
 };
 
 export default config;

@@ -61,7 +61,7 @@ export function CapabilitiesSection() {
           </motion.p>
         </div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 card-grid">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
             return (
@@ -74,7 +74,7 @@ export function CapabilitiesSection() {
               >
                 <Link
                   href={capability.href}
-                  className="group block rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300 ease-out hover:border-accent-300 hover:shadow-xl hover:-translate-y-1"
+                  className="group rounded-xl border border-neutral-200 bg-white p-6 transition-all duration-300 ease-out hover:border-accent-300 hover:shadow-xl hover:-translate-y-1 card-equal"
                 >
                   <div className={cn('inline-flex rounded-lg p-3', capability.color)}>
                     <Icon className="h-6 w-6" />
