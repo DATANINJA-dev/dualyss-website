@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { locales } from '@/lib/i18n/config';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualyss.eu';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualys.eu';
 
 const routes = [
   '',

@@ -1,4 +1,4 @@
-# Dualyss Website Project
+# Dualys Website Project
 
 **Slogan**: "Protecting democracy with dual deterrence technologies"
 
@@ -90,5 +90,5 @@ Professional, strategic (not militaristic), European perspective, innovation-foc
 ## Resources
 
 - Logo: `docs/dualys_logo_300x300.png`
-- Positioning: `docs/Reflexions_Posicionament_Dualyss_22gen2026.pdf`
+- Positioning: `docs/Reflexions_Posicionament_Dualys_22gen2026.pdf`
 - Brand Guidelines: `docs/branding/Guideline Marca Dualys 2026.pdf`

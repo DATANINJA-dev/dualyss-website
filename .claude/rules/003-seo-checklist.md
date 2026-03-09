@@ -1,4 +1,4 @@
-# Dualyss SEO Checklist
+# Dualys SEO Checklist
 
 ## Pre-Commit Validation
 

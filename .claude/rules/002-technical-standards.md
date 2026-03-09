@@ -1,4 +1,4 @@
-# Dualyss Technical Standards
+# Dualys Technical Standards
 
 ## Technology Stack
 

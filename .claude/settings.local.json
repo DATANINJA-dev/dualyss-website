@@ -228,7 +228,15 @@
       "WebFetch(domain:www.mbda-systems.com)",
       "mcp__plugin_playwright_playwright__browser_hover",
       "Bash(npx tsc:*)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(Start-Process -NoNewWindow npm -ArgumentList \"run\",\"dev\")",
+      "Bash(Start-Sleep -Seconds 15)",
+      "Bash(Invoke-WebRequest -Uri \"http://localhost:3000/sitemap.xml\" -UseBasicParsing)",
+      "Bash(Select-Object -ExpandProperty Content)",
+      "Bash(Select-String -Pattern \"legal\" -CaseSensitive)",
+      "Bash(npx next dev --turbopack --port 3099)",
+      "Bash(git diff:*)",
+      "Bash(git restore:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

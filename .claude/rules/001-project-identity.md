@@ -1,8 +1,8 @@
-# Dualyss Project Identity Rules
+# Dualys Project Identity Rules
 
 ## Brand Identity
 
-**Company**: Dualyss (AIE - Agrupació d'Interès Econòmic)
+**Company**: Dualys (AIE - Agrupació d'Interès Econòmic)
 **Origin**: Catalonia, Europe
 **Slogan**: "Protecting democracy with dual deterrence technologies"
 

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { locales, type Locale } from '@/lib/i18n/config';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualyss.eu';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualys.eu';
 
 interface GenerateMetadataProps {
   title: string;
@@ -48,7 +48,7 @@ export function generatePageMetadata({
       title,
       description,
       url,
-      siteName: 'Dualyss',
+      siteName: 'Dualys',
       locale,
       type: 'website',
       images: [
@@ -85,8 +85,8 @@ export function getOrganizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Dualyss',
-    alternateName: 'Dualyss AIE',
+    name: 'Dualys',
+    alternateName: 'Dualys AIE',
     url: baseUrl,
     logo: `${baseUrl}/logo.png`,
     description: 'Protecting democracy with dual deterrence technologies. Enabling capabilities in defense, cybersecurity, and biosecurity for European strategic autonomy.',
@@ -97,8 +97,8 @@ export function getOrganizationSchema() {
       addressCountry: 'ES',
     },
     sameAs: [
-      'https://linkedin.com/company/dualyss',
-      'https://twitter.com/dualyss',
+      'https://www.linkedin.com/company/dualys-strategy/',
+      'https://twitter.com/dualys',
     ],
     areaServed: {
       '@type': 'GeoCircle',
@@ -126,7 +126,7 @@ export function getWebSiteSchema(locale: Locale) {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Dualyss',
+    name: 'Dualys',
     url: `${baseUrl}/${locale}`,
     inLanguage: locale,
     potentialAction: {
@@ -158,7 +158,7 @@ export function getWebPageSchema({ title, description, locale, path }: WebPageSc
     inLanguage: locale,
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Dualyss',
+      name: 'Dualys',
       url: `${baseUrl}/${locale}`,
     },
   };

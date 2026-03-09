@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualyss.eu';
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://dualys.eu';
 
 export default function robots(): MetadataRoute.Robots {
   return {

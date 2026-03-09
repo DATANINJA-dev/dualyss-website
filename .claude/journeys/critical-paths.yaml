@@ -1,0 +1,215 @@
+# Critical User Journeys - Dualys Website
+# Defines primary and secondary conversion paths
+# Used by: E2E tests, UX validation, navigation audits
+
+version: "1.0"
+last_updated: "2026-03-01"
+
+# === PRIMARY JOURNEYS ===
+# Critical conversion paths that must always work
+
+journeys:
+  primary_conversion:
+    name: "Primary Conversion"
+    description: "Direct path from homepage to contact"
+    priority: critical
+    expected_clicks: 2
+    steps:
+      - path: "/"
+        action: "View homepage hero"
+        expected_elements:
+          - "h1 with main value proposition"
+          - "CTA button to capabilities"
+          - "Secondary CTA to contact"
+      - path: "/capabilities"
+        action: "Browse capabilities"
+        expected_elements:
+          - "4 capability cards"
+          - "CTA to contact"
+      - path: "/contact"
+        action: "Submit inquiry"
+        expected_elements:
+          - "Contact form"
+          - "Office information"
+    success_criteria:
+      - "Form submission works"
+      - "All CTAs are visible and clickable"
+      - "Journey completes in under 3 clicks"
+
+  capability_deep_dive:
+    name: "Capability Deep Dive"
+    description: "User explores specific capability before contact"
+    priority: critical
+    expected_clicks: 3
+    steps:
+      - path: "/"
+        action: "Land on homepage"
+      - path: "/capabilities/defense"
+        action: "Explore defense capability"
+        expected_elements:
+          - "Detailed capability description"
+          - "Use cases"
+          - "CTA to contact"
+      - path: "/contact"
+        action: "Request information"
+    success_criteria:
+      - "Capability page loads with full content"
+      - "Related capabilities are suggested"
+
+  institutional_inquiry:
+    name: "Institutional Inquiry"
+    description: "Government/EU program stakeholder journey"
+    priority: high
+    expected_clicks: 4
+    steps:
+      - path: "/"
+        action: "Land on homepage"
+      - path: "/about"
+        action: "Learn about company"
+        expected_elements:
+          - "Company mission and vision"
+          - "European positioning"
+      - path: "/about/partners"
+        action: "Review partner ecosystem"
+        expected_elements:
+          - "Partner categories"
+          - "Partnership approach"
+      - path: "/contact"
+        action: "Initiate partnership discussion"
+    success_criteria:
+      - "Trust signals visible throughout"
+      - "European focus emphasized"
+
+  industrial_partnership:
+    name: "Industrial Partnership"
+    description: "Defense contractor evaluating capabilities"
+    priority: high
+    expected_clicks: 4
+    steps:
+      - path: "/"
+        action: "Land on homepage"
+      - path: "/capabilities/dual-use"
+        action: "Explore dual-use technologies"
+      - path: "/sectors"
+        action: "Confirm sector fit"
+      - path: "/contact"
+        action: "Request partnership info"
+    success_criteria:
+      - "Industrial messaging resonates"
+      - "Capabilities clearly presented"
+
+  news_to_contact:
+    name: "Content to Contact"
+    description: "User reads news/insights then contacts"
+    priority: medium
+    expected_clicks: 3
+    steps:
+      - path: "/news"
+        action: "Browse news articles"
+        expected_elements:
+          - "Article list/grid"
+          - "Categories/filters"
+      - path: "/news/[slug]"
+        action: "Read article"
+        expected_elements:
+          - "Full article content"
+          - "CTA to contact"
+      - path: "/contact"
+        action: "Follow up on article topic"
+    success_criteria:
+      - "Articles have clear CTAs"
+      - "Contact form pre-populated context (optional)"
+
+# === SECONDARY JOURNEYS ===
+# Important but not critical paths
+
+  about_exploration:
+    name: "About Exploration"
+    description: "User learning about company culture"
+    priority: medium
+    expected_clicks: 3
+    steps:
+      - path: "/about"
+        action: "Read about company"
+      - path: "/about/team"
+        action: "Meet the team"
+      - path: "/about/partners"
+        action: "Review partnerships"
+    success_criteria:
+      - "Team profiles load correctly"
+      - "Partner logos visible"
+
+  capability_comparison:
+    name: "Capability Comparison"
+    description: "User comparing multiple capabilities"
+    priority: medium
+    expected_clicks: 5
+    steps:
+      - path: "/capabilities"
+        action: "View all capabilities"
+      - path: "/capabilities/defense"
+        action: "Explore defense"
+      - path: "/capabilities/cybersecurity"
+        action: "Compare with cybersecurity"
+      - path: "/capabilities/biosecurity"
+        action: "Compare with biosecurity"
+      - path: "/contact"
+        action: "Discuss integrated solutions"
+    success_criteria:
+      - "Navigation between capabilities is smooth"
+      - "Common elements are consistent"
+
+# === MOBILE-SPECIFIC JOURNEYS ===
+
+  mobile_quick_contact:
+    name: "Mobile Quick Contact"
+    description: "Mobile user seeking quick contact"
+    priority: high
+    device: mobile
+    expected_clicks: 2
+    steps:
+      - path: "/"
+        action: "Land on mobile homepage"
+        expected_elements:
+          - "Mobile-optimized hero"
+          - "Touch-friendly CTAs (48px minimum)"
+      - path: "/contact"
+        action: "Access contact form"
+        expected_elements:
+          - "Mobile-optimized form"
+          - "Click-to-call option"
+    success_criteria:
+      - "All touch targets are 48px minimum"
+      - "Form fields work on mobile keyboards"
+
+# === JOURNEY METRICS ===
+# Expected performance thresholds
+
+performance_thresholds:
+  page_load_time: 2500ms  # LCP target
+  interaction_delay: 200ms  # INP target
+  layout_shift: 0.1  # CLS target
+  journey_completion_rate: 75%  # Expected conversion
+
+# === VALIDATION CONFIG ===
+# Settings for automated journey testing
+
+validation:
+  run_frequency: "pre-commit"
+  browsers: ["chromium"]
+  viewports:
+    desktop: { width: 1280, height: 720 }
+    mobile: { width: 375, height: 667 }
+  screenshot_on_failure: true
+  video_on_failure: true
+
+# === BROKEN JOURNEY ALERTS ===
+# Define what constitutes a broken journey
+
+failure_conditions:
+  - "404 error on any step"
+  - "Missing primary CTA"
+  - "Form submission error"
+  - "Navigation link broken"
+  - "Page load timeout (>5s)"
+  - "JavaScript error blocking interaction"

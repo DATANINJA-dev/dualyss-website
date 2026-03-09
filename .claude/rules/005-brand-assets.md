@@ -1,4 +1,4 @@
-# Dualyss Brand Assets
+# Dualys Brand Assets
 
 ## Logo Files
 

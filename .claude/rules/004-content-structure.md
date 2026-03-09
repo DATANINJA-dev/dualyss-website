@@ -1,10 +1,10 @@
-# Dualyss Website Content Structure
+# Dualys Website Content Structure
 
 ## Sitemap
 
 ```
 /                           # Homepage
-/about                      # About Dualyss
+/about                      # About Dualys
 /about/team                 # Leadership & Team
 /about/partners             # Partner Ecosystem
 /capabilities               # Our Capabilities (overview)
@@ -26,7 +26,7 @@
 ### Homepage
 - Hero with value proposition
 - Key capability areas (4 pillars)
-- Why Dualyss (differentiators)
+- Why Dualys (differentiators)
 - Latest news/insights
 - CTA to contact
 

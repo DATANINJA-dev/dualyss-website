@@ -31,14 +31,14 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="text-xl font-bold text-primary-500">
-              Dualyss
+              Dualys
             </Link>
             <p className="mt-4 max-w-md text-sm text-neutral-600">
               {t('description')}
             </p>
             <div className="mt-6 flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/dualys-strategy/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-neutral-500 transition-colors hover:text-accent-500"

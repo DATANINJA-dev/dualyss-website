@@ -35,7 +35,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
         },
-        // Dualyss Brand Colors (Official Guidelines 2026)
+        // Dualys Brand Colors (Official Guidelines 2026)
         // Distribution: 40% black, 40% white, 20% blue accent
         primary: {
           50: '#f5f5f5',

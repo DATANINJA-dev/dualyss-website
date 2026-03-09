@@ -43,7 +43,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
-              alt="Dualyss"
+              alt="Dualys"
               width={120}
               height={40}
               className="h-8 w-auto"

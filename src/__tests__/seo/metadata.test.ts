@@ -48,7 +48,7 @@ describe('SEO Metadata', () => {
 
       expect(schema['@context']).toBe('https://schema.org');
       expect(schema['@type']).toBe('Organization');
-      expect(schema.name).toBe('Dualyss');
+      expect(schema.name).toBe('Dualys');
       expect(schema.url).toBeDefined();
       expect(schema.logo).toBeDefined();
     });
@@ -69,7 +69,7 @@ describe('SEO Metadata', () => {
 
       expect(schema['@context']).toBe('https://schema.org');
       expect(schema['@type']).toBe('WebSite');
-      expect(schema.name).toBe('Dualyss');
+      expect(schema.name).toBe('Dualys');
       expect(schema.inLanguage).toBe('en');
     });
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Dualyss | Technologies à Double Usage pour la Sécurité Européenne",
-    "description": "Protéger la démocratie avec des technologies de dissuasion duale. Dualyss développe des capacités habilitantes en défense, cybersécurité et biosécurité pour l'autonomie stratégique européenne."
+    "title": "Dualys | Technologies à Double Usage pour la Sécurité Européenne",
+    "description": "Protéger la démocratie avec des technologies de dissuasion duale. Dualys développe des capacités habilitantes en défense, cybersécurité et biosécurité pour l'autonomie stratégique européenne."
   },
   "nav": {
     "home": "Accueil",
@@ -47,7 +47,7 @@
     }
   },
   "about": {
-    "title": "À Propos de Dualyss",
+    "title": "À Propos de Dualys",
     "subtitle": "Construire l'autonomie stratégique européenne grâce aux capacités habilitantes",
     "mission": {
       "title": "Notre Mission",
@@ -82,7 +82,7 @@
     "terms": "Conditions d'Utilisation",
     "cookies": "Politique de Cookies",
     "followUs": "Suivez-nous",
-    "copyright": "© {year} Dualyss AIE. Tous droits réservés."
+    "copyright": "© {year} Dualys AIE. Tous droits réservés."
   },
   "contact": {
     "title": "Contactez-nous",
@@ -106,10 +106,10 @@
   "pages": {
     "about": {
       "meta": {
-        "title": "À Propos de Dualyss | Leader Européen des Technologies Duales",
-        "description": "Découvrez Dualyss, un Groupement d'Intérêt Économique catalan spécialisé dans les technologies à double usage pour la défense, la cybersécurité et la biosécurité."
+        "title": "À Propos de Dualys | Leader Européen des Technologies Duales",
+        "description": "Découvrez Dualys, un Groupement d'Intérêt Économique catalan spécialisé dans les technologies à double usage pour la défense, la cybersécurité et la biosécurité."
       },
-      "title": "À Propos de Dualyss",
+      "title": "À Propos de Dualys",
       "subtitle": "Construire l'autonomie stratégique européenne grâce aux capacités habilitantes",
       "mission": {
         "title": "Notre Mission",
@@ -143,8 +143,8 @@
     },
     "team": {
       "meta": {
-        "title": "Notre Équipe | Direction de Dualyss",
-        "description": "Rencontrez l'équipe de direction de Dualyss, experts en défense, cybersécurité et technologies à double usage."
+        "title": "Notre Équipe | Direction de Dualys",
+        "description": "Rencontrez l'équipe de direction de Dualys, experts en défense, cybersécurité et technologies à double usage."
       },
       "title": "Notre Équipe",
       "subtitle": "Rencontrez les experts qui portent l'autonomie technologique européenne",
@@ -156,7 +156,7 @@
         "member1": {
           "name": "Directeur Exécutif",
           "role": "Directeur Général",
-          "description": "Pilote la vision stratégique et le positionnement européen de Dualyss."
+          "description": "Pilote la vision stratégique et le positionnement européen de Dualys."
         },
         "member2": {
           "name": "Directeur Technologique",
@@ -182,8 +182,8 @@
     },
     "partners": {
       "meta": {
-        "title": "Partenaires | Écosystème Dualyss",
-        "description": "Explorez l'écosystème de partenaires de Dualyss : leaders industriels, institutions académiques et centres de recherche."
+        "title": "Partenaires | Écosystème Dualys",
+        "description": "Explorez l'écosystème de partenaires de Dualys : leaders industriels, institutions académiques et centres de recherche."
       },
       "title": "Nos Partenaires",
       "subtitle": "Développer des capacités par la collaboration stratégique",
@@ -217,8 +217,8 @@
     },
     "capabilities": {
       "meta": {
-        "title": "Capacités | Technologies Dualyss",
-        "description": "Explorez les capacités de Dualyss en défense, cybersécurité, biosécurité et technologies à double usage."
+        "title": "Capacités | Technologies Dualys",
+        "description": "Explorez les capacités de Dualys en défense, cybersécurité, biosécurité et technologies à double usage."
       },
       "title": "Nos Capacités",
       "subtitle": "Technologies habilitantes pour une Europe plus sûre et autonome",
@@ -246,8 +246,8 @@
     },
     "defense": {
       "meta": {
-        "title": "Technologies de Défense | Dualyss",
-        "description": "Découvrez les capacités de défense de Dualyss : systèmes sans pilote, capteurs et plateformes autonomes."
+        "title": "Technologies de Défense | Dualys",
+        "description": "Découvrez les capacités de défense de Dualys : systèmes sans pilote, capteurs et plateformes autonomes."
       },
       "title": "Technologies de Défense",
       "subtitle": "Systèmes avancés pour les besoins de défense modernes",
@@ -311,7 +311,7 @@
     },
     "cybersecurity": {
       "meta": {
-        "title": "Solutions de Cybersécurité | Dualyss",
+        "title": "Solutions de Cybersécurité | Dualys",
         "description": "Solutions complètes de cybersécurité pour la protection des infrastructures critiques et la résilience numérique."
       },
       "title": "Cybersécurité",
@@ -361,7 +361,7 @@
     },
     "biosecurity": {
       "meta": {
-        "title": "Capacités de Biosécurité | Dualyss",
+        "title": "Capacités de Biosécurité | Dualys",
         "description": "Capacités de réponse bio-sanitaire et solutions de sécurité sanitaire pour les menaces biologiques émergentes."
       },
       "title": "Biosécurité",
@@ -411,7 +411,7 @@
     },
     "dualUse": {
       "meta": {
-        "title": "Technologies à Double Usage | Dualyss",
+        "title": "Technologies à Double Usage | Dualys",
         "description": "Technologies avec applications civiles et de défense, stimulant l'innovation tout en assurant la préparation stratégique."
       },
       "title": "Technologies à Double Usage",
@@ -467,8 +467,8 @@
     },
     "sectors": {
       "meta": {
-        "title": "Secteurs d'Activité | Dualyss",
-        "description": "Dualyss accompagne les secteurs institutionnel, industriel, académique et public à travers l'Europe."
+        "title": "Secteurs d'Activité | Dualys",
+        "description": "Dualys accompagne les secteurs institutionnel, industriel, académique et public à travers l'Europe."
       },
       "title": "Secteurs d'Activité",
       "subtitle": "Fournir des capacités à des secteurs diversifiés",
@@ -514,8 +514,8 @@
     },
     "news": {
       "meta": {
-        "title": "Actualités et Perspectives | Dualyss",
-        "description": "Dernières actualités, annonces et perspectives de Dualyss sur la défense, la cybersécurité et les technologies à double usage."
+        "title": "Actualités et Perspectives | Dualys",
+        "description": "Dernières actualités, annonces et perspectives de Dualys sur la défense, la cybersécurité et les technologies à double usage."
       },
       "title": "Actualités et Perspectives",
       "subtitle": "Restez informé de nos derniers développements",
@@ -528,12 +528,12 @@
       },
       "articles": {
         "article1": {
-          "title": "Dualyss Annonce un Partenariat Stratégique",
+          "title": "Dualys Annonce un Partenariat Stratégique",
           "excerpt": "Nouvelle collaboration pour renforcer les capacités de défense européennes grâce à des technologies innovantes à double usage."
         },
         "article2": {
           "title": "Participation à un Programme de Défense Européen",
-          "excerpt": "Dualyss sélectionné pour participer à une initiative majeure de recherche en défense européenne."
+          "excerpt": "Dualys sélectionné pour participer à une initiative majeure de recherche en défense européenne."
         },
         "article3": {
           "title": "Lancement d'une Nouvelle Solution de Cybersécurité",
@@ -545,7 +545,7 @@
         },
         "article5": {
           "title": "Élargissement de Notre Réseau de Partenaires",
-          "excerpt": "Bienvenue à nos nouveaux partenaires industriels et académiques qui rejoignent l'écosystème Dualyss."
+          "excerpt": "Bienvenue à nos nouveaux partenaires industriels et académiques qui rejoignent l'écosystème Dualys."
         },
         "article6": {
           "title": "Innovation en Biosécurité",
@@ -561,8 +561,8 @@
     },
     "contact": {
       "meta": {
-        "title": "Contactez-nous | Dualyss",
-        "description": "Contactez Dualyss pour toute question sur nos solutions de défense, cybersécurité et technologies à double usage."
+        "title": "Contactez-nous | Dualys",
+        "description": "Contactez Dualys pour toute question sur nos solutions de défense, cybersécurité et technologies à double usage."
       },
       "title": "Contactez-nous",
       "subtitle": "Nous serions ravis d'échanger avec vous",
@@ -575,8 +575,8 @@
         },
         "email": {
           "title": "E-mail",
-          "general": "info@dualyss.eu",
-          "press": "press@dualyss.eu"
+          "general": "info@dualys.eu",
+          "press": "press@dualys.eu"
         },
         "phone": {
           "title": "Téléphone",
@@ -597,15 +597,15 @@
     },
     "privacy": {
       "meta": {
-        "title": "Politique de Confidentialité | Dualyss",
-        "description": "Politique de confidentialité de Dualyss expliquant comment nous collectons, utilisons et protégeons vos informations personnelles."
+        "title": "Politique de Confidentialité | Dualys",
+        "description": "Politique de confidentialité de Dualys expliquant comment nous collectons, utilisons et protégeons vos informations personnelles."
       },
       "title": "Politique de Confidentialité",
       "lastUpdated": "Dernière mise à jour : Janvier 2026",
       "sections": {
         "introduction": {
           "title": "Introduction",
-          "content": "Dualyss AIE (« nous », « notre » ou « nos ») s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web."
+          "content": "Dualys AIE (« nous », « notre » ou « nos ») s'engage à protéger votre vie privée. Cette Politique de Confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site web."
         },
         "dataCollection": {
           "title": "Informations Collectées",
@@ -637,14 +637,14 @@
         },
         "contact": {
           "title": "Nous Contacter",
-          "content": "Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter à privacy@dualyss.eu."
+          "content": "Si vous avez des questions concernant cette Politique de Confidentialité, veuillez nous contacter à privacy@dualys.eu."
         }
       }
     },
     "terms": {
       "meta": {
-        "title": "Conditions d'Utilisation | Dualyss",
-        "description": "Conditions générales d'utilisation du site web et des services Dualyss."
+        "title": "Conditions d'Utilisation | Dualys",
+        "description": "Conditions générales d'utilisation du site web et des services Dualys."
       },
       "title": "Conditions d'Utilisation",
       "lastUpdated": "Dernière mise à jour : Janvier 2026",
@@ -655,11 +655,11 @@
         },
         "use": {
           "title": "Utilisation du Site Web",
-          "content": "Ce site web est fourni à des fins d'information sur Dualyss et ses services. Vous ne pouvez utiliser ce site web qu'à des fins légales et conformément à ces Conditions."
+          "content": "Ce site web est fourni à des fins d'information sur Dualys et ses services. Vous ne pouvez utiliser ce site web qu'à des fins légales et conformément à ces Conditions."
         },
         "intellectualProperty": {
           "title": "Propriété Intellectuelle",
-          "content": "Tout le contenu de ce site web, y compris les textes, graphiques, logos et images, est la propriété de Dualyss ou de ses fournisseurs de contenu et est protégé par les lois sur la propriété intellectuelle."
+          "content": "Tout le contenu de ce site web, y compris les textes, graphiques, logos et images, est la propriété de Dualys ou de ses fournisseurs de contenu et est protégé par les lois sur la propriété intellectuelle."
         },
         "userConduct": {
           "title": "Conduite de l'Utilisateur",
@@ -667,11 +667,11 @@
         },
         "disclaimers": {
           "title": "Avertissements",
-          "content": "Ce site web et son contenu sont fournis « en l'état » sans garantie d'aucune sorte, expresse ou implicite. Dualyss ne garantit pas que le site web sera ininterrompu ou exempt d'erreurs."
+          "content": "Ce site web et son contenu sont fournis « en l'état » sans garantie d'aucune sorte, expresse ou implicite. Dualys ne garantit pas que le site web sera ininterrompu ou exempt d'erreurs."
         },
         "limitation": {
           "title": "Limitation de Responsabilité",
-          "content": "Dualyss ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs découlant de votre utilisation de ce site web."
+          "content": "Dualys ne sera pas responsable des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs découlant de votre utilisation de ce site web."
         },
         "governingLaw": {
           "title": "Droit Applicable",
@@ -683,14 +683,14 @@
         },
         "contact": {
           "title": "Contact",
-          "content": "Pour toute question concernant ces Conditions, veuillez nous contacter à legal@dualyss.eu."
+          "content": "Pour toute question concernant ces Conditions, veuillez nous contacter à legal@dualys.eu."
         }
       }
     },
     "cookies": {
       "meta": {
-        "title": "Politique de Cookies | Dualyss",
-        "description": "Informations sur la façon dont Dualyss utilise les cookies sur son site web."
+        "title": "Politique de Cookies | Dualys",
+        "description": "Informations sur la façon dont Dualys utilise les cookies sur son site web."
       },
       "title": "Politique de Cookies",
       "lastUpdated": "Dernière mise à jour : Janvier 2026",
@@ -717,7 +717,7 @@
         },
         "contact": {
           "title": "Nous Contacter",
-          "content": "Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter à privacy@dualyss.eu."
+          "content": "Si vous avez des questions sur notre utilisation des cookies, veuillez nous contacter à privacy@dualys.eu."
         }
       }
     }

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "TASK-001",
+    "title": "Configure Contentful CMS space and content models",
+    "status": "backlog",
+    "priority": "P0",
+    "type": "infrastructure",
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-001.md"
+  },
+  {
+    "id": "TASK-002",
+    "title": "Connect News page to Contentful CMS",
+    "status": "backlog",
+    "priority": "P0",
+    "type": "feature",
+    "depends_on": ["TASK-001"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-002.md"
+  },
+  {
+    "id": "TASK-003",
+    "title": "Connect Team page to Contentful CMS",
+    "status": "backlog",
+    "priority": "P0",
+    "type": "feature",
+    "depends_on": ["TASK-001"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-003.md"
+  },
+  {
+    "id": "TASK-004",
+    "title": "Connect Partners page to Contentful CMS",
+    "status": "backlog",
+    "priority": "P1",
+    "type": "feature",
+    "depends_on": ["TASK-001"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-004.md"
+  },
+  {
+    "id": "TASK-005",
+    "title": "Install npm dependencies (contentful, yaml, playwright)",
+    "status": "backlog",
+    "priority": "P0",
+    "type": "infrastructure",
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-005.md"
+  },
+  {
+    "id": "TASK-006",
+    "title": "Configure TOSH A font from Adobe Fonts",
+    "status": "backlog",
+    "priority": "P1",
+    "type": "design",
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-006.md",
+    "notes": "Requires Adobe Fonts license"
+  },
+  {
+    "id": "TASK-007",
+    "title": "Create dynamic news article page [slug]",
+    "status": "backlog",
+    "priority": "P1",
+    "type": "feature",
+    "depends_on": ["TASK-002"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-007.md"
+  },
+  {
+    "id": "TASK-008",
+    "title": "Run and fix E2E journey tests",
+    "status": "backlog",
+    "priority": "P1",
+    "type": "testing",
+    "depends_on": ["TASK-005"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-008.md"
+  },
+  {
+    "id": "TASK-009",
+    "title": "Add contact form backend API route",
+    "status": "backlog",
+    "priority": "P1",
+    "type": "feature",
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-009.md"
+  },
+  {
+    "id": "TASK-010",
+    "title": "Deploy to Vercel production",
+    "status": "backlog",
+    "priority": "P2",
+    "type": "infrastructure",
+    "depends_on": ["TASK-005"],
+    "created": "2026-03-01",
+    "file": "backlog/tasks/TASK-010.md"
+  }
+]

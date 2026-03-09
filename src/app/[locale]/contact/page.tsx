@@ -107,7 +107,7 @@ export default async function ContactPage({ params }: PageProps) {
                 <h3 className="mb-4 font-semibold text-neutral-900">{t('social.title')}</h3>
                 <div className="flex gap-3">
                   <a
-                    href="https://linkedin.com/company/dualyss"
+                    href="https://www.linkedin.com/company/dualys-strategy/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-lg bg-neutral-100 p-3 text-neutral-600 transition-colors hover:bg-primary-50 hover:text-primary-500"
@@ -118,7 +118,7 @@ export default async function ContactPage({ params }: PageProps) {
                     </svg>
                   </a>
                   <a
-                    href="https://twitter.com/dualyss"
+                    href="https://twitter.com/dualys"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-lg bg-neutral-100 p-3 text-neutral-600 transition-colors hover:bg-primary-50 hover:text-primary-500"

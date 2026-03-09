@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "title": "Dualyss | Tecnologies de Doble Ús per a la Seguretat Europea",
-    "description": "Protegint la democràcia amb tecnologies de dissuasió dual. Dualyss desenvolupa capacitats habilitadores en defensa, ciberseguretat i bioseguretat per a l'autonomia estratègica europea."
+    "title": "Dualys | Tecnologies de Doble Ús per a la Seguretat Europea",
+    "description": "Protegint la democràcia amb tecnologies de dissuasió dual. Dualys desenvolupa capacitats habilitadores en defensa, ciberseguretat i bioseguretat per a l'autonomia estratègica europea."
   },
   "nav": {
     "home": "Inici",
@@ -47,7 +47,7 @@
     }
   },
   "about": {
-    "title": "Sobre Dualyss",
+    "title": "Sobre Dualys",
     "subtitle": "Construint l'autonomia estratègica europea a través de capacitats habilitadores",
     "mission": {
       "title": "La Nostra Missió",
@@ -82,7 +82,7 @@
     "terms": "Termes d'Ús",
     "cookies": "Política de Cookies",
     "followUs": "Seguiu-nos",
-    "copyright": "© {year} Dualyss AIE. Tots els drets reservats."
+    "copyright": "© {year} Dualys AIE. Tots els drets reservats."
   },
   "contact": {
     "title": "Contacteu-nos",
@@ -106,10 +106,10 @@
   "pages": {
     "about": {
       "meta": {
-        "title": "Sobre Dualyss | Líder Europeu en Tecnologia de Doble Ús",
-        "description": "Coneixeu Dualyss, una Agrupació d'Interès Econòmic catalana especialitzada en tecnologies de doble ús per a defensa, ciberseguretat i bioseguretat."
+        "title": "Sobre Dualys | Líder Europeu en Tecnologia de Doble Ús",
+        "description": "Coneixeu Dualys, una Agrupació d'Interès Econòmic catalana especialitzada en tecnologies de doble ús per a defensa, ciberseguretat i bioseguretat."
       },
-      "title": "Sobre Dualyss",
+      "title": "Sobre Dualys",
       "subtitle": "Construint l'autonomia estratègica europea a través de capacitats habilitadores",
       "mission": {
         "title": "La Nostra Missió",
@@ -143,8 +143,8 @@
     },
     "team": {
       "meta": {
-        "title": "El Nostre Equip | Lideratge de Dualyss",
-        "description": "Coneixeu l'equip directiu de Dualyss, experts en defensa, ciberseguretat i tecnologies de doble ús."
+        "title": "El Nostre Equip | Lideratge de Dualys",
+        "description": "Coneixeu l'equip directiu de Dualys, experts en defensa, ciberseguretat i tecnologies de doble ús."
       },
       "title": "El Nostre Equip",
       "subtitle": "Coneixeu els experts que impulsen l'autonomia tecnològica europea",
@@ -156,7 +156,7 @@
         "member1": {
           "name": "Director Executiu",
           "role": "Director General",
-          "description": "Liderant la visió estratègica i el posicionament europeu de Dualyss."
+          "description": "Liderant la visió estratègica i el posicionament europeu de Dualys."
         },
         "member2": {
           "name": "Director de Tecnologia",
@@ -182,8 +182,8 @@
     },
     "partners": {
       "meta": {
-        "title": "Socis | Ecosistema de Dualyss",
-        "description": "Exploreu l'ecosistema de socis de Dualyss: líders industrials, institucions acadèmiques i centres de recerca."
+        "title": "Socis | Ecosistema de Dualys",
+        "description": "Exploreu l'ecosistema de socis de Dualys: líders industrials, institucions acadèmiques i centres de recerca."
       },
       "title": "Els Nostres Socis",
       "subtitle": "Construint capacitats a través de la col·laboració estratègica",
@@ -217,8 +217,8 @@
     },
     "capabilities": {
       "meta": {
-        "title": "Capacitats | Tecnologies de Dualyss",
-        "description": "Exploreu les capacitats de Dualyss en defensa, ciberseguretat, bioseguretat i tecnologies de doble ús."
+        "title": "Capacitats | Tecnologies de Dualys",
+        "description": "Exploreu les capacitats de Dualys en defensa, ciberseguretat, bioseguretat i tecnologies de doble ús."
       },
       "title": "Les Nostres Capacitats",
       "subtitle": "Tecnologies habilitadores per a una Europa més segura i autònoma",
@@ -246,8 +246,8 @@
     },
     "defense": {
       "meta": {
-        "title": "Tecnologies de Defensa | Dualyss",
-        "description": "Descobriu les capacitats de defensa de Dualyss: sistemes no tripulats, sensors i plataformes autònomes."
+        "title": "Tecnologies de Defensa | Dualys",
+        "description": "Descobriu les capacitats de defensa de Dualys: sistemes no tripulats, sensors i plataformes autònomes."
       },
       "title": "Tecnologies de Defensa",
       "subtitle": "Sistemes avançats per als requisits de defensa moderns",
@@ -311,7 +311,7 @@
     },
     "cybersecurity": {
       "meta": {
-        "title": "Solucions de Ciberseguretat | Dualyss",
+        "title": "Solucions de Ciberseguretat | Dualys",
         "description": "Solucions integrals de ciberseguretat per a protecció d'infraestructures crítiques i resiliència digital."
       },
       "title": "Ciberseguretat",
@@ -361,7 +361,7 @@
     },
     "biosecurity": {
       "meta": {
-        "title": "Capacitats de Bioseguretat | Dualyss",
+        "title": "Capacitats de Bioseguretat | Dualys",
         "description": "Capacitats de resposta biosanitària i solucions de seguretat sanitària per a amenaces biològiques emergents."
       },
       "title": "Bioseguretat",
@@ -411,7 +411,7 @@
     },
     "dualUse": {
       "meta": {
-        "title": "Tecnologies de Doble Ús | Dualyss",
+        "title": "Tecnologies de Doble Ús | Dualys",
         "description": "Tecnologies amb aplicacions civils i de defensa, impulsant la innovació i garantint la preparació estratègica."
       },
       "title": "Tecnologies de Doble Ús",
@@ -467,8 +467,8 @@
     },
     "sectors": {
       "meta": {
-        "title": "Sectors que Servim | Dualyss",
-        "description": "Dualyss serveix sectors institucionals, industrials, acadèmics i públics a tota Europa."
+        "title": "Sectors que Servim | Dualys",
+        "description": "Dualys serveix sectors institucionals, industrials, acadèmics i públics a tota Europa."
       },
       "title": "Sectors que Servim",
       "subtitle": "Lliurant capacitats en diversos sectors",
@@ -514,8 +514,8 @@
     },
     "news": {
       "meta": {
-        "title": "Notícies i Insights | Dualyss",
-        "description": "Últimes notícies, anuncis i insights de Dualyss sobre defensa, ciberseguretat i tecnologies de doble ús."
+        "title": "Notícies i Insights | Dualys",
+        "description": "Últimes notícies, anuncis i insights de Dualys sobre defensa, ciberseguretat i tecnologies de doble ús."
       },
       "title": "Notícies i Insights",
       "subtitle": "Manteniu-vos actualitzats amb els nostres últims desenvolupaments",
@@ -528,12 +528,12 @@
       },
       "articles": {
         "article1": {
-          "title": "Dualyss Anuncia Aliança Estratègica",
+          "title": "Dualys Anuncia Aliança Estratègica",
           "excerpt": "Nova col·laboració per enfortir les capacitats de defensa europees mitjançant tecnologies de doble ús innovadores."
         },
         "article2": {
           "title": "Participació en Programa de Defensa de la UE",
-          "excerpt": "Dualyss seleccionada per participar en una important iniciativa de recerca de defensa europea."
+          "excerpt": "Dualys seleccionada per participar en una important iniciativa de recerca de defensa europea."
         },
         "article3": {
           "title": "Llançament de Nova Solució de Ciberseguretat",
@@ -545,7 +545,7 @@
         },
         "article5": {
           "title": "Ampliant la Nostra Xarxa de Socis",
-          "excerpt": "Benvinguts als nostres nous socis industrials i acadèmics que s'uneixen a l'ecosistema Dualyss."
+          "excerpt": "Benvinguts als nostres nous socis industrials i acadèmics que s'uneixen a l'ecosistema Dualys."
         },
         "article6": {
           "title": "Innovació en Bioseguretat",
@@ -561,8 +561,8 @@
     },
     "contact": {
       "meta": {
-        "title": "Contacte | Dualyss",
-        "description": "Poseu-vos en contacte amb Dualyss per a consultes sobre les nostres solucions de defensa, ciberseguretat i tecnologia de doble ús."
+        "title": "Contacte | Dualys",
+        "description": "Poseu-vos en contacte amb Dualys per a consultes sobre les nostres solucions de defensa, ciberseguretat i tecnologia de doble ús."
       },
       "title": "Contacteu-nos",
       "subtitle": "Ens encantaria saber de vosaltres",
@@ -575,8 +575,8 @@
         },
         "email": {
           "title": "Email",
-          "general": "info@dualyss.eu",
-          "press": "press@dualyss.eu"
+          "general": "info@dualys.eu",
+          "press": "press@dualys.eu"
         },
         "phone": {
           "title": "Telèfon",
@@ -597,15 +597,15 @@
     },
     "privacy": {
       "meta": {
-        "title": "Política de Privacitat | Dualyss",
-        "description": "Política de privacitat de Dualyss que explica com recollim, utilitzem i protegim la vostra informació personal."
+        "title": "Política de Privacitat | Dualys",
+        "description": "Política de privacitat de Dualys que explica com recollim, utilitzem i protegim la vostra informació personal."
       },
       "title": "Política de Privacitat",
       "lastUpdated": "Última actualització: Gener 2026",
       "sections": {
         "introduction": {
           "title": "Introducció",
-          "content": "Dualyss AIE (\"nosaltres\", \"nostra\" o \"ens\") està compromesa amb la protecció de la vostra privacitat. Aquesta Política de Privacitat explica com recollim, utilitzem, divulguem i protegim la vostra informació quan visiteu el nostre lloc web."
+          "content": "Dualys AIE (\"nosaltres\", \"nostra\" o \"ens\") està compromesa amb la protecció de la vostra privacitat. Aquesta Política de Privacitat explica com recollim, utilitzem, divulguem i protegim la vostra informació quan visiteu el nostre lloc web."
         },
         "dataCollection": {
           "title": "Informació que Recollim",
@@ -637,14 +637,14 @@
         },
         "contact": {
           "title": "Contacteu-nos",
-          "content": "Si teniu alguna pregunta sobre aquesta Política de Privacitat, contacteu-nos a privacy@dualyss.eu."
+          "content": "Si teniu alguna pregunta sobre aquesta Política de Privacitat, contacteu-nos a privacy@dualys.eu."
         }
       }
     },
     "terms": {
       "meta": {
-        "title": "Termes d'Ús | Dualyss",
-        "description": "Termes i condicions per a l'ús del lloc web i serveis de Dualyss."
+        "title": "Termes d'Ús | Dualys",
+        "description": "Termes i condicions per a l'ús del lloc web i serveis de Dualys."
       },
       "title": "Termes d'Ús",
       "lastUpdated": "Última actualització: Gener 2026",
@@ -655,11 +655,11 @@
         },
         "use": {
           "title": "Ús del Lloc Web",
-          "content": "Aquest lloc web es proporciona amb finalitats informatives sobre Dualyss i els seus serveis. Podeu utilitzar aquest lloc web només per a finalitats legals i d'acord amb aquests Termes."
+          "content": "Aquest lloc web es proporciona amb finalitats informatives sobre Dualys i els seus serveis. Podeu utilitzar aquest lloc web només per a finalitats legals i d'acord amb aquests Termes."
         },
         "intellectualProperty": {
           "title": "Propietat Intel·lectual",
-          "content": "Tot el contingut d'aquest lloc web, incloent text, gràfics, logotips i imatges, és propietat de Dualyss o dels seus proveïdors de contingut i està protegit per les lleis de propietat intel·lectual."
+          "content": "Tot el contingut d'aquest lloc web, incloent text, gràfics, logotips i imatges, és propietat de Dualys o dels seus proveïdors de contingut i està protegit per les lleis de propietat intel·lectual."
         },
         "userConduct": {
           "title": "Conducta de l'Usuari",
@@ -667,11 +667,11 @@
         },
         "disclaimers": {
           "title": "Exempció de Responsabilitat",
-          "content": "Aquest lloc web i el seu contingut es proporcionen \"tal qual\" sense garanties de cap tipus, ja siguin expresses o implícites. Dualyss no garanteix que el lloc web estigui lliure d'interrupcions o errors."
+          "content": "Aquest lloc web i el seu contingut es proporcionen \"tal qual\" sense garanties de cap tipus, ja siguin expresses o implícites. Dualys no garanteix que el lloc web estigui lliure d'interrupcions o errors."
         },
         "limitation": {
           "title": "Limitació de Responsabilitat",
-          "content": "Dualyss no serà responsable de cap dany indirecte, incidental, especial, conseqüent o punitiu que sorgeixi del vostre ús d'aquest lloc web."
+          "content": "Dualys no serà responsable de cap dany indirecte, incidental, especial, conseqüent o punitiu que sorgeixi del vostre ús d'aquest lloc web."
         },
         "governingLaw": {
           "title": "Llei Aplicable",
@@ -683,14 +683,14 @@
         },
         "contact": {
           "title": "Contacte",
-          "content": "Per a preguntes sobre aquests Termes, contacteu-nos a legal@dualyss.eu."
+          "content": "Per a preguntes sobre aquests Termes, contacteu-nos a legal@dualys.eu."
         }
       }
     },
     "cookies": {
       "meta": {
-        "title": "Política de Cookies | Dualyss",
-        "description": "Informació sobre com Dualyss utilitza cookies al seu lloc web."
+        "title": "Política de Cookies | Dualys",
+        "description": "Informació sobre com Dualys utilitza cookies al seu lloc web."
       },
       "title": "Política de Cookies",
       "lastUpdated": "Última actualització: Gener 2026",
@@ -717,7 +717,7 @@
         },
         "contact": {
           "title": "Contacteu-nos",
-          "content": "Si teniu preguntes sobre el nostre ús de cookies, contacteu-nos a privacy@dualyss.eu."
+          "content": "Si teniu preguntes sobre el nostre ús de cookies, contacteu-nos a privacy@dualys.eu."
         }
       }
     }
